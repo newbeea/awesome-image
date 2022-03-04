@@ -1,0 +1,33 @@
+{
+  "name": "@vue-awesome-image/providers",
+  "version": "1.0.0",
+  "description": "",
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup ./index.ts --dts --format esm,cjs --watch",
+    "build": "tsup ./index.ts --dts --format esm,cjs"
+  },
+  "author": "",
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "tsup": "^5.11.13",
+    "vue": "^3.2.31"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "vue-demi": "^0.12.1"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  }
+}

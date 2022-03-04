@@ -1,5 +1,5 @@
 {
-  "name": "@as-image/as-image",
+  "name": "@vue-awesome-image/as-image",
   "private": false,
   "version": "1.0.0",
   "module": "./dist/vue3/index.es.js",
@@ -19,7 +19,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue-awesome-image/providers": "workspace:^1.0.0",
     "@vue/composition-api": "^1.4.9",
+    "rollup-plugin-dts": "^4.1.0",
     "vue-demi": "^0.12.1",
     "vue-template-compiler": "^2.6.14"
   },

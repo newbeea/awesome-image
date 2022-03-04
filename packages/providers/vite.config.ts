@@ -1,17 +1,14 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import { createVuePlugin } from 'vite-plugin-vue2'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import typescript2 from 'rollup-plugin-typescript2'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [createVuePlugin(), vueJsx()],
+  plugins: [typescript2()],
   build: {
-    outDir: './dist/vue2',
-
     lib: {
-      entry: resolve(__dirname, 'src/components/HelloWorld.vue'),
+      entry: resolve(__dirname, 'index.ts'),
       fileName: format => `index.${format}.js`,
-      name: 'HelloWorld',
+      name: 'useImageUrl',
     },
     cssCodeSplit: false,
     rollupOptions: {
