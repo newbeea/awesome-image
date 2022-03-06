@@ -7,4 +7,4 @@ declare module '*.vue' {
   export default component
 }
 
-declare module '@vue-awesome-image/filter-fake3d';
+declare module "@vue-awesome-image/filter-fake3d"

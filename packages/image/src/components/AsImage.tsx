@@ -25,6 +25,7 @@ export default defineComponent({
     sizes: { type: String, default: '100vw' },
     imageProvider: { type: Function as PropType<ImageProvider>, default: useDefaultImageProvider },
     duration: { type: Number, default: 1 },
+    autoWebp: { type: Boolean, default: true },
   },
   setup(props) {
     const {
@@ -95,7 +96,7 @@ export default defineComponent({
     const renderImg = (type = 'image') => {
       const isImage = type === 'image'
       const className = isImage
-        ? `image${this.$slots.webglFilter && this.imageLoaded ? 'has-webgl-filter' : ''}`
+        ? `image${this.$slots.webglFilter && this.imageLoaded ? ' has-webgl-filter' : ''}`
         : 'image-placeholder'
       const src = {
         [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
@@ -115,18 +116,18 @@ export default defineComponent({
           {...src}
           sizes={this.sizes}
           onLoad={() => { this.imageLoaded = true }}
-          onload={`this.classList += " ${type}-loaded";`}
+          onload={`this.classList.add("${type}-loaded");`}
         />
       )
     }
 
     const renderPicture = () => {
-      return (
+      return this.autoWebp ? (
         <picture>
           <source srcset={this.pictureSrcSet} type="image/webp" />
           {renderImg()}
         </picture>
-      )
+      ) : renderImg()
     }
     return (
       <div class="image-wrapper">
@@ -138,7 +139,9 @@ export default defineComponent({
         </div>
         {renderPicture()}
         <transition name="fade">
-          {this.imageLoaded ? this.$slots.webglFilter?.() : null}
+          {this.imageLoaded ? this.$slots.webglFilter?.({
+            image: this.image
+          }) : null}
         </transition>
       </div>
     )

@@ -2,7 +2,6 @@ import type { Ref } from 'vue-demi'
 import { computed } from 'vue-demi'
 
 export function useFpProvider(url: Ref<string>, options: Record<string, string | number> = {}) {
-  console.log('🚀 ~ file: index.ts ~ line 5 ~ useFpProvider ~ options', options)
   const query: Array<string> = []
   if (options.width)
     query.push(`w=${options.width}`)

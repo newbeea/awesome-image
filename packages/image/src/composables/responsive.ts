@@ -8,7 +8,6 @@ export function useResponsive(src: Ref<any>, breakpoints: Ref<Array<number>>, us
     const url = useImageProvider(src, Object.assign({
       width: size,
     }, options))
-    console.log('🚀 ~ file: responsive.ts ~ line 11 ~ srcset ~ url', options)
     return `${url.value} ${size}w`
   }).join(', '))
   return srcset

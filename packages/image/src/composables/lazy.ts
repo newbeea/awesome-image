@@ -8,15 +8,15 @@ export function useLazy(imageRef: Ref<any>, offset: Ref<string>) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const imageDom = entry.target as any
-          const img = new Image()
-          img.crossOrigin = 'Anonymous'
+          // const img = new Image()
+          // img.crossOrigin = 'Anonymous'
           // img.srcset = imageDom.dataset.srcset
           // img.onload = () => {
           //   loaded.value = true
           //   imageDom.srcset = img.srcset
           // }
           imageDom.srcset = imageDom.dataset.srcset
-          image.value = img
+          // image.value = img
           imageObserver.unobserve(imageDom)
         }
       })

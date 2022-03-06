@@ -38,9 +38,12 @@ img {
   width: 100%;
   height: 100%;
   transition: opacity;
+  vertical-align: bottom;
 }
 img.has-webgl-filter {
   position: absolute;
+  left: 0;
+  top: 0;
   z-index: -1;
 }
 img[srcset=""] { visibility: hidden; opacity: 0;}
@@ -50,5 +53,7 @@ img.placeholder-loaded {
 }
 img.image-loaded {
   opacity: 1 !important;
-
+}
+canvas {
+  vertical-align: bottom;
 }
