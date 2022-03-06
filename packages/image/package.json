@@ -19,7 +19,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vue-awesome-image/filter-fake3d": "workspace:^0.0.1",
+    "@vue-awesome-image/filter-fake3d": "workspace:^1.0.0",
     "@vue-awesome-image/providers": "workspace:^1.0.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "@vue/composition-api": "^1.4.9",

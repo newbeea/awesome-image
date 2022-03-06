@@ -93,7 +93,7 @@ importers:
       vue-template-compiler: ^2.6.14
     dependencies:
       core-js: 3.21.1
-      universal-vue-template: link:../..
+      universal-vue-template: 0.0.4_vue@2.6.14
       vue: 2.6.14
     devDependencies:
       '@babel/core': 7.17.5
@@ -119,7 +119,7 @@ importers:
       vue: ^3.2.13
     dependencies:
       core-js: 3.21.1
-      universal-vue-template: link:../..
+      universal-vue-template: 0.0.4_vue@3.2.31
       vue: 3.2.31
     devDependencies:
       '@babel/core': 7.17.5
@@ -136,7 +136,7 @@ importers:
       '@types/node': ^17.0.21
       '@vitejs/plugin-vue': ^2.2.0
       '@vitejs/plugin-vue-jsx': ^1.3.8
-      '@vue-awesome-image/filter-fake3d': workspace:^0.0.1
+      '@vue-awesome-image/filter-fake3d': workspace:^1.0.0
       '@vue-awesome-image/providers': workspace:^1.0.0
       '@vue/babel-helper-vue-jsx-merge-props': ^1.2.1
       '@vue/composition-api': ^1.4.9
@@ -2508,6 +2508,14 @@ packages:
     optionalDependencies:
       prettier: 2.5.1
     dev: true
+
+  /@vue/composition-api/1.4.9_vue@2.6.14:
+    resolution: {integrity: sha512-l6YOeg5LEXmfPqyxAnBaCv1FMRw0OGKJ4m6nOWRm6ngt5TuHcj5ZoBRN+LXh3J0u6Ur3C4VA+RiKT+M0eItr/g==}
+    peerDependencies:
+      vue: '>= 2.5 < 3'
+    dependencies:
+      vue: 2.6.14
+    dev: false
 
   /@vue/composition-api/1.4.9_vue@3.2.31:
     resolution: {integrity: sha512-l6YOeg5LEXmfPqyxAnBaCv1FMRw0OGKJ4m6nOWRm6ngt5TuHcj5ZoBRN+LXh3J0u6Ur3C4VA+RiKT+M0eItr/g==}
@@ -9933,6 +9941,36 @@ packages:
       imurmurhash: 0.1.4
     dev: false
 
+  /universal-vue-template/0.0.4_vue@2.6.14:
+    resolution: {integrity: sha512-OHOrjxkT++nimsQD88UAM/EZrqyrwtW+uASnOaah0cepf1TDlaXvsyLhd4gMfXxFALzmaSGfe2/Shsy8XGsoYA==}
+    requiresBuild: true
+    peerDependencies:
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@vue/composition-api': 1.4.9_vue@2.6.14
+      vue: 2.6.14
+      vue-demi: 0.12.1_8414dc0546a7fec2b290b41e4edbca0b
+      vue-template-compiler: 2.6.14
+    dev: false
+
+  /universal-vue-template/0.0.4_vue@3.2.31:
+    resolution: {integrity: sha512-OHOrjxkT++nimsQD88UAM/EZrqyrwtW+uASnOaah0cepf1TDlaXvsyLhd4gMfXxFALzmaSGfe2/Shsy8XGsoYA==}
+    requiresBuild: true
+    peerDependencies:
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@vue/composition-api': 1.4.9_vue@3.2.31
+      vue: 3.2.31
+      vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
+      vue-template-compiler: 2.6.14
+    dev: false
+
   /universalify/0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
@@ -10238,6 +10276,22 @@ packages:
       vscode-pug-languageservice: 0.29.8
       vscode-typescript-languageservice: 0.29.8
     dev: true
+
+  /vue-demi/0.12.1_8414dc0546a7fec2b290b41e4edbca0b:
+    resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@vue/composition-api': 1.4.9_vue@2.6.14
+      vue: 2.6.14
+    dev: false
 
   /vue-demi/0.12.1_ac2a42527c362575429f172d82b9d821:
     resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
