@@ -1,7 +1,7 @@
 /* eslint-disable react/no-string-refs */
 /* eslint-disable react/no-unknown-property */
 import type { PropType } from 'vue-demi'
-import { Transition, defineComponent, inject, ref, render, resolveComponent, toRefs } from 'vue-demi'
+import { Transition, defineComponent, inject, onMounted, ref, toRefs } from 'vue-demi'
 import { useLazy } from '../composables/lazy'
 import { useResponsive } from '../composables/responsive'
 import type { ImageOptions, ImageProvider } from '../interface'
@@ -40,8 +40,8 @@ export default defineComponent({
       format,
     } = toRefs(props)
 
-    const placeholder = ref<HTMLElement>()
-    const image = ref<HTMLElement>()
+    const placeholder = ref<HTMLImageElement>()
+    const image = ref<HTMLImageElement>()
     let imageDom = ref<HTMLImageElement>()
     let imageLoaded = ref(false)
 
@@ -77,6 +77,10 @@ export default defineComponent({
         useLazy(placeholder, placeholderLazyOffset)
     }
 
+    onMounted(() => {
+      if (image.value?.complete)
+        imageLoaded.value = true
+    })
     return {
       placeholderSrcSet,
       imageLoaded,
@@ -110,7 +114,8 @@ export default defineComponent({
           height={this.height}
           {...src}
           sizes={this.sizes}
-          onload={`this.classList += " ${type}-loaded"`}
+          onLoad={() => { this.imageLoaded = true }}
+          onload={`this.classList += " ${type}-loaded";`}
         />
       )
     }
