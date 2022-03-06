@@ -10,7 +10,7 @@ export default defineConfig({
     outDir: './dist/vue2',
 
     lib: {
-      entry: resolve(__dirname, 'src/components/HelloWorld.vue'),
+      entry: resolve(__dirname, 'src/components/AsImage.tsx'),
       fileName: format => `index.${format}.js`,
       name: 'HelloWorld',
     },

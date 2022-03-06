@@ -1,7 +1,7 @@
 {
   "name": "@vue-awesome-image/filter-fake3d",
   "private": false,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "module": "./dist/vue3/index.es.js",
   "main": "./dist/vue3/index.umd.js",
   "files": [
@@ -11,9 +11,10 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:2 && npm run build:3 && npm run copy",
+    "build": "npm run build:2 && npm run build:3",
     "build:2": "patch-package && vue-demi-switch 2 vue2 && vite --config vite.config.vue2.ts build",
-    "build:3": "vue-demi-switch 3 && vite --config vite.config.vue3.ts build --watch",
+    "build:3": "vue-demi-switch 3 && vite --config vite.config.vue3.ts build",
+    "watch": "vue-demi-switch 3 && vite --config vite.config.vue3.ts build --watch",
     "copy": "node ./scripts/copy.js",
     "postinstall": "node ./scripts/postinstall.js",
     "preview": "vite preview"
