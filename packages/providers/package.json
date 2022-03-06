@@ -1,5 +1,6 @@
 {
   "name": "@vue-awesome-image/providers",
+  "private": "false",
   "version": "1.0.0",
   "description": "",
   "module": "./dist/index.mjs",

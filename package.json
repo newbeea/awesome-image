@@ -1,5 +1,6 @@
 {
   "name": "@vue-awesome-image/monorepo",
+  "private": "false",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
