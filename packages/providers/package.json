@@ -1,6 +1,8 @@
 {
   "name": "@vue-awesome-image/providers",
-  "private": "false",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0",
   "description": "",
   "module": "./dist/index.mjs",

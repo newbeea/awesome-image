@@ -1,6 +1,8 @@
 {
   "name": "@vue-awesome-image/as-image",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0",
   "module": "./dist/vue3/index.es.js",
   "main": "./dist/vue3/index.umd.js",
