@@ -3,9 +3,10 @@
   transition: opacity 1s ease;
 }
 
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from, .fade-leave-to, .fade-enter {
   opacity: 0;
 }
+
 .image-wrapper {
   overflow: hidden;
   position: relative;

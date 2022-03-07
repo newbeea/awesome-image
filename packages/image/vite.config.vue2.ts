@@ -1,11 +1,11 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
-import dts from 'rollup-plugin-dts'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import rmTransition from './vite-plugin-vue2-transition'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [createVuePlugin(), vueJsx()],
+  plugins: [rmTransition(), createVuePlugin(), vueJsx()],
   build: {
     outDir: './dist/vue2',
 

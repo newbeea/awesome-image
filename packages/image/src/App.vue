@@ -2,8 +2,8 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { defineComponent, ref } from 'vue-demi'
-import { AsImage } from './'
 import Fake3d from '@vue-awesome-image/filter-fake3d'
+import { AsImage } from './'
 export default defineComponent({
   name: 'App',
   components: {
@@ -16,7 +16,6 @@ export default defineComponent({
 
 <template>
   <div>
-    
     <AsImage
       class="image"
       :width="2111"
@@ -26,7 +25,7 @@ export default defineComponent({
       :duration="2"
       :quantity="90"
       format="png"
-      :autoWebp="true"
+      :auto-webp="true"
       :progressive="false"
       :responsive="true"
     >
@@ -36,10 +35,12 @@ export default defineComponent({
         </div>
       </template>
 
-      <template #webglFilter="{
-        image
-      }">
-        <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/dress-depth.jpg"></Fake3d>
+      <template
+        #webglFilter="{
+          image
+        }"
+      >
+        <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/dress-depth.jpg" />
       </template>
     </AsImage>
   </div>

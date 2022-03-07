@@ -1,7 +1,16 @@
 /* eslint-disable react/no-string-refs */
 /* eslint-disable react/no-unknown-property */
 import type { PropType } from 'vue-demi'
-import { Transition, defineComponent, inject, onMounted, ref, toRefs } from 'vue-demi'
+import {
+  Transition,
+  defineComponent,
+  inject,
+  isVue2,
+  onMounted,
+  ref,
+  toRefs,
+} from 'vue-demi'
+
 import { useLazy } from '../composables/lazy'
 import { useResponsive } from '../composables/responsive'
 import type { ImageOptions, ImageProvider } from '../interface'
@@ -9,7 +18,9 @@ import { useDefaultImageProvider } from '../composables/default-image-provider'
 import './style.scss'
 export default defineComponent({
   name: 'AsImage',
-  components: { Transition },
+  components: {
+    Transition,
+  },
   props: {
     src: { type: String, default: '' },
     width: { type: Number },
@@ -95,12 +106,26 @@ export default defineComponent({
   render() {
     const renderImg = (type = 'image') => {
       const isImage = type === 'image'
-      const className = isImage
-        ? `image${this.$slots.webglFilter && this.imageLoaded ? ' has-webgl-filter' : ''}`
-        : 'image-placeholder'
-      const src = {
-        [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
+      let className = ''
+      if (isImage) {
+        if ((isVue2 && this.$scopedSlots.webglFilter) || this.$slots.webglFilter)
+          className = 'image has-webgl-filter'
+        else
+          className = 'image'
       }
+      else {
+        className = 'image-placeholder'
+      }
+
+      const attrs = {
+        [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
+        onload: `this.classList.add("${type}-loaded");`,
+      }
+      const src = isVue2
+        ? {
+          attrs,
+        }
+        : attrs
       return (
         <img
           {...this.$attrs}
@@ -116,32 +141,44 @@ export default defineComponent({
           {...src}
           sizes={this.sizes}
           onLoad={() => { this.imageLoaded = true }}
-          onload={`this.classList.add("${type}-loaded");`}
         />
       )
     }
 
     const renderPicture = () => {
-      return this.autoWebp ? (
-        <picture>
-          <source srcset={this.pictureSrcSet} type="image/webp" />
-          {renderImg()}
-        </picture>
-      ) : renderImg()
+      return this.autoWebp
+        ? (
+          <picture>
+            <source srcset={this.pictureSrcSet} type="image/webp" />
+            {renderImg()}
+          </picture>
+        )
+        : renderImg()
+    }
+    const renderWebglFilter = () => {
+      return isVue2
+        ? this.$scopedSlots.webglFilter?.({
+          image: this.image,
+        })
+        : this.$slots.webglFilter?.({
+          image: this.image,
+        })
     }
     return (
       <div class="image-wrapper">
         <div class="image-background">
-          {this.$slots.loading?.()}
+          {isVue2
+            ? this.$slots.loading
+            : this.$slots.loading?.()}
         </div>
         <div class="image-placeholder-wrapper">
           {renderImg('placeholder')}
         </div>
         {renderPicture()}
         <transition name="fade">
-          {this.imageLoaded ? this.$slots.webglFilter?.({
-            image: this.image
-          }) : null}
+          {this.imageLoaded
+            ? renderWebglFilter()
+            : null}
         </transition>
       </div>
     )

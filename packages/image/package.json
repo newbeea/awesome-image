@@ -3,9 +3,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
-  "module": "./dist/vue3/index.es.js",
-  "main": "./dist/vue3/index.umd.js",
+  "version": "1.0.4",
+  "module": "./dist/index.es.js",
+  "main": "./dist/index.umd.js",
   "files": [
     "dist",
     "scripts",
