@@ -22,10 +22,11 @@ export default defineConfig({
     },
     cssCodeSplit: false,
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'vue-demi'],
       output: {
         globals: {
-          vue: 'Vue',
+          'vue': 'Vue',
+          'vue-demi': 'VueDemi',
         },
       },
     },

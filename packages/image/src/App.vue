@@ -3,7 +3,7 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { defineComponent, ref } from 'vue-demi'
 import Fake3d from '@vue-awesome-image/filter-fake3d'
-import { useFpProvider } from '@vue-awesome-image/providers'
+
 import { AsImage } from './'
 export default defineComponent({
   name: 'App',
@@ -13,7 +13,7 @@ export default defineComponent({
   },
   data() {
     return {
-      useFpProvider,
+
     }
   },
 
@@ -34,7 +34,6 @@ export default defineComponent({
       :auto-webp="true"
       :progressive="false"
       :responsive="true"
-      :image-provider="useFpProvider"
     >
       <template #loading>
         <div class="placeholder">
@@ -43,7 +42,7 @@ export default defineComponent({
       </template>
 
       <template
-        #webgl-filter="{
+        #webglfilter="{
           image
         }"
       >
