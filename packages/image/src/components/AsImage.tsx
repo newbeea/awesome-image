@@ -14,8 +14,8 @@ import {
 import { useLazy } from '../composables/lazy'
 import { useResponsive } from '../composables/responsive'
 import type { ImageOptions, ImageProvider } from '../interface'
-import { useDefaultImageProvider } from '../composables/default-image-provider'
-import './style.scss'
+import useDefaultImageProvider from '../composables/default-image-provider'
+import style from './style.module.scss'
 export default defineComponent({
   name: 'AsImage',
   components: {
@@ -34,7 +34,7 @@ export default defineComponent({
     progressive: { type: Boolean, default: true },
     breakpoints: { type: Array as PropType<Array<number>>, default: () => [360, 540, 720, 900, 1080] },
     sizes: { type: String, default: '100vw' },
-    imageProvider: { type: Function as PropType<ImageProvider>, default: useDefaultImageProvider },
+    imageProvider: { type: Function as any, default: useDefaultImageProvider },
     duration: { type: Number, default: 1 },
     autoWebp: { type: Boolean, default: true },
   },
@@ -58,6 +58,8 @@ export default defineComponent({
     let imageLoaded = ref(false)
 
     const useImageProvider = inject<ImageProvider>('useImageProvider', imageProvider.value)
+    console.log('🚀 ~ file: AsImage.tsx ~ line 61 ~ setup ~ imageProvider.value', imageProvider.value)
+    console.log('🚀 ~ file: AsImage.tsx ~ line 61 ~ setup ~ useImageProvider', useImageProvider)
 
     const placeholderSrcSet = progressive.value
       ? useImageProvider(src, {
@@ -108,18 +110,19 @@ export default defineComponent({
       const isImage = type === 'image'
       let className = ''
       if (isImage) {
-        if ((isVue2 && this.$scopedSlots.webglFilter) || this.$slots.webglFilter)
-          className = 'image has-webgl-filter'
+        if ((isVue2 && this.$scopedSlots.webglfilter) || !!this.$slots.webglfilter)
+          className = `${style.image} ${style.hasWebglFilter}`
         else
-          className = 'image'
+          className = style.image
       }
       else {
-        className = 'image-placeholder'
+        className = style.imagePlaceholder
       }
+      console.log('🚀 ~ file: AsImage.tsx ~ line 121 ~ renderImg ~ className', className)
 
       const attrs = {
         [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
-        onload: `this.classList.add("${type}-loaded");`,
+        onload: `this.classList.add("${isImage ? style.imageLoaded : style.placeholderLoaded}");`,
       }
       const src = isVue2
         ? {
@@ -128,7 +131,7 @@ export default defineComponent({
         : attrs
       return (
         <img
-          {...this.$attrs}
+          // {...this.$attrs}
           crossorigin="anonymous"
           ref={isImage ? 'image' : 'placeholder'}
           class={className}
@@ -157,21 +160,21 @@ export default defineComponent({
     }
     const renderWebglFilter = () => {
       return isVue2
-        ? this.$scopedSlots.webglFilter?.({
+        ? this.$scopedSlots.webglfilter?.({
           image: this.image,
         })
-        : this.$slots.webglFilter?.({
+        : this.$slots.webglfilter?.({
           image: this.image,
         })
     }
     return (
-      <div class="image-wrapper">
-        <div class="image-background">
+      <div class={style.imageWrapper}>
+        <div class={style.imageBackground}>
           {isVue2
             ? this.$slots.loading
             : this.$slots.loading?.()}
         </div>
-        <div class="image-placeholder-wrapper">
+        <div class={style.imagePlaceholderWrapper}>
           {renderImg('placeholder')}
         </div>
         {renderPicture()}

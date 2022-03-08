@@ -1,14 +1,16 @@
 <script lang="ts">
+import { log } from 'console'
 import { GLWidget, Texture, Vector2 } from '@gl-widget/gl-widget'
-import { computed, defineComponent, onMounted, PropType, ref } from 'vue-demi'
-type Mouse = {
+import type { PropType } from 'vue-demi'
+import { computed, defineComponent, onMounted, ref } from 'vue-demi'
+interface Mouse {
   x: number
   y: number
 }
 export default defineComponent({
   props: {
     image: { type: HTMLImageElement, default: () => new Image() },
-    depth: { type: String, default: ''},
+    depth: { type: String, default: '' },
     scaleX: { default: 1 },
     scaleY: { default: 1 },
     mouse: {
@@ -17,6 +19,7 @@ export default defineComponent({
     },
   },
   setup(props) {
+    console.log('setup')
     const webglContainer = ref<HTMLElement>()
 
     const mouse = new Vector2(0, 0)
@@ -31,8 +34,9 @@ export default defineComponent({
       mouseTarget.y = 1 - event.offsetY * 2 / webglContainer.value.clientHeight
     }
     onMounted(() => {
+      console.log('onMounted')
       if (!webglContainer.value) return
-
+      console.log(webglContainer)
       const glWidget = new GLWidget({
         element: webglContainer.value,
       })
@@ -114,7 +118,7 @@ export default defineComponent({
 
       glWidget.renderBackground(shader, animate)
     })
-    
+
     return {
       webglContainer,
     }
@@ -124,8 +128,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div ref="webglContainer" class="webgl-filter">
-  </div>
+  <div ref="webglContainer" class="webgl-filter" />
 </template>
 <style lang="scss">
 

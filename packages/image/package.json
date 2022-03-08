@@ -3,9 +3,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.4",
-  "module": "./dist/index.es.js",
-  "main": "./dist/index.umd.js",
+  "version": "1.0.10",
+  "module": "./dist/vue3/index.es.js",
+  "main": "./dist/vue3/index.umd.js",
   "files": [
     "dist",
     "scripts",
@@ -14,10 +14,11 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run build:2 && npm run build:3 && npm run copy",
-    "build:2": "patch-package && vue-demi-switch 2 vue2 && vite --config vite.config.vue2.ts build",
+    "build:2": "patch-package && vue-demi-switch 2 vue && vite --config vite.config.vue2.ts build",
     "build:3": "vue-demi-switch 3 && vite --config vite.config.vue3.ts build",
     "copy": "node ./scripts/copy.js",
     "postinstall": "node ./scripts/postinstall.js",
+    "gentype": "node ./scripts/gentype.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "@vue/composition-api": "^1.4.9",
     "rollup-plugin-dts": "^4.1.0",
+    "vite-plugin-dts": "^0.9.9",
     "vue-demi": "^0.12.1",
     "vue-template-compiler": "^2.6.14"
   },
@@ -40,9 +42,7 @@
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
     "vite-plugin-vue2": "^1.9.3",
-    "vue": "^3.2.25",
-    "vue-tsc": "^0.29.8",
-    "vue2": "npm:vue@2"
+    "vue-tsc": "^0.29.8"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",

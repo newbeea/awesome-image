@@ -4,6 +4,6 @@ import App from './App.vue'
 import VueAwesomeImage from '.'
 const app = createApp(App)
 app.use(VueAwesomeImage, {
-  imageProvider: useFpProvider,
+  // imageProvider: useFpProvider,
 })
 app.mount('#app')

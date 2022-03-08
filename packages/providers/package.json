@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.2",
+  "version": "1.0.10",
   "description": "",
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",
@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "dev": "tsup ./index.ts --dts --format esm,cjs --watch",
-    "build": "tsup ./index.ts --dts --format esm,cjs"
+    "build": "tsup ./index.ts --dts --format esm,cjs,umd"
   },
   "author": "",
   "devDependencies": {

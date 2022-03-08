@@ -1,7 +1,17 @@
-import type { Ref } from 'vue-demi'
+import type { ComputedRef, Ref } from 'vue-demi'
 import { computed } from 'vue-demi'
+export interface ImageOptions {
+  width?: number
+  height?: number
+  blur?: number
+  quantity?: number
+  format?: string
+}
+export interface ImageProvider {
+  (url: Ref<string>, options?: ImageOptions): ComputedRef<string> | Ref<string>
+}
 
-export function useFpProvider(url: Ref<string>, options: Record<string, string | number> = {}) {
+const useFpProvider: ImageProvider = (url: Ref<string>, options: ImageOptions = {}): ComputedRef<string> | Ref<string> => {
   const query: Array<string> = []
   if (options.width)
     query.push(`w=${options.width}`)
@@ -23,3 +33,5 @@ export function useFpProvider(url: Ref<string>, options: Record<string, string |
 
   return newUrl
 }
+
+export { useFpProvider }

@@ -3,8 +3,14 @@ import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import rmTransition from './vite-plugin-vue2-transition'
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+    },
+  },
   plugins: [rmTransition(), createVuePlugin(), vueJsx()],
   build: {
     outDir: './dist/vue2',
@@ -12,15 +18,14 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/components/AsImage.tsx'),
       fileName: format => `index.${format}.js`,
-      name: 'HelloWorld',
+      name: 'AsImage',
     },
     cssCodeSplit: false,
     rollupOptions: {
-      external: ['vue', 'vue-demi'],
+      external: ['vue'],
       output: {
         globals: {
-          'vue': 'Vue',
-          'vue-demi': 'VueDemi',
+          vue: 'Vue',
         },
       },
     },

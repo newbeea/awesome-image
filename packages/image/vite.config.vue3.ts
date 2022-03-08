@@ -4,6 +4,11 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+    },
+  },
   plugins: [vue(), vueJsx()],
   build: {
     outDir: './dist/vue3',
@@ -11,15 +16,14 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/components/AsImage.tsx'),
       fileName: format => `index.${format}.js`,
-      name: 'HelloWorld',
+      name: 'AsImage',
     },
     cssCodeSplit: false,
     rollupOptions: {
-      external: ['vue', 'vue-demi'],
+      external: ['vue'],
       output: {
         globals: {
-          'vue': 'Vue',
-          'vue-demi': 'VueDemi',
+          vue: 'Vue',
         },
       },
     },

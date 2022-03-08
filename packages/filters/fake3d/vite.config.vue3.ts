@@ -11,15 +11,14 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/components/Fake3d.vue'),
       fileName: format => `index.${format}.js`,
-      name: 'HelloWorld',
+      name: 'Fake3d',
     },
     cssCodeSplit: false,
     rollupOptions: {
-      external: ['vue', 'vue-demi'],
+      external: ['vue'],
       output: {
         globals: {
-          'vue': 'Vue',
-          'vue-demi': 'VueDemi',
+          vue: 'Vue',
         },
       },
     },
