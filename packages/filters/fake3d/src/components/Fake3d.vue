@@ -59,8 +59,7 @@ export default defineComponent({
       console.log(webglContainer.value.clientWidth, props.image.naturalHeight, props.image.height)
       glWidget.setSize(webglContainer.value.clientWidth, webglContainer.value.clientWidth / props.image.naturalWidth * props.image.naturalHeight, { width: '100%' })
       const resolution = glWidget.getSize()
-      const i = props.image as HTMLImageElement
-      // i.crossOrigin = 'Anonymous'
+
       const image = new Texture(props.image as HTMLImageElement)
       const depth = new Texture(props.depth)
       const shader = {
@@ -132,6 +131,17 @@ export default defineComponent({
           mouse.y = props.mouse.y
         }
       }
+
+      let currentSrc = props.image?.currentSrc
+      window.addEventListener('resize', () => {
+        if (webglContainer.value?.clientWidth && props.image.naturalHeight && props.image?.currentSrc !== currentSrc) {
+          currentSrc = props.image?.currentSrc
+          const width = webglContainer.value?.clientWidth
+          glWidget.setSize(width, width! / props.image.naturalWidth * props.image.naturalHeight, { width: '100%' })
+          shader.uniforms.resolution.value = glWidget.getSize()
+          shader.uniforms.image.value = new Texture(props.image?.currentSrc)
+        }
+      })
 
       glWidget.renderBackground(shader, animate)
     })

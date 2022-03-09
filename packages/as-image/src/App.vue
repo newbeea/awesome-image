@@ -34,7 +34,7 @@ export default defineComponent({
       class="demoimage"
       :width="999"
       :height="1424"
-      :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/dress.jpg'"
+      :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg'"
       :lazy="true"
       :duration="2"
       format="png"
@@ -53,7 +53,7 @@ export default defineComponent({
           image
         }"
       >
-        <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/dress-depth.jpg" />
+        <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount-map.jpg" />
       </template>
     </AsImage>
 
