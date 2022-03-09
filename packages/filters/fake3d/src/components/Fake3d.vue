@@ -25,8 +25,8 @@ export default defineComponent({
     const mouse = new Vector2(0, 0)
 
     const mouseTarget = {
-      x: -1,
-      y: -1,
+      x: 0,
+      y: 0,
     }
     const onMouseMove = (event: MouseEvent) => {
       if (!webglContainer.value) return
@@ -43,7 +43,8 @@ export default defineComponent({
 
       glWidget.setSize(webglContainer.value.clientWidth, webglContainer.value.clientWidth / props.image.naturalWidth * props.image.naturalHeight, { width: '100%' })
       const resolution = glWidget.getSize()
-
+      const i = props.image as HTMLImageElement
+      // i.crossOrigin = 'Anonymous'
       const image = new Texture(props.image as HTMLImageElement)
       const depth = new Texture(props.depth)
       const shader = {

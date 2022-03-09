@@ -39,6 +39,45 @@ importers:
       vue-tsc: 0.29.8_typescript@4.6.2
       vue2: /vue/2.6.14
 
+  packages/as-image:
+    specifiers:
+      '@antfu/eslint-config': ^0.16.1
+      '@types/node': ^17.0.21
+      '@vitejs/plugin-vue': ^2.2.0
+      '@vitejs/plugin-vue-jsx': ^1.3.8
+      '@vue-awesome-image/filter-fake3d': workspace:^1.0.0
+      '@vue-awesome-image/services': workspace:^1.0.12
+      '@vue/babel-helper-vue-jsx-merge-props': ^1.2.1
+      '@vue/composition-api': ^1.4.9
+      eslint: ^8.10.0
+      patch-package: ^6.4.7
+      sass: ^1.49.9
+      typescript: ^4.5.4
+      vite: ^2.8.0
+      vite-plugin-vue2: ^1.9.3
+      vue-demi: ^0.12.1
+      vue-template-compiler: ^2.6.14
+      vue-tsc: ^0.29.8
+    dependencies:
+      '@vue/composition-api': 1.4.9_vue@3.2.31
+      vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
+      vue-template-compiler: 2.6.14
+    devDependencies:
+      '@antfu/eslint-config': 0.16.1_eslint@8.10.0+typescript@4.6.2
+      '@types/node': 17.0.21
+      '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
+      '@vitejs/plugin-vue-jsx': 1.3.8
+      '@vue-awesome-image/filter-fake3d': link:../filters/fake3d
+      '@vue-awesome-image/services': link:../services
+      '@vue/babel-helper-vue-jsx-merge-props': 1.2.1
+      eslint: 8.10.0
+      patch-package: 6.4.7
+      sass: 1.49.9
+      typescript: 4.6.2
+      vite: 2.8.6_sass@1.49.9
+      vite-plugin-vue2: 1.9.3_79e5dcfe8bf02d151f183bc73f7677d5
+      vue-tsc: 0.29.8_typescript@4.6.2
+
   packages/filters/fake3d:
     specifiers:
       '@antfu/eslint-config': ^0.16.1
