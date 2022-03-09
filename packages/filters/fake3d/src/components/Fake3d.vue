@@ -9,7 +9,7 @@ interface Mouse {
 }
 export default defineComponent({
   props: {
-    image: { type: HTMLImageElement, default: () => new Image() },
+    image: { type: Object as PropType<HTMLImageElement>, default: () => new Image() },
     depth: { type: String, default: '' },
     scaleX: { default: 1 },
     scaleY: { default: 1 },
@@ -33,14 +33,30 @@ export default defineComponent({
       mouseTarget.x = 1 - event.offsetX * 2 / webglContainer.value.clientWidth
       mouseTarget.y = 1 - event.offsetY * 2 / webglContainer.value.clientHeight
     }
-    onMounted(() => {
+    onMounted(async() => {
       console.log('onMounted')
       if (!webglContainer.value) return
+      const untilSizeRight = () => {
+        if (webglContainer.value?.clientWidth && props.image.naturalHeight)
+          return true
+
+        return new Promise((resolve, reject) => {
+          const i = setInterval(() => {
+            if (webglContainer.value?.clientWidth && props.image.naturalHeight) {
+              clearInterval(i)
+              resolve(true)
+            }
+          }, 0)
+        })
+      }
+
       console.log(webglContainer)
       const glWidget = new GLWidget({
         element: webglContainer.value,
       })
-
+      console.log(props.image)
+      await untilSizeRight()
+      console.log(webglContainer.value.clientWidth, props.image.naturalHeight, props.image.height)
       glWidget.setSize(webglContainer.value.clientWidth, webglContainer.value.clientWidth / props.image.naturalWidth * props.image.naturalHeight, { width: '100%' })
       const resolution = glWidget.getSize()
       const i = props.image as HTMLImageElement

@@ -128,8 +128,8 @@ export default defineComponent({
       const hasWebglFilter = (isVue2 && this.$scopedSlots.webglfilter) || !!this.$slots.webglfilter
       let className = ''
       if (isImage) {
-        if (hasWebglFilter)
-          className = `${style.image} ${style.hasWebglFilter}`
+        if (hasWebglFilter && this.imageLoaded)
+          className = `${style.image} ${style.hasWebglFilter} ${style.imageLoaded}`
         else
           className = style.image
       }
@@ -140,7 +140,7 @@ export default defineComponent({
 
       const attrs = {
         [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
-        onload: `this.classList.add("${isImage ? style.imageLoaded : style.placeholderLoaded}");`,
+        onload: `this.classList.add("${isImage ? style.imageLoaded : style.placeholderLoaded}");console.log(313123123)`,
 
       }
       if (hasWebglFilter)

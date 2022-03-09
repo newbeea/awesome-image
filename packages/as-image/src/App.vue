@@ -56,6 +56,8 @@ export default defineComponent({
         <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/dress-depth.jpg" />
       </template>
     </AsImage>
+
+    sfsdf
   </div>
 </template>
 

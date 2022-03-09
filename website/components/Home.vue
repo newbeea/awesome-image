@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AsImage from '@vue-awesome-image/as-image'
-import '@vue-awesome-image/as-image/dist/style.css'
+import Fake3d from '@vue-awesome-image/filter-fake3d'
+
 </script>
 
 <template>
@@ -9,29 +9,27 @@ import '@vue-awesome-image/as-image/dist/style.css'
       <div>
         <AsImage
           class="banner"
-          :width="999"
-          :height="1424"
-          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/dress.jpg'"
-          :lazy="false"
+          :width="1080"
+          :height="722"
+          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg'"
+          :lazy="true"
           :duration="2"
-          :quantity="90"
           format="png"
           :auto-webp="true"
           :progressive="true"
           :responsive="true"
-
         >
           <template #loading>
             <div class="placeholder" />
           </template>
 
-          <!-- <template
+          <template
             #webglfilter="{
               image
             }"
           >
-            <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/dress-depth.jpg" />
-          </template> -->
+            <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount-map.jpg" />
+          </template>
         </AsImage>
         <NuxtLink
           class="btn m-3 text-sm"
