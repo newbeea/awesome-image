@@ -36,10 +36,14 @@ export default defineComponent({
     onMounted(async() => {
       console.log('onMounted')
       if (!webglContainer.value) return
+      const glWidget = new GLWidget({
+        element: webglContainer.value,
+      })
+
+      // valid container and image size()
       const untilSizeRight = () => {
         if (webglContainer.value?.clientWidth && props.image.naturalHeight)
           return true
-
         return new Promise((resolve, reject) => {
           const i = setInterval(() => {
             if (webglContainer.value?.clientWidth && props.image.naturalHeight) {
@@ -49,14 +53,8 @@ export default defineComponent({
           }, 0)
         })
       }
-
-      console.log(webglContainer)
-      const glWidget = new GLWidget({
-        element: webglContainer.value,
-      })
-      console.log(props.image)
       await untilSizeRight()
-      console.log(webglContainer.value.clientWidth, props.image.naturalHeight, props.image.height)
+
       glWidget.setSize(webglContainer.value.clientWidth, webglContainer.value.clientWidth / props.image.naturalWidth * props.image.naturalHeight, { width: '100%' })
       const resolution = glWidget.getSize()
 
@@ -106,18 +104,20 @@ export default defineComponent({
         },
       }
 
-      const imageAspect = props.image.naturalHeight / props.image.naturalWidth
-      let a1, a2
-      if (resolution.y / resolution.x < imageAspect) {
-        a1 = 1
-        a2 = (resolution.y / resolution.x) / imageAspect
-      }
-      else {
-        a1 = (resolution.x / resolution.y) * imageAspect
-        a2 = 1
-      }
-      shader.uniforms.imageAspect.value = new Vector2(a1, a2)
+      // keep aspect in specific size, now the canvas size is relative to the image, so isn't needed.
+      // const imageAspect = props.image.naturalHeight / props.image.naturalWidth
+      // let a1, a2
+      // if (resolution.y / resolution.x < imageAspect) {
+      //   a1 = 1
+      //   a2 = (resolution.y / resolution.x) / imageAspect
+      // }
+      // else {
+      //   a1 = (resolution.x / resolution.y) * imageAspect
+      //   a2 = 1
+      // }
+      // shader.uniforms.imageAspect.value = new Vector2(a1, a2)
 
+      // update mouse uniform for shader
       if (!props.mouse)
         webglContainer.value.addEventListener('mousemove', onMouseMove, false)
 
@@ -134,12 +134,17 @@ export default defineComponent({
 
       let currentSrc = props.image?.currentSrc
       window.addEventListener('resize', () => {
-        if (webglContainer.value?.clientWidth && props.image.naturalHeight && props.image?.currentSrc !== currentSrc) {
-          currentSrc = props.image?.currentSrc
+        // valid size
+        if (webglContainer.value?.clientWidth && props.image.naturalHeight) {
           const width = webglContainer.value?.clientWidth
+          // update webgl size
           glWidget.setSize(width, width! / props.image.naturalWidth * props.image.naturalHeight, { width: '100%' })
           shader.uniforms.resolution.value = glWidget.getSize()
-          shader.uniforms.image.value = new Texture(props.image?.currentSrc)
+          // update image if responsive image loaded
+          if (props.image?.currentSrc !== currentSrc) {
+            shader.uniforms.image.value = new Texture(props.image?.currentSrc)
+            currentSrc = props.image?.currentSrc
+          }
         }
       })
 

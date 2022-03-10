@@ -37,6 +37,7 @@ export default defineComponent({
     breakpoints: { type: Array as PropType<Array<number>>, default: () => [360, 540, 720, 900, 1080] },
     sizes: { type: String, default: '100vw' },
     imageUrlGenerator: { type: Function as any, default: imageUrlGeneratorDefault },
+    toGroup: { type: Function as any, required: false },
     duration: { type: Number, default: 1 },
     autoWebp: { type: Boolean, default: true },
   },
@@ -95,6 +96,7 @@ export default defineComponent({
     const onImageLoaded = () => {
       if (image.value?.complete && !imageLoaded.value) {
         emit('image-loaded')
+        if (props.toGroup) props.toGroup(image.value)
         imageLoaded.value = true
       }
     }
@@ -190,7 +192,7 @@ export default defineComponent({
         })
     }
     return (
-      <div class={style.imageWrapper}>
+      <div class="vue-awesome-image">
         <div class={style.imageBackground}>
           {isVue2
             ? this.$slots.loading

@@ -1,8 +1,8 @@
 
 
 
-.image-wrapper {
-  :global(.fade-enter-active),  :global(.fade-leave-active) {
+:global(.vue-awesome-image) {
+  :global(.fade-enter-active), :global(.fade-leave-active) {
     transition: opacity 1s ease;
   }
   
