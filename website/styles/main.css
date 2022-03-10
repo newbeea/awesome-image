@@ -9,3 +9,6 @@ html.dark {
   background: #222;
   color: white;
 }
+svg {
+  display: unset;
+}

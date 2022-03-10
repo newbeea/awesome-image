@@ -2,6 +2,7 @@
 import Fake3d from '@vue-awesome-image/filter-fake3d'
 import AsImageGroup from '@vue-awesome-image/as-image-group'
 import '@vue-awesome-image/as-image-group/dist/style.css'
+import {ArrowCircleLeft, ArrowCircleRight} from '@icon-park/vue-next';
 const activeIndex = ref(0);
 </script>
 
@@ -33,10 +34,31 @@ const activeIndex = ref(0);
                 <div class="placeholder" />
               </template>
             </AsImage>
+            <AsImage
+              class="banner"
+              :width="1080"
+              :height="722"
+              :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/canyon.jpg'"
+              :lazy="true"
+              :duration="2"
+              format="png"
+              :auto-webp="true"
+              :progressive="true"
+              :responsive="true"
+              :to-group="onImageLoaded(1)"
+            >
+              <template #loading>
+                <div class="placeholder" />
+              </template>
+            </AsImage>
           </template>
         </AsImageGroup>
 
-      </div>
+    </div>
+    <div p-1>
+      <ArrowCircleLeft class="text-3xl mr-3 text-gray-700" @click="activeIndex -= 1"></ArrowCircleLeft> 
+      <ArrowCircleRight class="text-3xl text-gray-700" @click="activeIndex += 1"></ArrowCircleRight> 
+    </div>
   </div>
 </template>
 <style>
