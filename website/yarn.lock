@@ -2518,10 +2518,30 @@
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-2.2.0.tgz#a0affe3ee09f70a9a1415bd39c0f8a58fa78b419"
   integrity sha512-wXigM1EwN2G7rZcwG6kLk9ivvIMhx2363tCEvMBiXcTu5nePM/12hUPVzPb83Uugt6U+zom1gTpJopi/Ow/jwg==
 
+"@vue-awesome-image/as-image-group@^1.0.20":
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image-group/-/as-image-group-1.0.20.tgz#6fb091d4f715272aec1909e0a12c632840a3607c"
+  integrity sha512-u3uz2OBuwoq3ZfbaU4exQh2UqsZ4iwTULBr1+i3T2bmKCS+LF93cUk4nmgQMswEFX9W6vsxQLXaGB3BmobTfkA==
+  dependencies:
+    "@gl-widget/gl-widget" "^1.1.3"
+    "@vue-awesome-image/as-image" "^1.0.20"
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
 "@vue-awesome-image/as-image@^1.0.20":
   version "1.0.20"
   resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image/-/as-image-1.0.20.tgz#323a1fac5564142e42ac4f6bda209fb1544a9c46"
   integrity sha512-kA2LhesMtjWWi1FSJJ8ZT+daFL3iA7uQOUlcmHe/CV9dQQD+Yh8hEI6bk1c734/LiaBiy8l8ujM74xZwxD8xmw==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@vue-awesome-image/as-image@^1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image/-/as-image-1.0.21.tgz#cfe01ecce9af4bbc18e3e4954a702f092e0890ad"
+  integrity sha512-TCehXznP6BKKqWedtQRZkoIX8j5fh1zblHEAPh4dy2bnsABfopDrw3F/aeRZAxpneI73KD32mSBqDVslNKMU8Q==
   dependencies:
     "@vue/composition-api" "^1.4.9"
     vue-demi "^0.12.1"

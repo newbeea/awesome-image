@@ -10,9 +10,6 @@ type Transitions = Array<Transition | String>
 export default defineComponent({
   props: {
     modelValue: Number,
-    modelValue: {
-      default: 0,
-    },
     transition: {
       type: Object as PropType<Transition | String>,
       default: () => transitions.default,

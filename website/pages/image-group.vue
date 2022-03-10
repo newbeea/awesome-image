@@ -6,9 +6,8 @@ const activeIndex = ref(0);
 </script>
 
 <template>
-  <div>
+  <div class="container mx-auto sm:py-10">
     <div>
-      <div>
         <AsImageGroup
           v-model="activeIndex" :transition="'directionalwrap'"
         >
@@ -33,25 +32,11 @@ const activeIndex = ref(0);
               <template #loading>
                 <div class="placeholder" />
               </template>
-
-              <!-- <template
-                #webglfilter="{
-                  image
-                }"
-              >
-                <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount-map.jpg" />
-              </template> -->
             </AsImage>
           </template>
         </AsImageGroup>
-        <NuxtLink
-          class="btn m-3 text-sm"
-          to="/restful/page-view"
-        >
-          RESTful Api
-        </NuxtLink>
+
       </div>
-    </div>
   </div>
 </template>
 <style>
