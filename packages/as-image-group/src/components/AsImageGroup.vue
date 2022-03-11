@@ -148,7 +148,7 @@ export default defineComponent({
         shader.uniforms.progress.value = progress / step
         if (progress >= step) {
           clearInterval(interval)
-          emit('update:modelValue', current)
+          // emit('update:modelValue', current)
         }
       }, 16)
     }
