@@ -24,7 +24,8 @@
   
 
   "method": {
-    "name": "方法名",
+    "name": "方法",
+    "params": "参数",
     "setActiveItem": {
       "desc": "手动切换幻灯片",
       "params": "需要切换的幻灯片的索引，从 0 开始"
@@ -37,9 +38,16 @@
       "desc": "切换至下一张幻灯片",
       "params": "-"
     }
+  },
+  "usage": {
+    "basic": "基本用法",
+    "desc": "安装 awesome-vue-image/as-image awesome-vue-image/as-image-group AsImage 作为 AsImageGroup slot中子组件使用，并将AsImageGroup scoped 函数 toGroupWithIndex 调用（以image索引为参数）后，绑定到image 属性to-group上，完成图片资源传递，示例如下：",
+    "transition": {
+      "buildin": "内置过渡",
+      "custom": "自定义过渡",
+      "customHow": "编写shader，可配置uniform变量",
+      "gl": "你可以直接使用gl-transition中的过渡效果",
+      "uniform": "内置uniform变量"
+    }
   }
-
-  
-
-
 }

@@ -1,13 +1,53 @@
 {
-  "clientLoading": "Loading when client only",
-  "clientMode": "Client Mode",
-  "ssrLoading": "Loading when jump from other landing page",
-  "ssrMode": "Prefetch on SSR Mode",
-  "name": "What's your name?",
-  "go": "Go",
-  "visited": "{count} page views since {time}",
-  "back": "Back",
-  "alias": "Also as known as",
-  "China": "China",
-  "Phil Xu": "Phil Xu"
+  "attrs": {
+    "name": "Attribute",
+    "initIndex": "initial image index",
+    "autoPlay": "auto play",
+    "interval": "auto play interval",
+    "transition": "transition effect"
+  },
+  "desc": "Description",
+  "type": "Type",
+  "optional": "Accepted Values",
+  "default": "Default",
+
+  
+
+  "event": {
+    "name": "Event",
+    "callback": "Parameters",
+    "change": {
+      "desc": "triggers when the active slide switches",
+      "params": "index of the new active slide, index of the old active slide"
+    }
+  },
+  
+
+  "method": {
+    "name": "Method",
+    "params": "Parameters",
+    "setActiveItem": {
+      "desc": "manually switch slide",
+      "params": "index of the slide to be switched to, starting from 0;"
+    },
+    "prev": {
+      "desc": "switch to the previous slide",
+      "params": "-"
+    },
+    "next": {
+      "desc": "switch to the next slide",
+      "params": "-"
+    }
+  },
+  "usage": {
+    "basic": "Basic usage",
+    "desc": "安装 awesome-vue-image/as-image awesome-vue-image/as-image-group AsImage 作为 AsImageGroup slot中子组件使用，并将AsImageGroup scoped 函数 toGroupWithIndex 调用（以image索引为参数）后，绑定到image 属性to-group上，完成图片资源传递，示例如下：",
+    "transition": {
+      "buildin": "Buildin transition",
+      "custom": "Custom transition",
+      "customHow": "编写shader，可配置uniform变量",
+      "gl": "you can use gl-transition's effet directly'",
+      "uniform": "buildin uniform"
+    }
+  }
 }

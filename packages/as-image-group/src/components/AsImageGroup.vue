@@ -101,8 +101,16 @@ export default defineComponent({
         },
       },
     }
-    Object.assign(shader.uniforms, transition.uniforms)
 
+    const updateUniforms = (shaderUniforms: any, transitionUniforms: any) => {
+      Object.keys(transitionUniforms).forEach((u) => {
+        shaderUniforms[u] = {
+          value: transitionUniforms[u],
+        }
+      })
+    }
+    updateUniforms(shader.uniforms, transition.uniforms)
+    console.log(shader.uniforms)
     // init webgl environment
     const webglContainer = ref<HTMLElement>()
 

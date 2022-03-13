@@ -1,9 +1,7 @@
 export interface Transition {
   name?: string
   shader?: string
-  uniforms?: Record<string, {
-    value: any
-  }>
+  uniforms?: Record<string, any>
 }
 const transition: Record<string, Transition> = {
   default: {
@@ -29,12 +27,8 @@ const transition: Record<string, Transition> = {
       }
     `,
     uniforms: {
-      count: {
-        value: 10,
-      },
-      smoothness: {
-        value: 0.5,
-      },
+      count: 10,
+      smoothness: 0.5,
     },
   },
   directionalwrap: {
@@ -55,10 +49,8 @@ const transition: Record<string, Transition> = {
     `,
     uniforms: {
       direction: {
-        value: {
-          x: -1,
-          y: 1,
-        },
+        x: -1,
+        y: 1,
       },
     },
   },
