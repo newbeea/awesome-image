@@ -4,8 +4,8 @@
 import { GLWidget, Texture, Vector2 } from '@gl-widget/gl-widget'
 import type { PropType } from 'vue-demi'
 import { computed, defineComponent, onMounted, ref, toRefs, watch } from 'vue-demi'
-import type { Transition } from './transitions'
-import transitions from './transitions'
+import type { Transition } from '../transitions'
+import transitions from '../transitions'
 export default defineComponent({
   props: {
     initialIndex: {
