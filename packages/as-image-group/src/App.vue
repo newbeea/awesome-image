@@ -14,13 +14,6 @@ export default defineComponent({
   setup() {
     const activeIndex = ref(0)
 
-    const next = () => {
-      activeIndex.value += 1
-    }
-    const prev = () => {
-      activeIndex.value -= 1
-    }
-
     const customTransition = {
       shader: `
         const float SQRT_2 = 1.414213562373;
@@ -40,10 +33,30 @@ export default defineComponent({
 
       },
     }
+
+    const banner = ref<typeof AsImageGroup>()
+    const next = () => {
+      banner.value?.next()
+    }
+    const prev = () => {
+      banner.value?.prev()
+    }
+
+    const setActiveItem = () => {
+      banner.value?.setActiveItem(2)
+    }
+
+    const onChange = (i, j) => {
+      console.log(i, j)
+      activeIndex.value = i
+    }
     return {
-      activeIndex,
+      banner,
       next,
       prev,
+      setActiveItem,
+      onChange,
+      activeIndex,
       customTransition,
     }
   },
@@ -55,15 +68,32 @@ export default defineComponent({
   <div @click="prev">
     Prev
   </div>
+  {{ activeIndex }}
   <div @click="next">
     Next
   </div>
+  <div @click="setActiveItem">
+    setActiveItem 2
+  </div>
   <AsImageGroup
-    v-model="activeIndex" :transition="'directionalwrap'"
+    ref="banner"
+    :transition="{
+      name: 'directionalwrap',
+      uniforms: {
+        direction: {
+          value: {
+            x: 0,
+            y: 1,
+          },
+        },
+      }
+    }"
+    :initial-index="2"
+    @change="onChange"
   >
     <template
       #images="{
-        onImageLoaded
+        toGroupWithIndex
       }"
     >
       <AsImage
@@ -77,7 +107,7 @@ export default defineComponent({
         :auto-webp="true"
         :progressive="true"
         :responsive="true"
-        :to-group="onImageLoaded(0)"
+        :to-group="toGroupWithIndex(0)"
       >
         <template #loading>
           <div class="placeholder" />
@@ -94,7 +124,7 @@ export default defineComponent({
         :auto-webp="true"
         :progressive="true"
         :responsive="true"
-        :to-group="onImageLoaded(1)"
+        :to-group="toGroupWithIndex(1)"
       >
         <template #loading>
           <div class="placeholder" />
@@ -111,7 +141,7 @@ export default defineComponent({
         :auto-webp="true"
         :progressive="true"
         :responsive="true"
-        :to-group="onImageLoaded(2)"
+        :to-group="toGroupWithIndex(2)"
       >
         <template #loading>
           <div class="placeholder" />
@@ -128,7 +158,7 @@ export default defineComponent({
         :auto-webp="true"
         :progressive="true"
         :responsive="true"
-        :to-group="onImageLoaded(3)"
+        :to-group="toGroupWithIndex(3)"
       >
         <template #loading>
           <div class="placeholder" />

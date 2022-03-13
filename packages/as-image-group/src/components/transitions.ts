@@ -1,5 +1,6 @@
 export interface Transition {
-  shader: string
+  name?: string
+  shader?: string
   uniforms?: Record<string, {
     value: any
   }>

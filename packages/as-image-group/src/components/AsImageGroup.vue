@@ -6,29 +6,49 @@ import type { PropType } from 'vue-demi'
 import { computed, defineComponent, onMounted, ref, toRefs, watch } from 'vue-demi'
 import type { Transition } from './transitions'
 import transitions from './transitions'
-type Transitions = Array<Transition | String>
 export default defineComponent({
   props: {
-    modelValue: Number,
+    initialIndex: {
+      type: Number,
+      default: 0,
+    },
+    autoPlay: {
+      type: Boolean,
+      default: true,
+    },
+    interval: {
+      default: 3000,
+    },
     transition: {
-      type: Object as PropType<Transition | String>,
+      type: Object as PropType<Transition>,
       default: () => transitions.default,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['change'],
   setup(props, { emit }) {
     console.log('setup')
     const {
-      modelValue,
+      initialIndex,
+      autoPlay,
+      interval,
     } = toRefs(props)
 
+    // generate shader
     const getTransition = (): Transition => {
       const transition = props.transition
-      if (typeof (transition) === 'string') {
-        return transitions[transition] || transitions.default
+      transition.uniforms = transition.uniforms || {}
+      if (transition.name && !transition.shader) {
+        const buildinTranstion = transitions[transition.name] || transitions.default
+        transition.shader = buildinTranstion.shader
+        transition.uniforms = Object.assign(buildinTranstion.uniforms, transition.uniforms)
+        return transition as Transition
+      }
+      else if (transition.shader) {
+        return transition as Transition
       }
       else {
-        return transition as Transition
+        console.error('Buildin transition name or custom shader is needed!')
+        return transitions.default
       }
     }
     const transition = getTransition()
@@ -82,11 +102,9 @@ export default defineComponent({
       },
     }
     Object.assign(shader.uniforms, transition.uniforms)
+
+    // init webgl environment
     const webglContainer = ref<HTMLElement>()
-
-    const imageMap = ref<Record<number | string, Texture>>({})
-
-    const countMap: any = {}
 
     const mount = async(width: number, height: number) => {
       if (!webglContainer.value) return
@@ -105,64 +123,87 @@ export default defineComponent({
 
       glWidget.renderBackground(shader, animate)
     }
-    const onImageLoaded = (index: number) => {
+
+    // prepare image
+    const imageMap = ref<Record<number | string, Texture>>({})
+
+    const countMap: any = {}
+    const toGroupWithIndex = (index: number) => {
       countMap[index] = true
       return (image: any) => {
         imageMap.value[index] = new Texture(image.currentSrc, () => {
-          if (index === 0) {
-            shader.uniforms.imageFrom.value = imageMap.value[0]
-            // shader.uniforms.imageDepth.value = imageMap.value[0]
-            console.log(imageMap.value[0])
+          if (index === initialIndex.value) {
+            shader.uniforms.imageFrom.value = imageMap.value[initialIndex.value]
             setTimeout(() => {
-              mount(imageMap.value[0].image.width, imageMap.value[0].image.height)
+              mount(imageMap.value[initialIndex.value].image.width, imageMap.value[initialIndex.value].image.height)
             }, 100)
           }
         })
       }
     }
 
-    let current = 0
-
+    // slide and animate
+    let current = initialIndex.value
     const step = 50
     let progress = step
-    let interval: NodeJS.Timer
+    let rAF: number
+    const animate = () => {
+      progress = progress % step + 1
+      shader.uniforms.progress.value = progress / step
+      if (progress < step) {
+        rAF = requestAnimationFrame(animate)
+      }
+    }
     const slide = (from: number, to: number) => {
       const length = Object.keys(countMap).length
-      if (to < 0) {
-        to += 10 * length
-      }
-      if (from < 0) {
-        from += 10 * length
-      }
-      to = to % length
-      shader.uniforms.imageFrom.value = imageMap.value[from % length]
-      shader.uniforms.imageTo.value = imageMap.value[to % length]
-      shader.uniforms.progress.value = 0
-      progress = 0
+      from = (from < 0 ? from + length : from) % length
+      to = (to < 0 ? to + length : to) % length
+      if (from === to) return
+      shader.uniforms.next.value = to > from
       current = to
+      emit('change', to, from)
 
-      clearInterval(interval)
-      interval = setInterval(() => {
-        progress = progress % step + 1
+      shader.uniforms.imageFrom.value = imageMap.value[from]
+      shader.uniforms.imageTo.value = imageMap.value[to]
 
-        shader.uniforms.progress.value = progress / step
-        if (progress >= step) {
-          clearInterval(interval)
-          // emit('update:modelValue', current)
-        }
-      }, 16)
+      progress = 0
+      shader.uniforms.progress.value = progress
+
+      cancelAnimationFrame(rAF)
+      rAF = requestAnimationFrame(animate)
     }
 
-    watch(modelValue, (newValue, oldValue) => {
-      if (newValue !== oldValue) {
-        shader.uniforms.next.value = newValue > oldValue
-        slide(current, newValue)
+    let autoPlayHandler: NodeJS.Timer
+
+    const prev = () => {
+      clearInterval(autoPlayHandler)
+      slide(current, current - 1)
+    }
+
+    const next = () => {
+      clearInterval(autoPlayHandler)
+      slide(current, current + 1)
+    }
+
+    const setActiveItem = (activeIndex: number) => {
+      clearInterval(autoPlayHandler)
+      slide(current, activeIndex)
+    }
+
+    onMounted(() => {
+      if (autoPlay.value) {
+        autoPlayHandler = setInterval(() => {
+          slide(current, current + 1)
+        }, interval.value)
       }
     })
 
     return {
+      prev,
+      next,
+      setActiveItem,
       webglContainer,
-      onImageLoaded,
+      toGroupWithIndex,
     }
   },
 })
@@ -171,7 +212,7 @@ export default defineComponent({
 
 <template>
   <div ref="webglContainer" class="vue-awesome-image-group">
-    <slot name="images" :onImageLoaded="onImageLoaded" />
+    <slot name="images" :toGroupWithIndex="toGroupWithIndex" />
     <!-- {{ imageMap }} -->
     <!-- {{ images }} -->
   </div>

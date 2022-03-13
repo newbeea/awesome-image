@@ -1,13 +1,45 @@
 {
-  "clientLoading": "客户端加载中效果",
-  "clientMode": "客户端模式数据",
-  "ssrLoading": "从其他落地页跳转加载中效果",
-  "ssrMode": "SSR模式预加载数据",
-  "name": "你的名字？",
-  "go": "确定",
-  "visited": "自{time}以来访问了{count}次",
-  "back": "返回",
-  "alias": "也叫做",
-  "China": "中国",
-  "Phil Xu": "许鹏飞"
+  "attrs": {
+    "name": "参数",
+    "initIndex": "初始图片索引",
+    "autoPlay": "自动播放",
+    "interval": "自动播放间隔",
+    "transition": "过渡效果"
+  },
+  "desc": "说明",
+  "type": "类型",
+  "optional": "可选值",
+  "default": "默认值",
+
+  
+
+  "event": {
+    "name": "事件",
+    "callback": "回调参数",
+    "change": {
+      "desc": "切换时触发",
+      "params": "目前激活的幻灯片的索引，原幻灯片的索引"
+    }
+  },
+  
+
+  "method": {
+    "name": "方法名",
+    "setActiveItem": {
+      "desc": "手动切换幻灯片",
+      "params": "需要切换的幻灯片的索引，从 0 开始"
+    },
+    "prev": {
+      "desc": "切换至上一张幻灯片",
+      "params": "-"
+    },
+    "next": {
+      "desc": "切换至下一张幻灯片",
+      "params": "-"
+    }
+  }
+
+  
+
+
 }
