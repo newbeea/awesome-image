@@ -58,7 +58,7 @@ export default defineComponent({
       glWidget.setSize(webglContainer.value.clientWidth, webglContainer.value.clientWidth / props.image.naturalWidth * props.image.naturalHeight, { width: '100%' })
       const resolution = glWidget.getSize()
 
-      const image = new Texture(props.image as HTMLImageElement)
+      const image = new Texture(props.image?.currentSrc)
       const depth = new Texture(props.depth)
       const shader = {
         fragmentShader: `

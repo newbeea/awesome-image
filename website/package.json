@@ -14,9 +14,9 @@
     "@intlify/nuxt3": "^0.1.10",
     "@nuxt3/apollo-module": "0.0.9",
     "@nuxt3/graphql-codegen-module": "0.0.6",
-    "@vue-awesome-image/as-image": "^1.0.21",
-    "@vue-awesome-image/as-image-group": "^1.0.25",
-    "@vue-awesome-image/filter-fake3d": "^1.0.20",
+    "@vue-awesome-image/as-image": "^1.0.22",
+    "@vue-awesome-image/as-image-group": "^1.0.26",
+    "@vue-awesome-image/filter-fake3d": "^1.0.21",
     "@vue-awesome-image/services": "^1.0.13",
     "@vue/composition-api": "^1.4.3",
     "apollo-graphql": "^0.9.5",
@@ -24,8 +24,8 @@
     "class-validator": "^0.13.2",
     "graphql": "^15.8.0",
     "graphql-playground-html": "^1.6.30",
+    "highlight.js": "^11.5.0",
     "pinia": "^2.0.6",
-    "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1",
     "unenv": "^0.4.3"
   },
@@ -35,6 +35,7 @@
     "@graphql-codegen/typescript": "^2.4.1",
     "@graphql-codegen/typescript-operations": "^2.2.1",
     "@graphql-codegen/typescript-vue-apollo": "^3.2.1",
+    "@highlightjs/vue-plugin": "^2.1.0",
     "@icon-park/vue-next": "^1.3.6",
     "@iconify-json/carbon": "^1.0.12",
     "@iconify-json/twemoji": "^1.0.2",
@@ -48,7 +49,10 @@
     "serverless": "^3.2.1",
     "serverless-domain-manager": "^6.0.2",
     "typescript": "^4.5.4",
-    "vite-plugin-svg-icons": "^1.0.5"
+    "vite-plugin-svg-icons": "^1.0.5",
+    "vue-code-highlight": "^0.7.8",
+    "vue-highlightjs-all": "^2.0.0",
+    "vue3-highlightjs": "^1.0.5"
   },
   "resolutions": {
     "vite": "2.7.13",

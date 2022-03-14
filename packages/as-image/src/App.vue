@@ -32,17 +32,12 @@ export default defineComponent({
   <div>
     <AsImage
       class="demoimage"
-      :width="999"
-      :height="1424"
-      :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg'"
+      :width="1080"
+      :height="722"
+      :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/ball.jpg'"
       :lazy="true"
-      :duration="2"
-      format="png"
-      :auto-webp="true"
       :progressive="true"
       :responsive="true"
-      @image-loaded="imageLoaded"
-      @placeholder-loaded="placeholderLoaded"
     >
       <template #loading>
         <div class="placeholder" />
@@ -53,7 +48,7 @@ export default defineComponent({
           image
         }"
       >
-        <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount-map.jpg" />
+        <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/ball-map.jpg" />
       </template>
     </AsImage>
 

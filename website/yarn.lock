@@ -1062,6 +1062,11 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
+"@highlightjs/vue-plugin@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@highlightjs/vue-plugin/-/vue-plugin-2.1.0.tgz#b7c41e3597a46975665b10cad57882cbde1d1594"
+  integrity sha512-E+bmk4ncca+hBEYRV2a+1aIzIV0VSY/e5ArjpuSN9IO7wBJrzUE2u4ESCwrbQD7sAy+jWQjkV5qCCWgc+pu7CQ==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.3.tgz#f2564c744b387775b436418491f15fce6601f63e"
@@ -2523,10 +2528,10 @@
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-2.2.0.tgz#a0affe3ee09f70a9a1415bd39c0f8a58fa78b419"
   integrity sha512-wXigM1EwN2G7rZcwG6kLk9ivvIMhx2363tCEvMBiXcTu5nePM/12hUPVzPb83Uugt6U+zom1gTpJopi/Ow/jwg==
 
-"@vue-awesome-image/as-image-group@^1.0.25":
-  version "1.0.25"
-  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image-group/-/as-image-group-1.0.25.tgz#b561fad6c5bf6971f423a52156558661e8beec1c"
-  integrity sha512-mudpMDzQ71ObEwjUIrbfKwbYrIDGFPHtIzeysJO6GyXBJmpQJwCIHbqnMkrhUT0GH6+79SM5nc2BWK6JqGpU7g==
+"@vue-awesome-image/as-image-group@^1.0.26":
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image-group/-/as-image-group-1.0.26.tgz#5e0b046bc7c0ef4406489d5e25212aa61d7a2489"
+  integrity sha512-UnbPSNuNvDaBudnUQ5PvHTqNhnBzS2p5AwCtfzHYmbU5xzw4jMxC5pX+4ayMaCLIDfa28hOUSQAypQRJp08+lg==
   dependencies:
     "@gl-widget/gl-widget" "^1.1.3"
     "@vue-awesome-image/as-image" "^1.0.20"
@@ -2534,7 +2539,7 @@
     vue-demi "^0.12.1"
     vue-template-compiler "^2.6.14"
 
-"@vue-awesome-image/as-image@^1.0.20", "@vue-awesome-image/as-image@^1.0.21":
+"@vue-awesome-image/as-image@^1.0.20":
   version "1.0.21"
   resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image/-/as-image-1.0.21.tgz#cfe01ecce9af4bbc18e3e4954a702f092e0890ad"
   integrity sha512-TCehXznP6BKKqWedtQRZkoIX8j5fh1zblHEAPh4dy2bnsABfopDrw3F/aeRZAxpneI73KD32mSBqDVslNKMU8Q==
@@ -2543,10 +2548,19 @@
     vue-demi "^0.12.1"
     vue-template-compiler "^2.6.14"
 
-"@vue-awesome-image/filter-fake3d@^1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@vue-awesome-image/filter-fake3d/-/filter-fake3d-1.0.20.tgz#917b6e39e19e19bb735146d7ffffa0a69100d21e"
-  integrity sha512-pvvE5f4zRh/HCqgJsM50yyIRDp2PEqd7j57eRxIYLjGyu9RoHsA9GJrZ5w2249htkv4g+ewVrsQRbjEtR5yY9g==
+"@vue-awesome-image/as-image@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image/-/as-image-1.0.22.tgz#c7d363e88fca33998a84e58075addfe02adad71a"
+  integrity sha512-HryUv8XuozSAL+xhh7nhGHNbL35YGNOyIvgiQ6VQSBERchu1C3O0BJVCtOpOQ8g9JLp3joQqGCIxI3v5QgcgoA==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@vue-awesome-image/filter-fake3d@^1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@vue-awesome-image/filter-fake3d/-/filter-fake3d-1.0.21.tgz#98f6284b4985154e7b1daa15e41c128e21c0ed7a"
+  integrity sha512-c2ppeKMA6tUXgRJQXSNoEfYFfeUPd4O+iPpwz3PxN2NBF3nenAQKHkwZL0djx7GF5bg2927CsLLmV0zQZMfJog==
   dependencies:
     "@gl-widget/gl-widget" "^1.1.3"
     "@vue/composition-api" "^1.4.9"
@@ -7588,6 +7602,16 @@ header-case@^2.0.4:
     capital-case "^1.0.4"
     tslib "^2.0.3"
 
+highlight.js@^10.3.2:
+  version "10.7.3"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
+  integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==
+
+highlight.js@^11.5.0:
+  version "11.5.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.5.0.tgz#00abb7ed926491adbdabc93a4f3fd2b88b451b4a"
+  integrity sha512-SM6WDj5/C+VfIY8pZ6yW6Xa0Fm1tniYVYWYW1Q/DcMnISZFrC3aQAZZZFAAZtybKNrGId3p/DNbFTtcTXXgYBw==
+
 hmac-drbg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -11057,6 +11081,11 @@ printj@~1.3.1:
   resolved "https://registry.yarnpkg.com/printj/-/printj-1.3.1.tgz#9af6b1d55647a1587ac44f4c1654a4b95b8e12cb"
   integrity sha512-GA3TdL8szPK4AQ2YnOe/b+Y1jUFwmmGMMK/qbY7VcE3Z7FU8JstbKiKRzO6CIiAKPhTO8m01NoQ0V5f3jc4OGg==
 
+prism-es6@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/prism-es6/-/prism-es6-1.2.0.tgz#ead4e0d7809fefc36b9636f1ea4b2cebad074e63"
+  integrity sha512-A8JV9G2zKM8PWksT7YJcmnaWtYO6C9hSfxM/xv0RxB2aNc8rjv30WakzIw1gWyqLi2eiqquo2KmS7orxqlm+yg==
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -11374,11 +11403,6 @@ redis-parser@^3.0.0:
   integrity sha1-tm2CjNyv5rS4pCin3vTGvKwxyLQ=
   dependencies:
     redis-errors "^1.0.0"
-
-reflect-metadata@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 regenerator-runtime@^0.13.4:
   version "0.13.9"
@@ -13536,6 +13560,14 @@ vue-bundle-renderer@^0.3.5:
   dependencies:
     bundle-runner "^0.0.1"
 
+vue-code-highlight@^0.7.8:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/vue-code-highlight/-/vue-code-highlight-0.7.8.tgz#04f8e0c1c17edd52f7c769dd19dda1d2d928bc90"
+  integrity sha512-jMt1W0DGisNZ3B2TASFCPLEswohVrwImX+TxzMIZINZyAUUNZ1Xth3soJw1xepTsMgxkIkhsmN/xVNpiI3bU4g==
+  dependencies:
+    prism-es6 "^1.2.0"
+    vue "^2.5.16"
+
 vue-demi@*, vue-demi@^0.12.1:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.12.1.tgz#f7e18efbecffd11ab069d1472d7a06e319b4174c"
@@ -13553,6 +13585,13 @@ vue-eslint-parser@^8.0.1:
     esquery "^1.4.0"
     lodash "^4.17.21"
     semver "^7.3.5"
+
+vue-highlightjs-all@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-highlightjs-all/-/vue-highlightjs-all-2.0.0.tgz#0cc65c41eec27a6fe466cf6d8e3d3ed10b108369"
+  integrity sha512-za2yS2h9gS3WSXsOEUddVu8CyNmBL4Xnrkq4r8TOAfH4zwWgB+4Ad36WkDN12f5IJHJYJeEwF3tfFEsP7PtOVA==
+  dependencies:
+    lodash-es "^4.17.21"
 
 vue-i18n@beta:
   version "9.2.0-beta.30"
@@ -13609,6 +13648,18 @@ vue-template-compiler@^2.6.14:
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
+
+vue3-highlightjs@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue3-highlightjs/-/vue3-highlightjs-1.0.5.tgz#10b8e2f2f64873dad0abfad6a8a19106d54f3dc9"
+  integrity sha512-Q4YNPXu0X5VMBnwPVOk+IQf1Ohp9jFdMitEAmzaz8qVVefcQpN6Dx4BnDGKxja3TLDVF+EgL136wC8YzmoCX9w==
+  dependencies:
+    highlight.js "^10.3.2"
+
+vue@^2.5.16:
+  version "2.6.14"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
 
 vue@^3.2.31:
   version "3.2.31"
