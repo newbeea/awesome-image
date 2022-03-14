@@ -3,13 +3,14 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { defineComponent, ref } from 'vue-demi'
 import Fake3d from '@vue-awesome-image/filter-fake3d'
+import Glitch from '@vue-awesome-image/filter-glitch'
 
 import { AsImage } from './'
 export default defineComponent({
   name: 'App',
   components: {
     AsImage,
-    Fake3d,
+    Glitch,
   },
   data() {
     return {
@@ -48,7 +49,7 @@ export default defineComponent({
           image
         }"
       >
-        <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/ball-map.jpg" />
+        <Glitch :image="image" />
       </template>
     </AsImage>
 

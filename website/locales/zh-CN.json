@@ -4,7 +4,9 @@
     "initIndex": "初始图片索引",
     "autoPlay": "自动播放",
     "interval": "自动播放间隔",
-    "transition": "过渡效果"
+    "transition": "过渡效果",
+    "image": "父组件 AsImage 传递的已加载的图片资源",
+    "depth": "原图片对应的深度图，可以使用MiDaS生成"
   },
   "desc": "说明",
   "type": "类型",
@@ -48,6 +50,9 @@
       "customHow": "编写shader，可配置uniform变量",
       "gl": "你可以直接使用gl-transition中的过渡效果",
       "uniform": "内置uniform变量"
+    },
+    "fake3d": {
+      "usage": "安装 {0} {1}，Fake3d作为AsImage 的 webglfilter slot 内容组件，并传递image变量。同时传递深度图片。"
     }
   }
 }

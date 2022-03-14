@@ -4,7 +4,9 @@
     "initIndex": "initial image index",
     "autoPlay": "auto play",
     "interval": "auto play interval",
-    "transition": "transition effect"
+    "transition": "transition effect",
+    "image": "image resource passed from AsImage's scoped slot",
+    "depth": "depth image for original image, you can generate it by MiDaS"
   },
   "desc": "Description",
   "type": "Type",
@@ -48,6 +50,9 @@
       "customHow": "编写shader，可配置uniform变量",
       "gl": "you can use gl-transition's effet directly'",
       "uniform": "buildin uniform"
+    },
+    "fake3d": {
+      "usage": "install {0} {1}，use Fake3d as AsImage's 'webglfilter' slot, pass original image from 'webglfilter' slot, pass depth image"
     }
   }
 }
