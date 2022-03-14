@@ -53,6 +53,18 @@
     },
     "fake3d": {
       "usage": "install {0} {1}，use Fake3d as AsImage's 'webglfilter' slot, pass original image from 'webglfilter' slot, pass depth image"
+    },
+    "glitch": {
+      "usage": "install {0} {1}，use Fake3d as AsImage's 'webglfilter' slot, pass original image from 'webglfilter' slot"
     }
+  },
+  "webglFilter": {
+    "title": "WebGL Filter",
+    "description": "move your mouse over the image to see the effect"
+  },
+  "buildInFilter": "Buildin webGL filter",
+  "customFilter": {
+    "title": "Custom webGL filter",
+    "how": "Consult {0}，you can use {1} （webGL framework, 14kb and easy to extend） to render or upload uniform"
   }
 }

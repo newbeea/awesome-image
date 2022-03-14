@@ -53,6 +53,18 @@
     },
     "fake3d": {
       "usage": "安装 {0} {1}，Fake3d作为AsImage 的 webglfilter slot 内容组件，并传递image变量。同时传递深度图片。"
+    },
+    "glitch": {
+      "usage": "安装 {0} {1}，Fake3d作为AsImage 的 webglfilter slot 内容组件，并传递image变量。"
     }
+  },
+  "webglFilter": {
+    "title": "WebGL滤镜",
+    "description": "用鼠标在图片上移动查看伪3D效果"
+  },
+  "buildInFilter": "内置WebGL滤镜",
+  "customFilter": {
+    "title": "自定义WebGL滤镜",
+    "how": "参考 {0}，你可以使用 {1} （面向UI的微内核 14kb、可扩展WebGL框架） 完成webgl部分渲染、动画、uniform上传等功能"
   }
 }
