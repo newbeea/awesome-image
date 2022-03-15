@@ -11,11 +11,13 @@ const imageUrlGeneratorFP: ImageUrlGenerator = (url: string, options: ImageOptio
   if (options.format)
     query.push(`f=${options.format}`)
 
-  if (/(.+\?$)|(.+\?.+&$)/.test(url))
+  if (!query.length) return url
+
+  if (/(.+\?$)|(.+\?.+&$)/.test(url)) // a.jpg? a.jpg?id=1&
     return url + query.join('&')
-  else if (/.+\?.+/.test(url))
+  else if (/.+\?.+/.test(url)) // a.jpg?id
     return `${url}&${query.join('&')}`
-  else
+  else // a.jpg
     return `${url}?${query.join('&')}`
 }
 

@@ -17,7 +17,7 @@
     "@vue-awesome-image/as-image": "^1.0.22",
     "@vue-awesome-image/as-image-group": "^1.0.26",
     "@vue-awesome-image/filter-fake3d": "^1.0.21",
-    "@vue-awesome-image/services": "^1.0.13",
+    "@vue-awesome-image/services": "^1.0.14",
     "@vue/composition-api": "^1.4.3",
     "apollo-graphql": "^0.9.5",
     "apollo-server-core": "^3.6.0",

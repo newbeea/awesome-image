@@ -66,5 +66,10 @@
   "customFilter": {
     "title": "Custom webGL filter",
     "how": "Consult {0}，you can use {1} （webGL framework, 14kb and easy to extend） to render or upload uniform"
+  },
+  "demo": {
+    "basic": {
+      "title": "Lazy / Responsive / Progressive / Webp"
+    }
   }
 }

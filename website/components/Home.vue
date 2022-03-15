@@ -97,10 +97,17 @@ const current = ref(0)
 const onChange = (i, j) => {
   current.value = i
 }
+const products = [
+  '//d3skwsdk169y0b.cloudfront.net/image/product/2.jpg',
+  '//d3skwsdk169y0b.cloudfront.net/image/product/3.jpg',
+  '//d3skwsdk169y0b.cloudfront.net/image/product/4.jpg',
+]
 const images = [
-  '//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg',
-  '//d3skwsdk169y0b.cloudfront.net/image/fake3d/lady.jpg',
-  '//d3skwsdk169y0b.cloudfront.net/image/fake3d/canyon.jpg'
+  '//d3skwsdk169y0b.cloudfront.net/image/banner/1.jpg',
+  '//d3skwsdk169y0b.cloudfront.net/image/banner/2.jpg',
+  '//d3skwsdk169y0b.cloudfront.net/image/banner/3.jpg',
+  '//d3skwsdk169y0b.cloudfront.net/image/banner/4.jpg',
+  '//d3skwsdk169y0b.cloudfront.net/image/banner/5.jpg'
 ]
 </script>
 
@@ -108,12 +115,12 @@ const images = [
   <div class="main">
     <div>
       <div>
-        <div>Responsive / Progressive / Load immediately in SSR mode</div>
         <AsImage
           class="banner"
-          :width="1080"
-          :height="722"
-          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg'"
+          :width="2800"
+          :height="1400"
+          :src="'//d3skwsdk169y0b.cloudfront.net/image/banner/3.jpg'"
+          :format="'png'"
           :progressive="true"
           :responsive="true"
         >
@@ -123,15 +130,38 @@ const images = [
         </AsImage>
         <Highlight :code="src1"></Highlight>
       </div>
+      <div my-10>
+        <div text-4xl mb-3>Vue Awesome Image</div>
+        <div text-2xl py-2>{{ $t('info.feature.title') }}</div>
+        <div text-xl my-2><a href="">{{ $t('info.lazyload.title') }}</a></div>
+        <div pb-2>{{ $t('info.lazyload.desc') }}</div>
+        <div text-xl my-2><a href="">{{ $t('info.responsive.title') }}</a></div>
+        <div pb-2>{{ $t('info.responsive.desc') }}</div>
+        <div text-xl my-2><a href="">{{ $t('info.progressive.title') }}</a></div>
+        <div pb-2>{{ $t('info.progressive.desc') }}</div>
+        <div text-xl my-2><a href="">{{ $t('info.webp.title') }}</a></div>
+        <div pb-2>{{ $t('info.webp.desc') }}</div>
+        <div text-xl my-2><a href="">{{ $t('info.service.title') }}</a></div>
+        <div pb-2>{{ $t('info.service.desc') }}</div>
+        <div text-xl my-2><a href="">{{ $t('info.filter.title') }}</a></div>
+        <div pb-2>{{ $t('info.filter.desc') }}</div>
+        <div text-xl my-2><a href="">{{ $t('info.swiper.title') }}</a></div>
+        <div pb-2>{{ $t('info.swiper.desc') }}</div>
 
+      </div>
       <div>
-        <div>Lazy / Progressive</div>
+        <div text-xl mt-10>{{ $t('demo.basic.title')}}</div>
+        <div>{{ $t('demo.basic.desc')}}</div>
         <AsImage
+          v-for="(src, key) in products"
+          :key="key"
           class="banner"
-          :width="1080"
-          :height="722"
-          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg'"
+          :width="1408"
+          :height="1408"
+          :src="src"
           :lazy="true"
+          :autoWebp="true"
+          :responsive="true"
           :progressive="true"
           imageLazyOffset="0px"
           placeholderLazyOffset="0px"
@@ -140,44 +170,18 @@ const images = [
             <div class="placeholder" />
           </template>
         </AsImage>
-        <AsImage
-          class="banner"
-          :width="1080"
-          :height="722"
-          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/lady.jpg'"
-          :lazy="true"
-          :progressive="true"
-          imageLazyOffset="0px"
-          placeholderLazyOffset="0px"
-        >
-          <template #loading>
-            <div class="placeholder" />
-          </template>
-        </AsImage>
-        <AsImage
-          class="banner"
-          :width="1080"
-          :height="722"
-          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/canyon.jpg'"
-          :lazy="true"
-          :progressive="true"
-          imageLazyOffset="0px"
-          placeholderLazyOffset="0px"
-        >
-          <template #loading>
-            <div class="placeholder" />
-          </template>
-        </AsImage>
+        
         <Highlight :code="src2"></Highlight>
       </div>
 
       <div>
-        <div>Webgl filter</div>
+        <div text-xl mt-10>{{ $t('webglFilter.title')}}</div>
+        <div>{{ $t('webglFilter.description')}}</div>
         <AsImage
           class="banner"
-          :width="1080"
-          :height="722"
-          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/ball.jpg'"
+          :width="2800"
+          :height="1400"
+          :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/7.jpg'"
         >
           <template #loading>
             <div class="placeholder" />
@@ -188,14 +192,15 @@ const images = [
               image
             }"
           >
-            <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/ball-map.jpg" />
+            <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/7-map.jpg" :scaleX="0.5" :scaleY="0.8" />
           </template>
         </AsImage>
         <Highlight :code="src3"></Highlight>
       </div>
 
       <div>
-        <div>Carousel with webgl transition</div>
+        <div text-xl mt-10>{{ $t('transition.title')}}</div>
+        <div>{{ $t('transition.description')}}</div>
         <div>
           <span class="carousel-btn" @click="prev">prev</span><span class="carousel-btn" @click="next">next</span>
         </div>
@@ -214,15 +219,14 @@ const images = [
           >
             <AsImage
               class="banner"
-              :width="1080"
-              :height="722"
+              :width="2800"
+              :height="1400"
               v-for="(src, i) in images"
               :key="i"
               :src="src"
               :to-group="toGroupWithIndex(i)"
             >
             </AsImage>
-            
           </template>
         </AsImageGroup>
         <Highlight :code="src4"></Highlight>

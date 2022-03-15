@@ -62,9 +62,8 @@ export default defineComponent({
     const imageLoaded = ref(false)
 
     const generator = inject<ImageUrlGenerator>('imageUrlGenerator', imageUrlGenerator.value)
-    console.log('🚀 ~ file: AsImage.tsx ~ line 61 ~ setup ~ imageProvider.value', imageUrlGenerator.value)
-    console.log('🚀 ~ file: AsImage.tsx ~ line 61 ~ setup ~ useImageProvider', generator)
 
+    // generate placeholder image's srcset
     const placeholderSrcSet = progressive.value
       ? computed(() => generator(src.value, {
         width: 48,
@@ -72,6 +71,7 @@ export default defineComponent({
       }))
       : src
 
+    // generate image's srcset
     const options: ImageOptions = {}
     if (quantity.value)
       options.quantity = quantity.value
@@ -82,14 +82,16 @@ export default defineComponent({
       ? useResponsive(src, breakpoints, generator, options)
       : computed(() => generator(src.value, options))
 
+    // generate picture's srcset
     const pictureOption: ImageOptions = Object.assign({}, options, { format: 'webp' })
     const pictureSrcSet = responsive.value
       ? useResponsive(src, breakpoints, generator, pictureOption)
       : computed(() => generator(src.value, pictureOption))
 
+    // load data-srcset when intersection observer emitted.
     if (lazy.value) {
       useLazy(image, imageLazyOffset)
-      if (progressive.value)
+      if (progressive.value) // placeholder lazyload
         useLazy(placeholder, placeholderLazyOffset)
     }
 
@@ -109,6 +111,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
+      // in case of image loaded before vue mounted
       onPlaceholderLoaded()
       onImageLoaded()
     })

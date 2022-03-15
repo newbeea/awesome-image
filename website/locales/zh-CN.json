@@ -66,5 +66,48 @@
   "customFilter": {
     "title": "自定义WebGL滤镜",
     "how": "参考 {0}，你可以使用 {1} （面向UI的微内核 14kb、可扩展WebGL框架） 完成webgl部分渲染、动画、uniform上传等功能"
+  },
+  "transition": {
+    "title": "轮播过渡",
+    "description": "可自定义的轮播图过渡效果"
+  },
+  "info": {
+    "feature": {
+      "title": "特性"
+    },
+    "lazyload": {
+      "title": "懒加载",
+      "desc": "分别自定义图片和placeholder加载时机"
+    },
+    "responsive": {
+      "title": "响应式加载",
+      "desc": "根据屏幕宽度加载不同尺寸图片"
+    },
+    "progressive": {
+      "title": "渐进式加载",
+      "desc": "加载宽度为48px模糊缩率图作为placeholder，并且加载过程平滑过渡"
+    },
+    "webp": {
+      "title": "webp 兼容",
+      "desc": "使用不支持自动webp的图片服务时，可以使用autoWebp参数添加webp兼容写法"
+    },
+    "service": {
+      "title": "自定义图片处理",
+      "desc": "内置fastly、upyun等图片处理规则，可自由定制其他图片url转换函数"
+    },
+    "filter": {
+      "title": "WebGL滤镜",
+      "desc": "可以在图片组件AsImage内使用滤镜组件，自定义webgl图片处理效果"
+    },
+    "swiper": {
+      "title": "轮播过渡",
+      "desc": "可以使用轮播图片组件AsImageGroup，自定义webgl图片过渡效果"
+    }
+  },
+  "demo": {
+    "basic": {
+      "title": "懒加载 / 响应式加载 / 渐进式加载 / webp 兼容",
+      "desc": "使用dev tools 网络选项卡查看加载效果"
+    }
   }
 }
