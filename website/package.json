@@ -46,6 +46,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.4.1",
     "nuxt3": "3.0.0-27417467.467ab69",
+    "sass": "^1.49.9",
     "serverless": "^3.2.1",
     "serverless-domain-manager": "^6.0.2",
     "typescript": "^4.5.4",
