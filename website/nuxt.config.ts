@@ -14,7 +14,9 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@intlify/nuxt3',
   ],
-
+  build: {
+    transpile: ['@vue-awesome-image/as-image', '@vue-awesome-image/as-image-group'],
+  },
   unocss: {
     uno: true,
     attributify: true,
