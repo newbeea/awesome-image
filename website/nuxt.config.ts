@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     '@intlify/nuxt3',
   ],
   build: {
-    transpile: ['@vue-awesome-image/as-image', '@vue-awesome-image/as-image-group'],
+    transpile: ['@vue-awesome-image/as-image', '@vue-awesome-image/as-image-group', '@icon-park/vue-next'],
   },
   unocss: {
     uno: true,
