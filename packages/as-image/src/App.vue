@@ -52,7 +52,46 @@ export default defineComponent({
         <Glitch :image="image" />
       </template>
     </AsImage>
-
+    <AsImage
+      class="demoimage"
+      :width="1080"
+      :height="722"
+      :src="'//d3skwsdk169y0b.cloudfront.net/image/product/1.jpg'"
+      :lazy="true"
+      :progressive="true"
+      :responsive="true"
+    >
+      <template #loading>
+        <div class="placeholder" />
+      </template>
+    </AsImage>
+    <AsImage
+      class="demoimage"
+      :width="1080"
+      :height="722"
+      :src="'//d3skwsdk169y0b.cloudfront.net/image/product/2.jpg'"
+      :lazy="true"
+      :progressive="true"
+      :responsive="true"
+      :image-lazy-offset="'0px'"
+    >
+      <template #loading>
+        <div class="placeholder" />
+      </template>
+    </AsImage>
+    <AsImage
+      class="demoimage"
+      :width="1080"
+      :height="722"
+      :src="'//d3skwsdk169y0b.cloudfront.net/image/product/3.jpg'"
+      :lazy="true"
+      :progressive="true"
+      :responsive="true"
+    >
+      <template #loading>
+        <div class="placeholder" />
+      </template>
+    </AsImage>
     sfsdf
   </div>
 </template>

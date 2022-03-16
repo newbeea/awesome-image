@@ -11,6 +11,8 @@
   "dependencies": {
     "@apollo/client": "^3.5.6",
     "@envelop/core": "^1.6.5",
+    "@iconify-json/carbon": "^1.1.2",
+    "@iconify-json/twemoji": "^1.1.2",
     "@intlify/nuxt3": "^0.1.10",
     "@nuxt3/apollo-module": "0.0.9",
     "@nuxt3/graphql-codegen-module": "0.0.6",

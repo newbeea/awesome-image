@@ -160,11 +160,9 @@ const images = [
           :height="1408"
           :src="src"
           :lazy="true"
-          :autoWebp="true"
           :responsive="true"
           :progressive="true"
-          imageLazyOffset="0px"
-          placeholderLazyOffset="0px"
+          image-lazy-offset="0px"
         >
           <template #loading>
             <div class="placeholder" />
