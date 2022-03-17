@@ -112,9 +112,10 @@ const images = [
 </script>
 
 <template>
-  <div class="main">
+  <div class="main" pb-20>
     <div>
       <div>
+        <div text-xl mt-10>SSR: Load before hydrating</div>
         <AsImage
           class="banner"
           :width="2800"
@@ -128,9 +129,9 @@ const images = [
             <div class="placeholder" />
           </template>
         </AsImage>
-        <Highlight :code="src1"></Highlight>
+        <!-- <Highlight :code="src1"></Highlight> -->
       </div>
-      <div my-10>
+      <!-- <div my-10>
         <div text-4xl mb-3>Vue Awesome Image</div>
         <div text-2xl py-2>{{ $t('info.feature.title') }}</div>
         <div text-xl my-2><a href="">{{ $t('info.lazyload.title') }}</a></div>
@@ -148,10 +149,10 @@ const images = [
         <div text-xl my-2><a href="">{{ $t('info.swiper.title') }}</a></div>
         <div pb-2>{{ $t('info.swiper.desc') }}</div>
 
-      </div>
+      </div> -->
       <div>
         <div text-xl mt-10>{{ $t('demo.basic.title')}}</div>
-        <div>{{ $t('demo.basic.desc')}}</div>
+        <!-- <div>{{ $t('demo.basic.desc')}}</div> -->
         <AsImage
           v-for="(src, key) in products"
           :key="key"
@@ -169,12 +170,12 @@ const images = [
           </template>
         </AsImage>
         
-        <Highlight :code="src2"></Highlight>
+        <!-- <Highlight :code="src2"></Highlight> -->
       </div>
 
       <div>
         <div text-xl mt-10>{{ $t('webglFilter.title')}}</div>
-        <div>{{ $t('webglFilter.description')}}</div>
+        <!-- <div>{{ $t('webglFilter.description')}}</div> -->
         <AsImage
           class="banner"
           :width="2800"
@@ -193,15 +194,15 @@ const images = [
             <Fake3d :image="image" depth="//d3skwsdk169y0b.cloudfront.net/image/fake3d/7-map.jpg" :scaleX="0.5" :scaleY="0.8" />
           </template>
         </AsImage>
-        <Highlight :code="src3"></Highlight>
+        <!-- <Highlight :code="src3"></Highlight> -->
       </div>
 
       <div>
-        <div text-xl mt-10>{{ $t('transition.title')}}</div>
-        <div>{{ $t('transition.description')}}</div>
+        <div text-xl mt-10 mb-3>WebGL Transition</div>
+        <!-- <div>{{ $t('transition.description')}}</div>
         <div>
           <span class="carousel-btn" @click="prev">prev</span><span class="carousel-btn" @click="next">next</span>
-        </div>
+        </div> -->
         <AsImageGroup
           ref="banner"
           :transition="{
@@ -227,15 +228,15 @@ const images = [
             </AsImage>
           </template>
         </AsImageGroup>
-        <Highlight :code="src4"></Highlight>
+        <!-- <Highlight :code="src4"></Highlight> -->
       </div>
     </div>
   </div>
 </template>
 <style>
-.main {
+/* .main {
   padding: 20px;
-}
+} */
 .banner {
   width: 100%;
   margin-top: 10px;
