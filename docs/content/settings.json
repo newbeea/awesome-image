@@ -1,0 +1,10 @@
+{
+  "title": "Vue Awesome Image",
+  "url": "vue-awesome-image.vercel.com",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "newbeea/as-image",
+  "twitter": "@nuxt_js"
+}

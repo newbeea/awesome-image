@@ -16,8 +16,13 @@ export default defineConfig({
     outDir: './dist/vue2',
 
     lib: {
+      formats: ['es', 'umd', 'cjs'],
       entry: resolve(__dirname, 'src/index.ts'),
-      fileName: format => `index.${format}.js`,
+      fileName: (format) => {
+        if (format === 'es') return 'index.es.js'
+        else if (format === 'umd') return 'index.umd.js'
+        else if (format === 'cjs') return 'index.js'
+      },
       name: 'AsImage',
     },
     cssCodeSplit: false,

@@ -35,7 +35,7 @@
     overflow: hidden;
     z-index: -2;
     .image-placeholder {
-      top: 0;
+      position: relative;
     }
     img {
       filter: blur(10px);
@@ -45,7 +45,7 @@
   }
 
   .image {
-    top: 0;
+    position: relative;
   }
     
   img {
@@ -53,6 +53,10 @@
     height: auto;
     transition: opacity;
     vertical-align: bottom;
+    &.image-origin-loaded,
+    &.image-placeholder-loaded {
+      opacity: 1 !important;
+    }
   }
   img.has-webgl-filter.image-loaded {
     position: absolute;
@@ -63,7 +67,6 @@
   img[srcset=""] { visibility: hidden; opacity: 0;}
   img.placeholder-loaded {
     opacity: 1 !important;
-
   }
   img.image-loaded {
     opacity: 1 !important;

@@ -16,7 +16,7 @@
     "@intlify/nuxt3": "^0.1.10",
     "@nuxt3/apollo-module": "0.0.9",
     "@nuxt3/graphql-codegen-module": "0.0.6",
-    "@vue-awesome-image/as-image": "^1.0.22",
+    "@vue-awesome-image/as-image": "^1.0.24",
     "@vue-awesome-image/as-image-group": "^1.0.26",
     "@vue-awesome-image/filter-fake3d": "^1.0.21",
     "@vue-awesome-image/services": "^1.0.14",

@@ -2598,11 +2598,12 @@
     vue-demi "^0.12.1"
     vue-template-compiler "^2.6.14"
 
-"@vue-awesome-image/as-image@^1.0.22":
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image/-/as-image-1.0.22.tgz#c7d363e88fca33998a84e58075addfe02adad71a"
-  integrity sha512-HryUv8XuozSAL+xhh7nhGHNbL35YGNOyIvgiQ6VQSBERchu1C3O0BJVCtOpOQ8g9JLp3joQqGCIxI3v5QgcgoA==
+"@vue-awesome-image/as-image@^1.0.24":
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image/-/as-image-1.0.24.tgz#1033aa65f2d3c226488dbb4499f7b0c5142795c5"
+  integrity sha512-TGp4ZUomBnMCtUqkxOUNaBoVWAGUIDJY/tDfGtc2xKImeQTkHmcy/vZg6MQaVdSEV1/FHa8G2aRsUvkf6hIKRQ==
   dependencies:
+    "@vue-awesome-image/filter-glitch" "^1.0.0"
     "@vue/composition-api" "^1.4.9"
     vue-demi "^0.12.1"
     vue-template-compiler "^2.6.14"
@@ -2611,6 +2612,16 @@
   version "1.0.21"
   resolved "https://registry.yarnpkg.com/@vue-awesome-image/filter-fake3d/-/filter-fake3d-1.0.21.tgz#98f6284b4985154e7b1daa15e41c128e21c0ed7a"
   integrity sha512-c2ppeKMA6tUXgRJQXSNoEfYFfeUPd4O+iPpwz3PxN2NBF3nenAQKHkwZL0djx7GF5bg2927CsLLmV0zQZMfJog==
+  dependencies:
+    "@gl-widget/gl-widget" "^1.1.3"
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@vue-awesome-image/filter-glitch@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vue-awesome-image/filter-glitch/-/filter-glitch-1.0.1.tgz#b71b51fd6ca8c044e6c703c81a06628f216d0b58"
+  integrity sha512-uOSi4mAHTt8ulgEQu6cFh+w99o8ree9Fb7choLp2wAlv+fFNyLInsQse93VAwRPKYmRWQc+GF41SPz+zkaA/tQ==
   dependencies:
     "@gl-widget/gl-widget" "^1.1.3"
     "@vue/composition-api" "^1.4.9"

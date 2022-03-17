@@ -3,9 +3,16 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.22",
+  "version": "1.0.37",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "module": "./dist/index.es.js",
-  "main": "./dist/index.umd.js",
+  "main": "./dist/index.js",
   "files": [
     "dist",
     "scripts",

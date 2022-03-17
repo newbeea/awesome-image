@@ -42,7 +42,7 @@ export default defineComponent({
     autoWebp: { type: Boolean, default: false },
   },
   emits: ['image-loaded', 'placeholder-loaded', 'image-error', 'placeholder-error'],
-  setup(props, { emit }) {
+  setup(props, { emit, root }) {
     const {
       src,
       responsive,
@@ -61,7 +61,7 @@ export default defineComponent({
     const image = ref<HTMLImageElement>()
     const imageLoaded = ref(false)
 
-    const generator = inject<ImageUrlGenerator>('imageUrlGenerator', imageUrlGenerator.value)
+    const generator = isVue2 ? root.$imageUrlGenerator : inject<ImageUrlGenerator>('imageUrlGenerator', imageUrlGenerator.value)
 
     // generate placeholder image's srcset
     const placeholderSrcSet = progressive.value
@@ -96,6 +96,7 @@ export default defineComponent({
     }
 
     const onImageLoaded = () => {
+      console.log('onImageLoaded', image.value?.complete)
       if (image.value?.complete && !imageLoaded.value) {
         emit('image-loaded')
         if (props.toGroup) props.toGroup(image.value)
@@ -104,6 +105,7 @@ export default defineComponent({
     }
 
     const onPlaceholderLoaded = () => {
+      console.log('onPlaceholderLoaded', placeholder.value?.complete)
       if (placeholder.value?.complete && !placeholderLoaded.value) {
         emit('placeholder-loaded')
         placeholderLoaded.value = true
@@ -111,6 +113,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
+      console.log('onMounted')
       // in case of image loaded before vue mounted
       onPlaceholderLoaded()
       onImageLoaded()
@@ -119,6 +122,7 @@ export default defineComponent({
     return {
       placeholderSrcSet,
       imageLoaded,
+      placeholderLoaded,
       imageSrcSet,
       pictureSrcSet,
       image,
@@ -133,19 +137,28 @@ export default defineComponent({
       const hasWebglFilter = (isVue2 && this.$scopedSlots.webglfilter) || !!this.$slots.webglfilter
       let className = ''
       if (isImage) {
-        if (hasWebglFilter && this.imageLoaded)
-          className = `${style.image} ${style.hasWebglFilter} ${style.imageLoaded}`
-        else
+        if (this.imageLoaded) {
+          if (hasWebglFilter) {
+            className = `${style.image} ${style.hasWebglFilter} ${style.imageLoaded}`
+          }
+          else {
+            className = `${style.image} ${style.imageLoaded}`
+          }
+        }
+        else {
           className = style.image
+        }
       }
       else {
-        className = style.imagePlaceholder
+        if (this.placeholderLoaded)
+          className = `${style.imagePlaceholder} ${style.placeholderLoaded}`
+        else
+          className = style.imagePlaceholder
       }
-      console.log('🚀 ~ file: AsImage.tsx ~ line 121 ~ renderImg ~ className', className)
-
+      console.log('render', className)
       const attrs = {
         [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
-        onload: `this.classList.add("${isImage ? style.imageLoaded : style.placeholderLoaded}");console.log(313123123)`,
+        onload: `this.classList.add("${isImage ? style.imageOriginLoaded : style.placeholderOriginLoaded}");`,
 
       }
       if (hasWebglFilter)
