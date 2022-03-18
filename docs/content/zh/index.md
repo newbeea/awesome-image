@@ -12,16 +12,22 @@ features:
   - WebGL滤镜  ——  以在图片组件AsImage内使用滤镜组件，支持自定义WebGL图片处理效果
   - 轮播过渡  ——  可以使用轮播图片组件AsImageGroup，支持gl-transitions过渡效果，支持自定义WebGL图片过渡效果
 ---
-@vue-awesome-image/as-image 是一个支持懒加载/渐进加载/响应加载/自动webp的、兼容vue2/vue3/nuxt的通用图片组件，可搭配内置或自定义WebGL滤镜组件、WebGL过渡组件实现更酷炫的图片展示效果。
+<Banner></Banner>
+<alert>
+AsImage WebGL滤镜
+</alert>
+
+AsImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `自动webp的`、兼容 `vue2` / `vue3` / `nuxt` 的通用图片组件，可搭配内置或自定义WebGL滤镜组件、WebGL过渡组件实现更酷炫的图片展示效果。
+
 ## 特性
 
 <list :items="features"></list>
 
 ## 效果
-### 懒加载/渐进加载/响应加载/SSR
+### 懒加载 / 渐进加载 / 响应加载 / SSR
 <img src="/show.gif" width="804" height="450" alt=""/>
 
-### WebGL滤镜
+### WebGL滤镜 (@vue-awesome-image/filter-fake3d)
 <img src="/fake3d.gif" width="804" height="450" alt=""/>
 
 ### WebGL过渡

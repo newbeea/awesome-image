@@ -1,14 +1,9 @@
 import Vue from 'vue'
-import AsImage from '@vue-awesome-image/as-image'
+import VueAsImage from '@vue-awesome-image/as-image'
 import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
-
+import Glitch from '@vue-awesome-image/filter-glitch'
 import '@vue-awesome-image/as-image/dist/style.css'
-import './reset.css'
-Vue.use(AsImage, {
-  imageUrlGenerator: imageUrlGeneratorFP
+Vue.component('Glitch', Glitch)
+Vue.use(VueAsImage, {
+  imageUrlGenerator: imageUrlGeneratorFP,
 })
-
-// export default ({ app }, inject) => {
-//   // Set the function directly on the context.app object
-//   inject('imageUrlGenerator', imageUrlGeneratorFP)
-// }

@@ -2,24 +2,25 @@ import theme from '@nuxt/content-theme-docs'
 
 export default theme({
   docs: {
-    primaryColor: '#E24F55'
+    // primaryColor: '#E24F55',
   },
+  css: ['~~/style.css'],
   i18n: {
     locales: () => [{
       code: 'zh',
       iso: 'zh-CN',
       file: 'zh-CN.js',
-      name: '中文'
+      name: '中文',
     }, {
       code: 'en',
       iso: 'en-US',
       file: 'en-US.js',
-      name: 'English'
+      name: 'English',
     }],
-    defaultLocale: 'zh'
+    defaultLocale: 'zh',
   },
   buildModules: [
-    '@nuxtjs/composition-api/module'
+    '@nuxtjs/composition-api/module',
   ],
-  plugins: ['~~/plugins/as-image.js']
+  plugins: ['~~/plugins/as-image.js'],
 })

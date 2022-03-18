@@ -1,0 +1,10 @@
+a[aria-label="Vue Awesome Image Logo"] img {
+  height: 6rem;
+}
+.prose img {
+  margin-top: unset;
+  margin-bottom: unset;
+}
+.banner {
+  width: 100%;
+}
