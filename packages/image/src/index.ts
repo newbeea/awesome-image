@@ -18,4 +18,5 @@ AsImage.install = (app: any, options: {
   }
   app.component(AsImage.name, AsImage)
 }
+export { AsImage }
 export default AsImage

@@ -1,4 +1,4 @@
-import type { ImageOptions, ImageUrlGenerator } from '../../as-image/src/interface'
+import type { ImageOptions, ImageUrlGenerator } from '../../image/src/interface'
 
 const imageUrlGeneratorFastly: ImageUrlGenerator = (url: string, options: ImageOptions = {}): string => {
   const query: Array<string> = Object.entries(options).map(kv => `${kv[0]}=${kv[1]}`)

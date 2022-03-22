@@ -2,9 +2,9 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { defineComponent, ref } from 'vue-demi'
-import { AsImage } from 'as-image'
+import { AsImage } from '@awesome-image/image'
 import HelloWorld from './components/index.vue'
-import 'as-image/dist/style.css'
+import '@awesome-image/image/dist/style.css'
 export default defineComponent({
   name: 'App',
   components: {
@@ -57,5 +57,8 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.demoimage {
+  width: 100%;
 }
 </style>

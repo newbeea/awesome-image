@@ -2,13 +2,13 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { defineComponent, ref } from 'vue-demi'
-import { AsImage } from 'as-image'
-import 'as-image/dist/style.css'
-import AsImageGroup from './components/Transition.vue'
+import { AsImage } from '@awesome-image/image'
+import '@awesome-image/image/dist/style.css'
+import { AsTransition } from './index'
 export default defineComponent({
   name: 'App',
   components: {
-    AsImageGroup,
+    AsTransition,
     AsImage,
   },
   setup() {
@@ -34,7 +34,7 @@ export default defineComponent({
       },
     }
 
-    const banner = ref<typeof AsImageGroup>()
+    const banner = ref<typeof AsTransition>()
     const next = () => {
       banner.value?.next()
     }
@@ -75,7 +75,7 @@ export default defineComponent({
   <div @click="setActiveItem">
     setActiveItem 2
   </div>
-  <AsImageGroup
+  <AsTransition
     ref="banner"
     :transition="{
       shader: `
@@ -178,7 +178,7 @@ vec4 transition (vec2 uv) {
         </template>
       </AsImage>
     </template>
-  </AsImageGroup>
+  </AsTransition>
 </template>
 
 <style>

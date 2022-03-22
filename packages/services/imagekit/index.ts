@@ -1,4 +1,4 @@
-import type { ImageOptions, ImageUrlGenerator } from '../../as-image/src/interface'
+import type { ImageOptions, ImageUrlGenerator } from '../../image/src/interface'
 
 const imageUrlGeneratorImagekit: ImageUrlGenerator = (url: string, options: ImageOptions = {}): string => {
   const params: Array<string> = []
