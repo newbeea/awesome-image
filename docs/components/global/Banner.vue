@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     change() {
-      console.log(1212)
       this.component = 'Fake3d'
     },
   },

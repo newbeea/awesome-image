@@ -9,9 +9,9 @@ export default defineConfig({
     outDir: './dist/vue3',
 
     lib: {
-      entry: resolve(__dirname, 'src/components/Fake3d.vue'),
+      entry: resolve(__dirname, 'src/index.ts'),
       fileName: format => `index.${format}.js`,
-      name: 'Fake3d',
+      name: 'AsFilterFake3d',
     },
     cssCodeSplit: false,
     rollupOptions: {

@@ -2129,9 +2129,9 @@
   dependencies:
     "@types/node" "*"
 
-"@vue-awesome-image/as-image@^1.0.37":
+"as-image@^1.0.37":
   version "1.0.37"
-  resolved "https://registry.yarnpkg.com/@vue-awesome-image/as-image/-/as-image-1.0.37.tgz#cbc725373b259883797993c3f7e4ccec78bb6bf9"
+  resolved "https://registry.yarnpkg.com/as-image/-/as-image-1.0.37.tgz#cbc725373b259883797993c3f7e4ccec78bb6bf9"
   integrity sha512-RBsecgjRsLd7tORQ3uaeE6XlKfvb1Oj+nWRe5WIuGeQJypk1DD14GcJaNAJ/Blban61waveQHKY8oZB9BxuOsg==
   dependencies:
     "@vue-awesome-image/filter-glitch" "^1.0.0"

@@ -1,9 +1,9 @@
 {
-  "name": "@vue-awesome-image/services",
+  "name": "@awesome-image/services",
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.14",
+  "version": "0.0.0",
   "description": "",
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",

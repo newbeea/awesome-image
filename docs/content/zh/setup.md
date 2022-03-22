@@ -7,20 +7,20 @@ category: AsImage
 
 ## Vue/Nuxt
 
-### 安装 `@vue-awesome-image/as-image`
+### 安装 `as-image`
 
 <code-group>
   <code-block label="Vue" active>
 
   ```bash
-  yarn add @vue-awesome-image/as-image
+  yarn add as-image
   ```
 
   </code-block>
   <code-block label="Nuxt">
 
   ```bash
- yarn add @vue-awesome-image/as-image
+ yarn add as-image
  yarn add @nuxtjs/composition-api
   ```
 
@@ -31,7 +31,7 @@ category: AsImage
 ### 引入样式
 
 ```bash
-import '@vue-awesome-image/as-image/dist/style.css'
+import 'as-image/dist/style.css'
 ```
 ### 使用
 #### 全局使用
@@ -39,7 +39,7 @@ import '@vue-awesome-image/as-image/dist/style.css'
   <code-block label="Vue2" active>
 
   ```js[main.js]
-  import VueAsImage from '@vue-awesome-image/as-image'
+  import VueAsImage from 'as-image'
   // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
   // read more about http://imageUrlGenerator
   Vue.use(VueAsImage, {
@@ -52,7 +52,7 @@ import '@vue-awesome-image/as-image/dist/style.css'
   <code-block label="Vue3" active>
 
   ```js[main.js]
-  import VueAsImage from '@vue-awesome-image/as-image'
+  import VueAsImage from 'as-image'
   // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
   // read more about http://imageUrlGenerator
   createApp().use(VueAsImage, {
@@ -68,7 +68,7 @@ import '@vue-awesome-image/as-image/dist/style.css'
   ```js[./plugins/as-image.js]
   // add ./plugins/as-image.js
 
-  import VueAsImage from '@vue-awesome-image/as-image'
+  import VueAsImage from 'as-image'
   // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
   // read more about http://imageUrlGenerator
   Vue.use(VueAsImage, {
@@ -94,7 +94,7 @@ import '@vue-awesome-image/as-image/dist/style.css'
 #### 局部使用
 ```html
 <script>  
-import { AsImage } from '@vue-awesome-image/as-image'
+import { AsImage } from 'as-image'
 // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
 // read more about http://imageUrlGenerator
 export default {
@@ -124,7 +124,7 @@ export default {
 
 ## 浏览器
 
-### 引入 `@vue-awesome-image/as-image`
+### 引入 `as-image`
 
 <code-group>
   <code-block label="Vue2" active>
@@ -133,7 +133,7 @@ export default {
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@vue/composition-api/dist/vue-composition-api.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-demi@0.12.1/lib/index.iife.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@vue-awesome-image/as-image@1.0.11/dist/vue2/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/as-image@1.0.11/dist/vue2/index.umd.js"></script>
   ```
 
   </code-block>
@@ -142,7 +142,7 @@ export default {
   ```bash
   <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-demi@0.12.4/lib/index.iife.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@vue-awesome-image/as-image/dist/vue3/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/as-image/dist/vue3/index.umd.js"></script>
   ```
 
   </code-block>
@@ -157,7 +157,7 @@ export default {
 ```bash
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@vue-awesome-image/as-image/dist/style.css"
+  href="https://cdn.jsdelivr.net/npm/as-image/dist/style.css"
 />
 ```
 
