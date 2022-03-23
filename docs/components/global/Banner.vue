@@ -13,27 +13,45 @@
       </template>
       <template #webglfilter="{ image }">
         <div>
-          <component :is="component" :image="image" depth="/banner-depth.png"></component>
+          <component :is="component" :image="image" :scale="8" depth="/banner-depth.png"></component>
         </div>
       </template>
     </AsImage>
+    <alert>
+      AwesomeImage WebGL Filter: @awesome-image/filter-{{ filters[index] }}
+    </alert>
   </div>
 </template>
 <script>
-import Fake3d from '@vue-awesome-image/filter-fake3d'
-
 export default {
   components: {
-    Fake3d,
   },
   data() {
     return {
-      component: 'Glitch',
+      index: 0,
+      timer: null,
+      filters: [
+        'glitch',
+        'crt',
+        'ascii',
+        'hexagon',
+      ],
+      component: 'as-filter-glitch',
     }
+  },
+  mounted() {
+    this.timer = setInterval(() => {
+      this.change()
+    }, 2000)
+  },
+  unmounted() {
+    clearInterval(this.timer)
   },
   methods: {
     change() {
-      this.component = 'Fake3d'
+      this.index += 1
+      this.index %= this.filters.length
+      this.component = `as-filter-${this.filters[this.index]}`
     },
   },
 }

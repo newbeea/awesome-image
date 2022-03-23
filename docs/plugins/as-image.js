@@ -1,9 +1,16 @@
 import Vue from 'vue'
-import VueAsImage from 'as-image'
-import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
-import Glitch from '@vue-awesome-image/filter-glitch'
-import 'as-image/dist/style.css'
-Vue.component('Glitch', Glitch)
-Vue.use(VueAsImage, {
+import AsImage from '@awesome-image/image'
+import { imageUrlGeneratorFP } from '@awesome-image/services'
+import Glitch from '@awesome-image/filter-glitch'
+import Crt from '@awesome-image/filter-crt'
+import Ascii from '@awesome-image/filter-ascii'
+import Hexagon from '@awesome-image/filter-hexagon'
+import '@awesome-image/image/dist/style.css'
+
+Vue.use(AsImage, {
   imageUrlGenerator: imageUrlGeneratorFP,
 })
+Vue.use(Glitch)
+Vue.use(Crt)
+Vue.use(Ascii)
+Vue.use(Hexagon)

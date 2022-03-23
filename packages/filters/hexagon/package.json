@@ -1,0 +1,56 @@
+{
+  "name": "@awesome-image/filter-hexagon",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0",
+  "module": "./dist/index.es.js",
+  "main": "./dist/index.umd.js",
+  "files": [
+    "dist",
+    "scripts",
+    "assets"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:2 && npm run build:3 && npm run copy",
+    "build:2": "patch-package && vue-demi-switch 2 vue && vite --config vite.config.vue2.ts build",
+    "build:3": "vue-demi-switch 3 && vite --config vite.config.vue3.ts build",
+    "watch": "vue-demi-switch 3 && vite --config vite.config.vue3.ts build --watch",
+    "copy": "node ./scripts/copy.js",
+    "postinstall": "node ./scripts/postinstall.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vue/composition-api": "^1.4.9",
+    "vue-demi": "^0.12.1",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.16.1",
+    "@awesome-image/image": "workspace:^0.0.0",
+    "@gl-widget/gl-widget": "^1.1.3",
+    "@tweenjs/tween.js": "^18.6.4",
+    "@types/node": "^17.0.21",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.8",
+    "eslint": "^8.10.0",
+    "patch-package": "^6.4.7",
+    "sass": "^1.49.9",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "vite-plugin-vue2": "^1.9.3",
+    "vue": "^3.2.25",
+    "vue-tsc": "^0.29.8",
+    "vue2": "npm:vue@2"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  }
+}

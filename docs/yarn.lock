@@ -120,6 +120,58 @@
   dependencies:
     "@types/throttle-debounce" "^2.1.0"
 
+"@awesome-image/filter-ascii@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@awesome-image/filter-ascii/-/filter-ascii-0.0.0.tgz#76c63ee67b6024a0bad842abdeca6330eecbc274"
+  integrity sha512-SbTvCsGpAX2soYz/nSlDdMKJ/QV8R1PppjKTfQy0/iy+YRM7GevLglIfwbQU/7b+EcpAJJ6u02PDIGDO37K8Vg==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@awesome-image/filter-crt@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@awesome-image/filter-crt/-/filter-crt-0.0.0.tgz#4ab5f3e51b29e673c14c1dd607056065046f903c"
+  integrity sha512-g6v/sKH+dF8lyP3dAcijxiKHBboN0uTMqro8G6a0Pb5YJhkAfS27acl6mtgYDUSsBGpNvbhBJXoNFjgUd1xvAQ==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@awesome-image/filter-glitch@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@awesome-image/filter-glitch/-/filter-glitch-0.0.0.tgz#a302d93264104d3eebc9b8a2632255cb69c996b5"
+  integrity sha512-32wBgxrrjxeo5dYtCFSXh40k8iDoX2DnjWdNQRoL+AsfJkDSlN9/CJNGeF9DEZTi8AjsiWspbo4JPiV86scv/w==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@awesome-image/filter-hexagon@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@awesome-image/filter-hexagon/-/filter-hexagon-0.0.0.tgz#17e5a3298a137b37d958fe0d65bc42018c6edf76"
+  integrity sha512-NEx4jkgwrJzct1j6uC4p4hmzHU1kqvz6/gO8BJoAJojjrSIYGXm/oSnIlYFtDJ4D1q0OSEyaHPVyYMP4+KV+0A==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@awesome-image/image@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@awesome-image/image/-/image-0.0.0.tgz#10a383c09f1e7da6857bb3b0902fa66d79f839e0"
+  integrity sha512-CoJ4nCZ6wmaNIy5ASyxQ8swyQ35HJmwuBLxecAzxiB7THJ6TJfkhj4k+ZfWrwaXGl6omB92XGnhMZGjx19WegA==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
+"@awesome-image/services@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@awesome-image/services/-/services-0.0.0.tgz#5ba990b4070e0943d415a5f392a7f57e198564ae"
+  integrity sha512-UqYwNeVfwVHuhgz68sInd6dZrlR5RrTKnhdN/Sf+4U3uGk0L+rqFC+MeZQq13WbORU+7h68fsaO42DDPROT3wg==
+  dependencies:
+    vue-demi "^0.12.1"
+
 "@babel/code-frame@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"
@@ -2128,43 +2180,6 @@
   integrity sha512-CHiCKIihl1pychwR2RNX5mAYmJDACgFVCMT5OArMaO3erzwXVcBqPcusr+Vl8yeeXukxZqtF8mZioqX+mpjjdw==
   dependencies:
     "@types/node" "*"
-
-"as-image@^1.0.37":
-  version "1.0.37"
-  resolved "https://registry.yarnpkg.com/as-image/-/as-image-1.0.37.tgz#cbc725373b259883797993c3f7e4ccec78bb6bf9"
-  integrity sha512-RBsecgjRsLd7tORQ3uaeE6XlKfvb1Oj+nWRe5WIuGeQJypk1DD14GcJaNAJ/Blban61waveQHKY8oZB9BxuOsg==
-  dependencies:
-    "@vue-awesome-image/filter-glitch" "^1.0.0"
-    "@vue/composition-api" "^1.4.9"
-    vue-demi "^0.12.1"
-    vue-template-compiler "^2.6.14"
-
-"@vue-awesome-image/filter-fake3d@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@vue-awesome-image/filter-fake3d/-/filter-fake3d-1.0.21.tgz#98f6284b4985154e7b1daa15e41c128e21c0ed7a"
-  integrity sha512-c2ppeKMA6tUXgRJQXSNoEfYFfeUPd4O+iPpwz3PxN2NBF3nenAQKHkwZL0djx7GF5bg2927CsLLmV0zQZMfJog==
-  dependencies:
-    "@gl-widget/gl-widget" "^1.1.3"
-    "@vue/composition-api" "^1.4.9"
-    vue-demi "^0.12.1"
-    vue-template-compiler "^2.6.14"
-
-"@vue-awesome-image/filter-glitch@^1.0.0", "@vue-awesome-image/filter-glitch@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@vue-awesome-image/filter-glitch/-/filter-glitch-1.0.1.tgz#b71b51fd6ca8c044e6c703c81a06628f216d0b58"
-  integrity sha512-uOSi4mAHTt8ulgEQu6cFh+w99o8ree9Fb7choLp2wAlv+fFNyLInsQse93VAwRPKYmRWQc+GF41SPz+zkaA/tQ==
-  dependencies:
-    "@gl-widget/gl-widget" "^1.1.3"
-    "@vue/composition-api" "^1.4.9"
-    vue-demi "^0.12.1"
-    vue-template-compiler "^2.6.14"
-
-"@vue-awesome-image/services@^1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@vue-awesome-image/services/-/services-1.0.14.tgz#18fdecc0592cbbd75cc87c9842c5fb32929d9b73"
-  integrity sha512-iYbW40Ynq+NO5jroh4Bl0U1K3YQZ6LVztgA6W1j0COLVcQCjozquneTsITweH1W2QnoEKsbKzG8K2Vf1s212rw==
-  dependencies:
-    vue-demi "^0.12.1"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"

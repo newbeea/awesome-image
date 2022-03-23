@@ -9,16 +9,18 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@awesome-image/image": "^0.0.0",
     "@nuxt/content-theme-docs": "^0.11.0",
     "@nuxtjs/composition-api": "^0.32.0",
-    "as-image": "^1.0.37",
-    "@vue-awesome-image/filter-fake3d": "^1.0.21",
     "nuxt": "^2.15.8",
     "vue-demi": "^0.12.4"
   },
   "devDependencies": {
-    "@gl-widget/gl-widget": "^1.1.3",
-    "@vue-awesome-image/filter-glitch": "^1.0.1",
-    "@vue-awesome-image/services": "^1.0.14"
+    "@awesome-image/filter-ascii": "^0.0.0",
+    "@awesome-image/filter-crt": "^0.0.0",
+    "@awesome-image/filter-glitch": "^0.0.0",
+    "@awesome-image/filter-hexagon": "^0.0.0",
+    "@awesome-image/services": "^0.0.0",
+    "@gl-widget/gl-widget": "^1.1.3"
   }
 }

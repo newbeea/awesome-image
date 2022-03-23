@@ -1,0 +1,11 @@
+diff --git a/node_modules/vue-template-compiler/index.js b/node_modules/vue-template-compiler/index.js
+index dcc7e6c..9775466 100644
+--- a/node_modules/vue-template-compiler/index.js
++++ b/node_modules/vue-template-compiler/index.js
+@@ -1,5 +1,5 @@
+ try {
+-  var vueVersion = require('vue').version
++  var vueVersion = require('vue2').version
+ } catch (e) {}
+ 
+ var packageName = require('./package.json').name

@@ -2,10 +2,15 @@
 import { GLWidget, Texture } from '@gl-widget/gl-widget'
 import type { PropType } from 'vue-demi'
 import { defineComponent, onMounted, ref } from 'vue-demi'
-
+import { Tween } from '@tweenjs/tween.js'
 export default defineComponent({
+  name: 'AsFilterHexagon',
   props: {
     image: { type: Object as PropType<HTMLImageElement>, default: () => new Image() },
+    scale: {
+      type: Number,
+      required: false,
+    },
   },
   setup(props) {
     const webglContainer = ref<HTMLElement>()
@@ -37,36 +42,47 @@ export default defineComponent({
 
       const shader = {
         fragmentShader: `
-          precision highp float;
+          precision mediump float;
           uniform vec2 resolution;
-          uniform float time;
           uniform sampler2D image;
-          float rand () {
-            return fract(sin(time)*1e4);
-          }
-          void main () {
-            vec2 uv = gl_FragCoord.xy/resolution.xy;
-            vec2 uvR = uv;
-            vec2 uvB = uv;
-
-            if (sin(time) > -0.2) {
-              uvR.x = uv.x * 1.0 - rand() * 0.02 * 0.8;
-              uvB.y = uv.y * 1.0 + rand() * 0.02 * 0.8;
-
-              if(uv.y < rand() && uv.y > rand() -0.1)
-              {
-                uv.x = (uv + 0.02 * rand()).x;
+          uniform vec2 center;
+          uniform float scale;
+          uniform vec2 texSize;
+          void main() {
+              vec2 tex = (gl_FragCoord.xy - center) / scale;
+              tex.y /= 0.866025404;
+              tex.x -= tex.y * 0.5;
+              
+              vec2 a;
+              if (tex.x + tex.y - floor(tex.x) - floor(tex.y) < 1.0) a = vec2(floor(tex.x), floor(tex.y));
+              else a = vec2(ceil(tex.x), ceil(tex.y));
+              vec2 b = vec2(ceil(tex.x), floor(tex.y));
+              vec2 c = vec2(floor(tex.x), ceil(tex.y));
+              
+              vec3 TEX = vec3(tex.x, tex.y, 1.0 - tex.x - tex.y);
+              vec3 A = vec3(a.x, a.y, 1.0 - a.x - a.y);
+              vec3 B = vec3(b.x, b.y, 1.0 - b.x - b.y);
+              vec3 C = vec3(c.x, c.y, 1.0 - c.x - c.y);
+              
+              float alen = length(TEX - A);
+              float blen = length(TEX - B);
+              float clen = length(TEX - C);
+              
+              vec2 choice;
+              if (alen < blen) {
+                  if (alen < clen) choice = a;
+                  else choice = c;
+              } else {
+                  if (blen < clen) choice = b;
+                  else choice = c;
               }
-            }
-
-            vec4 c;
-            c.r = texture2D(image, uvR).r;
-            c.g = texture2D(image, uv).g;
-            c.b = texture2D(image, uvB).b;
-            c.a = 1.;
-
-            gl_FragColor = c;
+              
+              choice.x += choice.y * 0.5;
+              choice.y *= 0.866025404;
+              choice *= scale / resolution;
+              gl_FragColor = texture2D(image, choice + center / resolution);
           }
+
         `,
         uniforms: {
           image: {
@@ -75,8 +91,14 @@ export default defineComponent({
           resolution: {
             value: resolution,
           },
-          time: {
-            value: 0,
+          center: {
+            value: {
+              x: 0.5,
+              y: 0.5,
+            },
+          },
+          scale: {
+            value: props.scale || 15,
           },
         },
       }
@@ -97,8 +119,19 @@ export default defineComponent({
         }
       })
 
+      // const scale = {
+      //   value: 4,
+      // }
+      // const tween = new Tween(scale)
+      // tween.to({
+      //   value: 20,
+      // }).repeat(Infinity).yoyo(true).duration(5000).start()
+
       function animate() {
-        shader.uniforms.time.value += 0.01
+        // if (!props.scale) {
+        //   tween.update()
+        //   shader.uniforms.scale.value = scale.value
+        // }
       }
       glWidget.renderBackground(shader, animate)
     })

@@ -154,10 +154,7 @@ export default defineComponent({
       }).repeat(Infinity).yoyo(true).duration(5000).start()
 
       function animate() {
-        if (props.pixelSize) {
-          shader.uniforms.pixelSize.value = props.pixelSize
-        }
-        else {
+        if (!props.pixelSize) {
           tween.update()
           shader.uniforms.pixelSize.value = pixelSize.value
         }

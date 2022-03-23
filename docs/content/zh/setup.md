@@ -2,25 +2,25 @@
 title: 安装
 description: ''
 position: 2
-category: AsImage
+category: AwesomeImage
 ---
 
 ## Vue/Nuxt
 
-### 安装 `as-image`
+### 安装 `@awesome-image/image`
 
 <code-group>
   <code-block label="Vue" active>
 
   ```bash
-  yarn add as-image
+  yarn add @awesome-image/image
   ```
 
   </code-block>
   <code-block label="Nuxt">
 
   ```bash
- yarn add as-image
+ yarn add @awesome-image/image
  yarn add @nuxtjs/composition-api
   ```
 
@@ -28,21 +28,17 @@ category: AsImage
   
 </code-group>
 
-### 引入样式
-
-```bash
-import 'as-image/dist/style.css'
-```
 ### 使用
 #### 全局使用
 <code-group>
   <code-block label="Vue2" active>
 
   ```js[main.js]
-  import VueAsImage from 'as-image'
-  // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
+  import AsImage from '@awesome-image/image'
+  import '@awesome-image/image/dist/style.css'
+  // import { imageUrlGeneratorFP } from '@awesome-image/services'
   // read more about http://imageUrlGenerator
-  Vue.use(VueAsImage, {
+  Vue.use(AsImage, {
     imageUrlGenerator: yourImageUrlGenerator 
   })
 
@@ -52,10 +48,11 @@ import 'as-image/dist/style.css'
   <code-block label="Vue3" active>
 
   ```js[main.js]
-  import VueAsImage from 'as-image'
-  // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
+  import AsImage from '@awesome-image/image'
+  import '@awesome-image/image/dist/style.css'
+  // import { imageUrlGeneratorFP } from '@awesome-image/services'
   // read more about http://imageUrlGenerator
-  createApp().use(VueAsImage, {
+  createApp().use(AsImage, {
     imageUrlGenerator: yourImageUrlGenerator 
   })
 
@@ -68,10 +65,11 @@ import 'as-image/dist/style.css'
   ```js[./plugins/as-image.js]
   // add ./plugins/as-image.js
 
-  import VueAsImage from 'as-image'
-  // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
+  import AsImage from '@awesome-image/image'
+  import '@awesome-image/image/dist/style.css'
+  // import { imageUrlGeneratorFP } from '@awesome-image/services'
   // read more about http://imageUrlGenerator
-  Vue.use(VueAsImage, {
+  Vue.use(AsImage, {
     imageUrlGenerator: yourImageUrlGenerator 
   })
 
@@ -94,7 +92,8 @@ import 'as-image/dist/style.css'
 #### 局部使用
 ```html
 <script>  
-import { AsImage } from 'as-image'
+import AsImage from '@awesome-image/image'
+import '@awesome-image/image/dist/style.css'
 // import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
 // read more about http://imageUrlGenerator
 export default {
@@ -124,7 +123,7 @@ export default {
 
 ## 浏览器
 
-### 引入 `as-image`
+### 引入 `@awesome-image/image`
 
 <code-group>
   <code-block label="Vue2" active>
@@ -133,7 +132,7 @@ export default {
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@vue/composition-api/dist/vue-composition-api.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-demi@0.12.1/lib/index.iife.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/as-image@1.0.11/dist/vue2/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@awesome-image/image/dist/vue2/index.umd.js"></script>
   ```
 
   </code-block>
@@ -142,7 +141,7 @@ export default {
   ```bash
   <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-demi@0.12.4/lib/index.iife.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/as-image/dist/vue3/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@awesome-image/image/dist/vue3/index.umd.js"></script>
   ```
 
   </code-block>
@@ -157,7 +156,7 @@ export default {
 ```bash
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/as-image/dist/style.css"
+  href="https://cdn.jsdelivr.net/npm/@awesome-image/image/dist/style.css"
 />
 ```
 

@@ -27,11 +27,11 @@ export default defineComponent({
     src: { type: String, default: '' },
     width: { type: Number },
     height: { type: Number },
-    quantity: { type: Number, default: 0 },
+    quanlity: { type: Number, required: false },
     format: { type: String, default: '' },
     lazy: { type: Boolean, default: false },
-    placeholderLazyOffset: { type: String, default: '2000px' },
-    imageLazyOffset: { type: String, default: '1000px' },
+    placeholderLazyOffset: { type: String, default: '0px' },
+    imageLazyOffset: { type: String, default: '0px' },
     responsive: { type: Boolean, default: false },
     progressive: { type: Boolean, default: false },
     breakpoints: { type: Array as PropType<Array<number>>, default: () => [640, 768, 1024, 1280, 1536] },
@@ -52,7 +52,7 @@ export default defineComponent({
       imageLazyOffset,
       breakpoints,
       imageUrlGenerator,
-      quantity,
+      quanlity,
       format,
     } = toRefs(props)
 
@@ -73,8 +73,8 @@ export default defineComponent({
 
     // generate image's srcset
     const options: ImageOptions = {}
-    if (quantity.value)
-      options.quantity = quantity.value
+    if (quanlity.value)
+      options.quanlity = quanlity.value
     if (format.value)
       options.format = format.value
 

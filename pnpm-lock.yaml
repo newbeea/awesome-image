@@ -156,12 +156,12 @@ importers:
       vue-tsc: ^0.29.8
       vue2: npm:vue@2
     dependencies:
-      '@awesome-image/image': link:../../image
       '@vue/composition-api': 1.4.9_vue@3.2.31
       vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
       vue-template-compiler: 2.6.14
     devDependencies:
       '@antfu/eslint-config': 0.16.1_eslint@8.10.0+typescript@4.6.2
+      '@awesome-image/image': link:../../image
       '@gl-widget/gl-widget': 1.1.3
       '@tweenjs/tween.js': 18.6.4
       '@types/node': 17.0.21
@@ -250,12 +250,12 @@ importers:
       vue-tsc: ^0.29.8
       vue2: npm:vue@2
     dependencies:
-      '@awesome-image/image': link:../../image
       '@vue/composition-api': 1.4.9_vue@3.2.31
       vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
       vue-template-compiler: 2.6.14
     devDependencies:
       '@antfu/eslint-config': 0.16.1_eslint@8.10.0+typescript@4.6.2
+      '@awesome-image/image': link:../../image
       '@gl-widget/gl-widget': 1.1.3
       '@types/node': 17.0.21
       '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
@@ -343,12 +343,12 @@ importers:
       vue-tsc: ^0.29.8
       vue2: npm:vue@2
     dependencies:
-      '@awesome-image/image': link:../../image
       '@vue/composition-api': 1.4.9_vue@3.2.31
       vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
       vue-template-compiler: 2.6.14
     devDependencies:
       '@antfu/eslint-config': 0.16.1_eslint@8.10.0+typescript@4.6.2
+      '@awesome-image/image': link:../../image
       '@gl-widget/gl-widget': 1.1.3
       '@types/node': 17.0.21
       '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
@@ -391,6 +391,196 @@ importers:
       vue-template-compiler: 2.6.14
 
   packages/filters/glitch/examples/vue3:
+    specifiers:
+      '@babel/core': ^7.12.16
+      '@babel/eslint-parser': ^7.12.16
+      '@vue/cli-plugin-babel': ~5.0.0
+      '@vue/cli-plugin-eslint': ~5.0.0
+      '@vue/cli-service': ~5.0.0
+      core-js: ^3.8.3
+      eslint: ^7.32.0
+      eslint-plugin-vue: ^8.0.3
+      universal-vue-template: ^0.0.4
+      vue: ^3.2.13
+    dependencies:
+      core-js: 3.21.1
+      universal-vue-template: 0.0.4_vue@3.2.31
+      vue: 3.2.31
+    devDependencies:
+      '@babel/core': 7.17.5
+      '@babel/eslint-parser': 7.17.0_@babel+core@7.17.5+eslint@7.32.0
+      '@vue/cli-plugin-babel': 5.0.1_1970d6679a8f3e272321bb303f883be9
+      '@vue/cli-plugin-eslint': 5.0.1_edb2fe9e9a8e71c3c1afcd5183c2e243
+      '@vue/cli-service': 5.0.1_7966456f7c4998b4f361cb1f497c5549
+      eslint: 7.32.0
+      eslint-plugin-vue: 8.5.0_eslint@7.32.0
+
+  packages/filters/hexagon:
+    specifiers:
+      '@antfu/eslint-config': ^0.16.1
+      '@awesome-image/image': workspace:^0.0.0
+      '@gl-widget/gl-widget': ^1.1.3
+      '@tweenjs/tween.js': ^18.6.4
+      '@types/node': ^17.0.21
+      '@vitejs/plugin-vue': ^2.2.0
+      '@vitejs/plugin-vue-jsx': ^1.3.8
+      '@vue/composition-api': ^1.4.9
+      eslint: ^8.10.0
+      patch-package: ^6.4.7
+      sass: ^1.49.9
+      typescript: ^4.5.4
+      vite: ^2.8.0
+      vite-plugin-vue2: ^1.9.3
+      vue: ^3.2.25
+      vue-demi: ^0.12.1
+      vue-template-compiler: ^2.6.14
+      vue-tsc: ^0.29.8
+      vue2: npm:vue@2
+    dependencies:
+      '@vue/composition-api': 1.4.9_vue@3.2.31
+      vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
+      vue-template-compiler: 2.6.14
+    devDependencies:
+      '@antfu/eslint-config': 0.16.1_eslint@8.10.0+typescript@4.6.2
+      '@awesome-image/image': link:../../image
+      '@gl-widget/gl-widget': 1.1.3
+      '@tweenjs/tween.js': 18.6.4
+      '@types/node': 17.0.21
+      '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
+      '@vitejs/plugin-vue-jsx': 1.3.8
+      eslint: 8.10.0
+      patch-package: 6.4.7
+      sass: 1.49.9
+      typescript: 4.6.2
+      vite: 2.8.6_sass@1.49.9
+      vite-plugin-vue2: 1.9.3_79e5dcfe8bf02d151f183bc73f7677d5
+      vue: 3.2.31
+      vue-tsc: 0.29.8_typescript@4.6.2
+      vue2: /vue/2.6.14
+
+  packages/filters/hexagon/examples/vue2:
+    specifiers:
+      '@babel/core': ^7.12.16
+      '@babel/eslint-parser': ^7.12.16
+      '@vue/cli-plugin-babel': ~5.0.0
+      '@vue/cli-plugin-eslint': ~5.0.0
+      '@vue/cli-service': ~5.0.0
+      core-js: ^3.8.3
+      eslint: ^7.32.0
+      eslint-plugin-vue: ^8.0.3
+      universal-vue-template: ^0.0.4
+      vue: ^2.6.14
+      vue-template-compiler: ^2.6.14
+    dependencies:
+      core-js: 3.21.1
+      universal-vue-template: 0.0.4_vue@2.6.14
+      vue: 2.6.14
+    devDependencies:
+      '@babel/core': 7.17.5
+      '@babel/eslint-parser': 7.17.0_@babel+core@7.17.5+eslint@7.32.0
+      '@vue/cli-plugin-babel': 5.0.1_60e714a6245a2cb9bb301eeda68bf83d
+      '@vue/cli-plugin-eslint': 5.0.1_edb2fe9e9a8e71c3c1afcd5183c2e243
+      '@vue/cli-service': 5.0.1_7966456f7c4998b4f361cb1f497c5549
+      eslint: 7.32.0
+      eslint-plugin-vue: 8.5.0_eslint@7.32.0
+      vue-template-compiler: 2.6.14
+
+  packages/filters/hexagon/examples/vue3:
+    specifiers:
+      '@babel/core': ^7.12.16
+      '@babel/eslint-parser': ^7.12.16
+      '@vue/cli-plugin-babel': ~5.0.0
+      '@vue/cli-plugin-eslint': ~5.0.0
+      '@vue/cli-service': ~5.0.0
+      core-js: ^3.8.3
+      eslint: ^7.32.0
+      eslint-plugin-vue: ^8.0.3
+      universal-vue-template: ^0.0.4
+      vue: ^3.2.13
+    dependencies:
+      core-js: 3.21.1
+      universal-vue-template: 0.0.4_vue@3.2.31
+      vue: 3.2.31
+    devDependencies:
+      '@babel/core': 7.17.5
+      '@babel/eslint-parser': 7.17.0_@babel+core@7.17.5+eslint@7.32.0
+      '@vue/cli-plugin-babel': 5.0.1_1970d6679a8f3e272321bb303f883be9
+      '@vue/cli-plugin-eslint': 5.0.1_edb2fe9e9a8e71c3c1afcd5183c2e243
+      '@vue/cli-service': 5.0.1_7966456f7c4998b4f361cb1f497c5549
+      eslint: 7.32.0
+      eslint-plugin-vue: 8.5.0_eslint@7.32.0
+
+  packages/filters/tiltshift:
+    specifiers:
+      '@antfu/eslint-config': ^0.16.1
+      '@awesome-image/image': workspace:^0.0.0
+      '@gl-widget/gl-widget': ^1.1.3
+      '@tweenjs/tween.js': ^18.6.4
+      '@types/node': ^17.0.21
+      '@vitejs/plugin-vue': ^2.2.0
+      '@vitejs/plugin-vue-jsx': ^1.3.8
+      '@vue/composition-api': ^1.4.9
+      eslint: ^8.10.0
+      patch-package: ^6.4.7
+      sass: ^1.49.9
+      typescript: ^4.5.4
+      vite: ^2.8.0
+      vite-plugin-vue2: ^1.9.3
+      vue: ^3.2.25
+      vue-demi: ^0.12.1
+      vue-template-compiler: ^2.6.14
+      vue-tsc: ^0.29.8
+      vue2: npm:vue@2
+    dependencies:
+      '@vue/composition-api': 1.4.9_vue@3.2.31
+      vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
+      vue-template-compiler: 2.6.14
+    devDependencies:
+      '@antfu/eslint-config': 0.16.1_eslint@8.10.0+typescript@4.6.2
+      '@awesome-image/image': link:../../image
+      '@gl-widget/gl-widget': 1.1.3
+      '@tweenjs/tween.js': 18.6.4
+      '@types/node': 17.0.21
+      '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
+      '@vitejs/plugin-vue-jsx': 1.3.8
+      eslint: 8.10.0
+      patch-package: 6.4.7
+      sass: 1.49.9
+      typescript: 4.6.2
+      vite: 2.8.6_sass@1.49.9
+      vite-plugin-vue2: 1.9.3_79e5dcfe8bf02d151f183bc73f7677d5
+      vue: 3.2.31
+      vue-tsc: 0.29.8_typescript@4.6.2
+      vue2: /vue/2.6.14
+
+  packages/filters/tiltshift/examples/vue2:
+    specifiers:
+      '@babel/core': ^7.12.16
+      '@babel/eslint-parser': ^7.12.16
+      '@vue/cli-plugin-babel': ~5.0.0
+      '@vue/cli-plugin-eslint': ~5.0.0
+      '@vue/cli-service': ~5.0.0
+      core-js: ^3.8.3
+      eslint: ^7.32.0
+      eslint-plugin-vue: ^8.0.3
+      universal-vue-template: ^0.0.4
+      vue: ^2.6.14
+      vue-template-compiler: ^2.6.14
+    dependencies:
+      core-js: 3.21.1
+      universal-vue-template: 0.0.4_vue@2.6.14
+      vue: 2.6.14
+    devDependencies:
+      '@babel/core': 7.17.5
+      '@babel/eslint-parser': 7.17.0_@babel+core@7.17.5+eslint@7.32.0
+      '@vue/cli-plugin-babel': 5.0.1_60e714a6245a2cb9bb301eeda68bf83d
+      '@vue/cli-plugin-eslint': 5.0.1_edb2fe9e9a8e71c3c1afcd5183c2e243
+      '@vue/cli-service': 5.0.1_7966456f7c4998b4f361cb1f497c5549
+      eslint: 7.32.0
+      eslint-plugin-vue: 8.5.0_eslint@7.32.0
+      vue-template-compiler: 2.6.14
+
+  packages/filters/tiltshift/examples/vue3:
     specifiers:
       '@babel/core': ^7.12.16
       '@babel/eslint-parser': ^7.12.16
@@ -484,12 +674,12 @@ importers:
       vue-tsc: ^0.29.8
       vue2: npm:vue@2
     dependencies:
-      '@awesome-image/image': link:../image
       '@vue/composition-api': 1.4.9_vue@3.2.31
       vue-demi: 0.12.1_ac2a42527c362575429f172d82b9d821
       vue-template-compiler: 2.6.14
     devDependencies:
       '@antfu/eslint-config': 0.16.1_eslint@8.10.0+typescript@4.6.2
+      '@awesome-image/image': link:../image
       '@gl-widget/gl-widget': 1.1.3
       '@types/node': 17.0.21
       '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
