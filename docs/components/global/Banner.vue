@@ -13,7 +13,7 @@
       </template>
       <template #webglfilter="{ image }">
         <div>
-          <component :is="component" :image="image" :scale="8" depth="/banner-depth.png"></component>
+          <component :is="component" :image="image" :scale="20" depth="/banner-depth.png"></component>
         </div>
       </template>
     </AsImage>
@@ -34,7 +34,6 @@ export default {
         'glitch',
         'crt',
         'ascii',
-        'hexagon',
       ],
       component: 'as-filter-glitch',
     }
