@@ -4,6 +4,7 @@
 import { defineComponent, ref } from 'vue-demi'
 import { AsImage } from '@awesome-image/image'
 import '@awesome-image/image/dist/style.css'
+import { imageUrlGeneratorFP } from '../../services/index'
 import { AsTransition } from './index'
 export default defineComponent({
   name: 'App',
@@ -55,6 +56,7 @@ export default defineComponent({
       onChange,
       activeIndex,
       customTransition,
+      imageUrlGeneratorFP,
     }
   },
 
@@ -65,7 +67,7 @@ export default defineComponent({
   <div @click="prev">
     Prev
   </div>
-  {{ activeIndex }}
+
   <div @click="next">
     Next
   </div>
@@ -75,7 +77,7 @@ export default defineComponent({
   <AsTransition
     ref="banner"
     :transition="customTransition"
-    :initial-index="2"
+    :initial-index="0"
     @change="onChange"
   >
     <template
@@ -85,16 +87,16 @@ export default defineComponent({
     >
       <AsImage
         class="demoimage"
-        :width="999"
-        :height="1424"
+        :width="160"
+        :height="107"
         :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg'"
         :lazy="true"
-        :duration="2"
         format="png"
         :auto-webp="true"
         :progressive="true"
         :responsive="true"
         :to-group="toGroupWithIndex(0)"
+        :image-url-generator="imageUrlGeneratorFP"
       >
         <template #loading>
           <div class="placeholder" />
@@ -102,50 +104,16 @@ export default defineComponent({
       </AsImage>
       <AsImage
         class="demoimage"
-        :width="999"
-        :height="1424"
+        :width="160"
+        :height="107"
         :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/canyon.jpg'"
         :lazy="true"
-        :duration="2"
         format="png"
         :auto-webp="true"
         :progressive="true"
         :responsive="true"
         :to-group="toGroupWithIndex(1)"
-      >
-        <template #loading>
-          <div class="placeholder" />
-        </template>
-      </AsImage>
-      <AsImage
-        class="demoimage"
-        :width="999"
-        :height="1424"
-        :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/lady.jpg'"
-        :lazy="true"
-        :duration="2"
-        format="png"
-        :auto-webp="true"
-        :progressive="true"
-        :responsive="true"
-        :to-group="toGroupWithIndex(2)"
-      >
-        <template #loading>
-          <div class="placeholder" />
-        </template>
-      </AsImage>
-      <AsImage
-        class="demoimage"
-        :width="999"
-        :height="1424"
-        :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/ball.jpg'"
-        :lazy="true"
-        :duration="2"
-        format="png"
-        :auto-webp="true"
-        :progressive="true"
-        :responsive="true"
-        :to-group="toGroupWithIndex(3)"
+        :image-url-generator="imageUrlGeneratorFP"
       >
         <template #loading>
           <div class="placeholder" />
@@ -153,6 +121,7 @@ export default defineComponent({
       </AsImage>
     </template>
   </AsTransition>
+  dfsd
 </template>
 
 <style>
@@ -163,5 +132,12 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.demoimage {
+  width: 100%;
+}
+.placeholder {
+  height: 100%;
+  background: #ccc;
 }
 </style>

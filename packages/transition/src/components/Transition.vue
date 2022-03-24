@@ -122,6 +122,7 @@ export default defineComponent({
     const webglContainer = ref<HTMLElement>()
 
     const mount = async(width: number, height: number) => {
+      console.log('mounted')
       if (!webglContainer.value) return
       const glWidget = new GLWidget({
         element: webglContainer.value,
@@ -151,7 +152,7 @@ export default defineComponent({
             shader.uniforms.imageFrom.value = imageMap.value[initialIndex.value]
             setTimeout(() => {
               mount(imageMap.value[initialIndex.value].image.width, imageMap.value[initialIndex.value].image.height)
-            }, 100)
+            }, 1000)
           }
         })
       }
@@ -231,20 +232,21 @@ export default defineComponent({
 <template>
   <div ref="webglContainer" class="vue-awesome-image-group">
     <slot name="images" :toGroupWithIndex="toGroupWithIndex" />
-    <!-- {{ imageMap }} -->
-    <!-- {{ images }} -->
   </div>
 </template>
 <style lang="scss">
 .vue-awesome-image-group {
   position: relative;
-  .vue-awesome-image {
+  .vue-awesome-image:not(:first-child) {
     position: absolute;
     width: 100%;
     left: 0;
     top: 0;
     z-index: -1;
     opacity: 0;
+  }
+  canvas {
+    vertical-align: bottom;
   }
 }
 </style>
