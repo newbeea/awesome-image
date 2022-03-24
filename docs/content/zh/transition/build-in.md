@@ -12,7 +12,6 @@ category: Webgl Transition
 ```js
 export interface Transition {
   name?: string
-  shader?: string
   uniforms?: Record<string, any>
 }
 ```

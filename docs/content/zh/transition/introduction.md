@@ -6,7 +6,7 @@ category: Webgl Transition
 features:
   - WebGL特效 —— 不同于css动画方式，WebGL可以支持更酷炫的切换效果
   - 内置特效  ——  内置多种切换特效
-  - gl-transition  ——  支持 gl-transition 上过渡效果
+  - GLTransitions  ——  支持开源WebGL过渡库 GLTransitions 中的过渡效果
   - 自定义特效  ——  可以自定义 WebGL shader 实现自定义切换 
 ---
 

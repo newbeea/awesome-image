@@ -16,21 +16,18 @@ export default defineComponent({
 
     const customTransition = {
       shader: `
-        const float SQRT_2 = 1.414213562373;
-        uniform float dots;// = 20.0;
-        uniform vec2 center;// = vec2(0, 0);
-
+        uniform float speed;
         vec4 transition(vec2 uv) {
-          bool nextImage = distance(fract(uv * dots), vec2(0.5, 0.5)) < ( (direction ? progress : (1. - progress)) / distance(uv, center));
-          nextImage = direction ? nextImage : !nextImage;
-          return nextImage ? getToColor(uv) : getFromColor(uv);
+          vec4 a = getFromColor(uv);
+          vec4 b = getToColor(uv);
+          if ( next )
+            return mix(a, b, step(uv.x, progress));
+          else
+            return mix(b, a, step(uv.x, 1. - progress));
         }
+
       `,
       uniforms: {
-        dots: {
-          value: 10,
-        },
-
       },
     }
 
@@ -77,30 +74,7 @@ export default defineComponent({
   </div>
   <AsTransition
     ref="banner"
-    :transition="{
-      shader: `
-// Author: gre
-// License: MIT
-uniform float amplitude; // = 100.0
-uniform float speed; // = 50.0
-
-vec4 transition (vec2 uv) {
-  vec2 dir = uv - vec2(.5);
-  float dist = length(dir);
-  vec2 offset = dir * (sin(progress * dist * amplitude - progress * speed) + .5) / 30.;
-  return mix(
-    getFromColor(uv + offset),
-    getToColor(uv),
-    smoothstep(0.2, 1.0, progress)
-  );
-}
-
-        `,
-      uniforms: {
-        amplitude: 100,
-        speed: 50
-      }
-    }"
+    :transition="customTransition"
     :initial-index="2"
     @change="onChange"
   >

@@ -68,6 +68,7 @@ export default defineComponent({
           uniform float scaleY;
           uniform float progress;
           uniform bool next;
+          uniform float ratio;
           vec4 getFromColor(vec2 uv) {
             return texture2D(imageFrom, uv);
           }
@@ -99,6 +100,9 @@ export default defineComponent({
         progress: {
           value: 0,
         },
+        ratio: {
+          value: 1,
+        },
         next: {
           value: 1,
         },
@@ -127,6 +131,7 @@ export default defineComponent({
       const resolution = glWidget.getSize()
 
       shader.uniforms.resolution.value = resolution
+      shader.uniforms.ratio.value = resolution.x / resolution.y
 
       function animate() {
       }
