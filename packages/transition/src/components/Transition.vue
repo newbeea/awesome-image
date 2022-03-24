@@ -17,6 +17,9 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    speed: {
+      default: 50,
+    },
     interval: {
       default: 3000,
     },
@@ -151,7 +154,8 @@ export default defineComponent({
 
     // slide and animate
     let current = initialIndex.value
-    const step = 50
+    const step = 2500 / props.speed
+    console.log(step)
     let progress = step
     let rAF: number
     const animate = () => {

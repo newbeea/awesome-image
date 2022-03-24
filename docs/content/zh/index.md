@@ -2,7 +2,7 @@
 title: 介绍
 description: 'AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `自动webp`、兼容 `vue2` / `vue3` / `nuxt` 的通用图片组件，可搭配内置或自定义WebGL滤镜组件、WebGL过渡组件实现更酷炫的图片展示或按钮效果'
 position: 1
-category: ''
+category: 'AwesomeImage'
 features:
   - 懒加载 —— 分别设置图片和placeholder加载时机
   - 响应式加载  ——  根据屏幕宽度加载不同尺寸图片

@@ -172,6 +172,15 @@
   dependencies:
     vue-demi "^0.12.1"
 
+"@awesome-image/transition@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@awesome-image/transition/-/transition-0.0.1.tgz#a8548ab789dc28aa5a0f8c31485f05f4c1e16692"
+  integrity sha512-RSq+K05DfT1U2edWeJVbVV5wNNUCOhUEav3qjsAFhq7rMARDtSZcFYFwXkalkczzGDYCvmrxuTGRq+Sfe86v7A==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
 "@babel/code-frame@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"

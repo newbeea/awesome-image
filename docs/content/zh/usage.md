@@ -189,13 +189,13 @@ category: AwesomeImage
 
 ### imageLazyOffset
 - **类型：** `string`
-- **默认：** `0px`
+- **默认：** `'0px'`
 
   懒加载时，图片提前加载的距离
 
 ### placeholderLazyOffset
 - **类型：** `string`
-- **默认：** `0px`
+- **默认：** `'0px'`
 
   懒加载时，缩率图提前加载的距离
 
@@ -231,7 +231,7 @@ category: AwesomeImage
 
 ### sizes
 - **类型：** `string`
-- **默认：** `100vw`
+- **默认：** `'100vw'`
 
   响应式加载时，如何按照屏幕尺寸选择要加载的图片。[详见](#复杂示例)
 

@@ -39,9 +39,9 @@ export default {
     }
   },
   mounted() {
-    this.timer = setInterval(() => {
-      this.change()
-    }, 2000)
+    // this.timer = setInterval(() => {
+    //   this.change()
+    // }, 2000)
   },
   unmounted() {
     clearInterval(this.timer)
