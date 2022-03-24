@@ -171,11 +171,13 @@ export default defineComponent({
       }
     }
     const slide = (from: number, to: number) => {
+      shader.uniforms.next.value = to > from
       const length = Object.keys(countMap).length
+
       from = (from < 0 ? from + length : from) % length
       to = (to < 0 ? to + length : to) % length
       if (from === to) return
-      shader.uniforms.next.value = to > from
+
       current = to
       emit('change', to, from)
 

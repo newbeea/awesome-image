@@ -53,6 +53,6 @@ import GLTransitions from "gl-transitions";
 </template>
 ```
 ### 示例
-点击刷新按钮切换随机效果
+点击切换过渡效果
 
 <code-sandbox :src="'https://codesandbox.io/embed/image-group-transition-b81gdl?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
