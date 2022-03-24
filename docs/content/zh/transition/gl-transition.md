@@ -1,7 +1,7 @@
 ---
 title: GLTransitions
 description: ''
-position: 5
+position: 9
 category: Webgl Transition
 ---
 

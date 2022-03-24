@@ -1,7 +1,7 @@
 ---
 title: 自定义过渡效果
 description: ''
-position: 6
+position: 10
 category: Webgl Transition
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 安装
 description: ''
-position: 2
+position: 6
 category: Webgl Transition
 ---
 ## 前提
