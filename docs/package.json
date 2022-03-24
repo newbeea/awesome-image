@@ -21,7 +21,7 @@
     "@awesome-image/filter-glitch": "^0.0.0",
     "@awesome-image/filter-hexagon": "^0.0.0",
     "@awesome-image/services": "^0.0.0",
-    "@awesome-image/transition": "^0.0.1",
+    "@awesome-image/transition": "^0.0.4",
     "@gl-widget/gl-widget": "^1.1.3"
   }
 }

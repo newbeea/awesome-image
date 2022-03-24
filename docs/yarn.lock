@@ -172,10 +172,10 @@
   dependencies:
     vue-demi "^0.12.1"
 
-"@awesome-image/transition@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@awesome-image/transition/-/transition-0.0.1.tgz#a8548ab789dc28aa5a0f8c31485f05f4c1e16692"
-  integrity sha512-RSq+K05DfT1U2edWeJVbVV5wNNUCOhUEav3qjsAFhq7rMARDtSZcFYFwXkalkczzGDYCvmrxuTGRq+Sfe86v7A==
+"@awesome-image/transition@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@awesome-image/transition/-/transition-0.0.4.tgz#355102c6abb957988d96970c2fa99d41a80192ea"
+  integrity sha512-sa1EpdNERxI/fHuVahHbzaSP4ZNoQxUKE8Bhgk0oJ5sBicQ7LRnrxYFZp6abbGH8pL5W6gQNxuL70kjBM/ushg==
   dependencies:
     "@vue/composition-api" "^1.4.9"
     vue-demi "^0.12.1"

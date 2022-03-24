@@ -12,8 +12,8 @@
       >
         <AsImage
           class="demoimage"
-          :width="999"
-          :height="1424"
+          :width="160"
+          :height="107"
           :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/mount.jpg'"
           :progressive="true"
           :to-group="toGroupWithIndex(0)"
@@ -24,8 +24,8 @@
         </AsImage>
         <AsImage
           class="demoimage"
-          :width="999"
-          :height="1424"
+          :width="160"
+          :height="107"
           :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/canyon.jpg'"
           :progressive="true"
           :to-group="toGroupWithIndex(1)"
@@ -36,8 +36,8 @@
         </AsImage>
         <AsImage
           class="demoimage"
-          :width="999"
-          :height="1424"
+          :width="160"
+          :height="107"
           :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/lady.jpg'"
           :progressive="true"
           :to-group="toGroupWithIndex(2)"
