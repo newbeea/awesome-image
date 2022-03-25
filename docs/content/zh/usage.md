@@ -6,7 +6,9 @@ category: Awesome Image
 ---
 ## 基本使用
 - 设置图片尺寸
-- 设置图片 / 加载样式
+- 设置图片样式
+- 可添加 `loading` 插槽作为加载前占位元素
+
 ```html
 <style>
   .demoimage {

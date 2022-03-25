@@ -5,6 +5,5 @@
     "light": "/logo.svg",
     "dark": "/logo.svg"
   },
-  "github": "newbeea/as-image",
-  "twitter": "@nuxt_js"
+  "github": "newbeea/as-image"
 }

@@ -14,6 +14,7 @@ AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `�
 
 另外可搭配官方WebGL滤镜库或自定义WebGL滤镜组件、WebGL过渡组件实现更酷炫的图片展示或按钮效果。
 
+[关于我](https://www.philxu.cn/)
 ## 特性
 
 - 懒加载 —— 分别设置图片和placeholder加载时机
