@@ -1,8 +1,11 @@
 import theme from '@nuxt/content-theme-docs'
 
 export default theme({
+  components: [
+    './components', // default level is 0
+    { path: '~~/node_modules/@nuxt/content-theme-docs/src/components/', level: 1 },
+  ],
   docs: {
-    // primaryColor: '#E24F55',
   },
   css: ['~~/style.css'],
   i18n: {
