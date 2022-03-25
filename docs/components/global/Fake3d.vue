@@ -4,7 +4,7 @@
       class="banner"
       :width="1332"
       :height="785"
-      :src="'/banner.jpg'"
+      :src="'/mount.jpg'"
       :lazy="true"
       :progressive="true"
     >
@@ -13,7 +13,7 @@
       </template>
       <template #webglfilter="{ image }">
         <div>
-          <component :is="component" :image="image" :scale="20" depth="/banner-depth.png"></component>
+          <component :is="component" :image="image" :scale="20" depth="/mount-map.jpg"></component>
         </div>
       </template>
     </AsImage>
@@ -32,7 +32,7 @@ export default {
         'crt',
         'ascii',
       ],
-      component: 'as-filter-glitch',
+      component: 'as-filter-fake3d',
     }
   },
   mounted() {

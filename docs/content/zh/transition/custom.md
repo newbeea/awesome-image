@@ -69,7 +69,3 @@ const customTransition = {
 向前和向后切换有不同效果
 
 <code-sandbox :src="'https://codesandbox.io/embed/image-group-transition-next-og6v88?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
-
-水波纹效果
-
-<code-sandbox :src="'https://codesandbox.io/embed/image-group-transition-custom-xk355h?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>

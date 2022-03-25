@@ -2,7 +2,7 @@
 title: 安装
 description: ''
 position: 2
-category: AwesomeImage
+category: Awesome Image
 ---
 
 ## Vue/Nuxt
@@ -45,7 +45,7 @@ category: AwesomeImage
   ```
 
   </code-block>
-  <code-block label="Vue3" active>
+  <code-block label="Vue3">
 
   ```js[main.js]
   import AsImage from '@awesome-image/image'

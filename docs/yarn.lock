@@ -138,6 +138,15 @@
     vue-demi "^0.12.1"
     vue-template-compiler "^2.6.14"
 
+"@awesome-image/filter-fake3d@^1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@awesome-image/filter-fake3d/-/filter-fake3d-1.0.21.tgz#389a36ed695d74af2b0527fa9b8d1afe5f236b37"
+  integrity sha512-jOoL4b+mN7gBoASsMDdzpFeZXNmwDxNbp+TTDHS9QqVx4CAtp+GDe+Rhx3WUWb6F+xHXx3UUZ+XDIEDv9WVX1A==
+  dependencies:
+    "@vue/composition-api" "^1.4.9"
+    vue-demi "^0.12.1"
+    vue-template-compiler "^2.6.14"
+
 "@awesome-image/filter-glitch@^0.0.0":
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/@awesome-image/filter-glitch/-/filter-glitch-0.0.0.tgz#a302d93264104d3eebc9b8a2632255cb69c996b5"

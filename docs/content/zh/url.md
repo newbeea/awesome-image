@@ -2,7 +2,7 @@
 title: 图片链接生成
 description: ''
 position: 4
-category: AwesomeImage
+category: Awesome Image
 ---
 
 组件 `懒加载` / `渐进加载` / `响应加载` / `自动webp` 等功能需要搭配图片链接生成函数 `ImageUrlGenerator` 使用，`ImageUrlGenerator` 在不同情况下会接收到不同图片参数，根据图片参数生成对应图片服务所需的图片url，最终获取到对应的图片。

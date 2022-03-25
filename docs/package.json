@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@awesome-image/filter-fake3d": "^1.0.21",
     "@awesome-image/image": "^0.0.0",
     "@nuxt/content-theme-docs": "^0.11.0",
     "@nuxtjs/composition-api": "^0.32.0",

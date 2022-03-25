@@ -5,6 +5,7 @@ import Glitch from '@awesome-image/filter-glitch'
 import Crt from '@awesome-image/filter-crt'
 import Ascii from '@awesome-image/filter-ascii'
 import Hexagon from '@awesome-image/filter-hexagon'
+import Fake3d from '@awesome-image/filter-fake3d'
 import '@awesome-image/image/dist/style.css'
 import { AsTransition } from '@awesome-image/transition'
 import '@awesome-image/transition/dist/style.css'
@@ -15,4 +16,5 @@ Vue.use(Glitch)
 Vue.use(Crt)
 Vue.use(Ascii)
 Vue.use(Hexagon)
+Vue.use(Fake3d)
 Vue.use(AsTransition)

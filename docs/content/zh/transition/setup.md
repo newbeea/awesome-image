@@ -42,7 +42,7 @@ category: Webgl Transition
   ```
 
   </code-block>
-  <code-block label="Vue3" active>
+  <code-block label="Vue3">
 
   ```js[main.js]
   import AsTransition from '@awesome-image/transition'

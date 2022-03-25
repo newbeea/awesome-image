@@ -2,7 +2,7 @@
 title: 使用
 description: ''
 position: 3
-category: AwesomeImage
+category: Awesome Image
 ---
 ## 基本使用
 - 设置图片尺寸
