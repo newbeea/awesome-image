@@ -54,11 +54,9 @@
   </div>
 </template>
 <script>
-import { AsTransition } from '@awesome-image/transition'
-import '@awesome-image/transition/dist/style.css'
+
 export default {
   components: {
-    AsTransition,
   },
 }
 </script>
