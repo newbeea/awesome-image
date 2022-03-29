@@ -1,6 +1,6 @@
 ---
-title: 介绍
-description: 'AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `自动webp`、兼容 `vue2` / `vue3` / `nuxt` 的通用图片组件，可搭配内置或自定义WebGL滤镜组件、WebGL过渡组件实现更酷炫的图片展示或按钮效果'
+title: Introduction
+description: 'Awesomeimage is a universal image component that supports `lazy`/`progressive`/`responsive`/`automatic webp` which compatible with Vue2/Vue3/NUXT.It can also be paired with the official WebGL filter library or a custom WebGL filter component, or the WebGL transition component for a cooler photo display or button effect.'
 position: 1
 category: 'Awesome Image'
 
@@ -10,29 +10,30 @@ category: 'Awesome Image'
   AwesomeImage WebGL Filter: @awesome-image/filter-glitch
 </alert>
 
-AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `自动webp`、兼容 `vue2` / `vue3` / `nuxt` 的通用图片组件。
+Awesomeimage is a universal image component that supports `lazy`/`progressive`/`responsive`/`automatic webp` which compatible with Vue2/Vue3/NUXT.
 
-另外可搭配官方WebGL滤镜库或自定义WebGL滤镜组件、WebGL过渡组件实现更酷炫的图片展示或按钮效果。
+It can also be paired with the official WebGL filter library or a custom WebGL filter component, or the WebGL transition component for a cooler photo display or button effect.
 
-## 特性
+## Features
 
-- 懒加载 —— 分别设置图片和placeholder加载时机
-- 响应式加载  ——  根据屏幕宽度加载不同尺寸图片
-- 渐进式加载  ——  加载宽度为48px模糊缩率图作为placeholder，并且加载过程平滑过渡
-- SSR  ——  支持服务端渲染，对于首屏图片指定非懒加载，可以在 `hydrating` 前加载图片，并兼容渐进效果，提升首屏加载体验
-- webp兼容  ——  使用不支持自动webp的图片服务时，可以使用autoWebp参数添加webp兼容写法
-- WebGL滤镜  ——  以在图片组件AsImage内使用滤镜组件，支持自定义WebGL图片处理效果 [详见](/filter/introduction)
-- 轮播过渡  ——  可以使用轮播图片过渡组件AsTransition，支持gl-transitions过渡效果，支持自定义WebGL图片过渡效果 [详见](/transition/introduction)
-- 自定义图片处理  ——  @awesome-image/services内置fastly、upyun等图片处理规则，可自由定制其他图片url转换函数 [详见](/url)
+- Lazy loading —— set when to load the image and placeholder image separately
+- Responsive loading  ——   load images of different sizes based on screen width
+- Progressive loading  ——  load a 48px blured image as placeholder, then display the image smoothly
+- SSR  ——  support server-side rendering, specify non-lazy loading for the first screen, load the images before `hydrating`, and compatible with the progressive effect, improve the first screen loading experience
+- WEBP compatibility —— you can use the `auto-webp` property to add a webp compatible notation when using an image service that does not support automatic webp
+- WebGL filter —— `WebGL Filter Component` can be used in `AsImage` component to processe image [More](/filter/introduction)
 
-## 效果
-### 懒加载 / 渐进加载 / 响应加载 / SSR
+- WebGL transition  ——  you can use the webgl image transition component `AsTransition` to switch image with awesome webgl effect. Support [GLTransitions](https://gl-transitions.com/) and custom WebGL image transitions [More](/transition/introduction)
+- Custom image url generator  ——  @awesome-image/services has built-in image url generator rules such as fastly and upyun, you can customize other image url generator functions [more](/url)
+
+## Show Case
+### Lazy / Responsive / Progressive / SSR
 <img src="/show.gif" width="804" height="450" alt=""/>
 
-### WebGL滤镜 (@awesome-image/filter-fake3d)
+### WebGL Filter (@awesome-image/filter-fake3d)
 <img src="/fake3d.gif" width="804" height="450" alt=""/>
 
-### WebGL过渡
+### WebGL Transition
 <img src="/transition.gif" width="804" height="450" alt=""/>
 
 

@@ -1,21 +1,21 @@
 ---
-title: 内置过渡效果
+title: Built-in transition effect
 description: ''
 position: 8
 category: Webgl Transition
 ---
 
-## 使用
-### `transition` 属性
-- 通过 `name` 指定内置效果
-- 通过 `uniforms` 配置效果支持的选项
+## Usage
+### `transition`
+- Specify the built-in effect by name
+- Configure the options that effect support
 ```js
 export interface Transition {
   name?: string
   uniforms?: Record<string, any>
 }
 ```
-### 示例
+### Example
 ```html
 <template>
   <AsTransition
@@ -32,7 +32,7 @@ export interface Transition {
 ```
 
 ## default
-渐变过渡效果
+Gradient transition effect
 
 ```html
 
@@ -49,12 +49,12 @@ export interface Transition {
 ```
 
 ## windowslice
-百叶窗效果
-### `transition` 参数
+Louver effect
+### `transition`
 - `name`  'windowslice'
 - `uniforms`
-  - count: 叶片个数
-  - smoothness: 越大过渡越慢
+  - count: number of slices
+  - smoothness: The bigger the transition, the slower it goes
 
 ```html
 
@@ -74,22 +74,22 @@ export interface Transition {
 </template>
 
 ```
-### 示例
+### Example
 <code-sandbox :src="'https://codesandbox.io/embed/image-group-basic-forked-99kefs?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 
 ## directionalwrap
-波动效果
-### `transition` 参数
+Big wave effect
+### `transition`
 - `name`  'directionalwrap'
 - `uniforms`
-  - direction: 过渡方向
+  - direction: Direction of wave
     {
       x: -1,
       y: 1
     } 
 
-### 示例
+### Example
 <code-sandbox :src="'https://codesandbox.io/embed/image-transition-directionalwrap-sfugdu?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 ## `more`

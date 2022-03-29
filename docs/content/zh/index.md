@@ -19,10 +19,10 @@ AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `�
 - 懒加载 —— 分别设置图片和placeholder加载时机
 - 响应式加载  ——  根据屏幕宽度加载不同尺寸图片
 - 渐进式加载  ——  加载宽度为48px模糊缩率图作为placeholder，并且加载过程平滑过渡
-- SSR  ——  支持服务端渲染，对于首屏图片指定非懒加载，可以在 `hydrating` 前加载图片，并兼容渐进效果，提升首屏加载体验
+- SSR  ——  支持服务端渲染，对于首屏图片指定非懒加载，可以在 `注水` 前加载图片，并兼容渐进效果，提升首屏加载体验
 - webp兼容  ——  使用不支持自动webp的图片服务时，可以使用autoWebp参数添加webp兼容写法
-- WebGL滤镜  ——  以在图片组件AsImage内使用滤镜组件，支持自定义WebGL图片处理效果 [详见](/filter/introduction)
-- 轮播过渡  ——  可以使用轮播图片过渡组件AsTransition，支持gl-transitions过渡效果，支持自定义WebGL图片过渡效果 [详见](/transition/introduction)
+- WebGL滤镜  ——  可以在图片组件AsImage内使用滤镜组件，支持自定义WebGL图片处理效果 [详见](/filter/introduction)
+- 轮播过渡  ——  可以使用轮播图片过渡组件AsTransition，支持[GLTransitions](https://gl-transitions.com/)过渡效果，支持自定义WebGL图片过渡效果 [详见](/transition/introduction)
 - 自定义图片处理  ——  @awesome-image/services内置fastly、upyun等图片处理规则，可自由定制其他图片url转换函数 [详见](/url)
 
 ## 效果

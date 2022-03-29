@@ -1,18 +1,18 @@
 ---
-title: 使用
+title: Usage
 description: ''
 position: 12
 category: Webgl Filter
 ---
-## 前提
-需安装 `@awesome-image/image` [详见](/setup)
+## Precondition
+Install `@awesome-image/image` [More](/setup)
 
 
-## 安装
+## Install
 ### Vue/Nuxt
 
-#### 安装滤镜
-`@awesome-image/filter-crt` 为例。[更多滤镜](/filter/lib)
+#### Install filter
+`@awesome-image/filter-crt` for example. [More](/filter/lib)
 
 <code-group>
   <code-block label="Vue" active>
@@ -33,7 +33,7 @@ category: Webgl Filter
   
 </code-group>
 
-#### 全局使用
+#### Global
 <code-group>
   <code-block label="Vue2" active>
 
@@ -78,7 +78,7 @@ category: Webgl Filter
 </code-group>
 
 
-#### 局部使用
+#### Local
 ```html
 <script>  
 import AsImage from '@awesome-image/image'
@@ -95,9 +95,9 @@ export default {
 ```
 
 
-### 浏览器
+### Browser
 
-#### 引入 `@awesome-image/image`
+#### Add `@awesome-image/image`
 
 <code-group>
   <code-block label="Vue2" active>
@@ -125,11 +125,11 @@ export default {
 </code-group>
 
 
-## 使用
-- 滤镜组件作为 `AsImage` 组件的滤镜插槽子组件
-- 传递作用域变量 `image` 给滤镜组件
+## Usage
+- Usage `filter component` as `AsImage`'s filter slot
+- Passing a scope variable `image` to `filter component`
 
-### 代码示例
+### Example
 ```html
 
 <template>
@@ -149,5 +149,5 @@ export default {
 
 ```
 
-### 在线预览
+### Online
 <code-sandbox :src="'https://codesandbox.io/embed/image-filter-crt-ier9bu?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>

@@ -1,13 +1,13 @@
 ---
-title: 图片链接生成
+title: Image url generator
 description: ''
 position: 4
 category: Awesome Image
 ---
 
-组件 `懒加载` / `渐进加载` / `响应加载` / `自动webp` 等功能需要搭配图片链接生成函数 `ImageUrlGenerator` 使用，`ImageUrlGenerator` 在不同情况下会接收到不同图片参数，根据图片参数生成对应图片服务所需的图片url，最终获取到对应的图片。
+Components like lazy load/progressive load/response load/auto webp, etc. need to be used with the image link generator function `ImageUrlGenerator`, which receives different image parameters in different situations. According to the image parameter, the `image URL` needed by the corresponding image service is generated, and the corresponding image is finally obtained by this `image URL`.
 
-## 使用方式
+## Usage
 
 <code-group>
 
@@ -52,7 +52,7 @@ category: Awesome Image
 
 </code-group>
 
-## 内置图片链接生成函数
+## Built-in image link generation function
 ### `fastly`
 ```js
 import { imageUrlGeneratorFastly } from '@awesome-image/services'
@@ -66,9 +66,9 @@ import { imageUrlGeneratorImagekit } from '@awesome-image/services'
 import { imageUrlGeneratorUpyun } from '@awesome-image/services'
 ```
 
-## 自定义图片链接生成函数
-你可以很方便的写自己的图片链接生成函数，并且欢迎提交常用的图片服务商对应的函数到 `@awesome-image/services`
-### 函数接口
+## Custom image url generation function
+You can easily write your own image url generator, and feel free to submit your image provider's function to `@awesome-image/services`
+### Interface
 ```js
 export interface ImageOptions {
   width?: number
@@ -83,33 +83,33 @@ export interface ImageUrlGenerator {
 
 ```
 
-### 函数参数
-组件在使用时会在不同情况下传递不同的参数给 `ImageUrlGenerator`，来生成对应的图片地址
-#### `progressive` 对应图片参数
-用来生成模糊缩略图对应的图片url
+### Function parameter
+When used, the component passes different parameters to the `ImageUrlGenerator` to generate the corresponding image url
+#### `progressive`
+Options used to generate the blured thumbnail
 ````js
 const imageOptions = {
   width: 48,
   blur: 5
 }
 ````
-例如
+For example
 ```js
 const image = 'https://cdn.com/image.jpg'
 const url = yourGenerator(image, imageOptions) 
 console.log(url) // https://cdn.com/image.jpg?w=48&b=5
 ```
 
-#### `responsive` 对应图片参数
-用来生成响应式所需的不同尺寸对应的图片url，宽度根据 `breakpoints` 属性生成
+#### `responsive`
+Options used to generate the different sizes required for the response, the width of which is generated based on the `breakpoints` property
 ````js
 const imageOptions = {
   // other options
   width: 640, // according to breakpoints
 }
 ````
-#### `format` 对应图片参数
-组件指定 `format` 属性时会传递的参数
+#### `format` 
+Options for `format` property
 ````js
 const imageOptions = {
   // other options
@@ -117,8 +117,8 @@ const imageOptions = {
 }
 ````
 
-#### `quanlity` 对应图片参数
-组件指定 `quanlity` 属性时会传递的参数
+#### `quanlity`
+Options for `quanlity` property
 ````js
 const imageOptions = {
   // other options
@@ -126,8 +126,8 @@ const imageOptions = {
 }
 ````
 
-#### `auto-webp` 对应图片参数
-组件使用 `auto-webp` 属性时会传递的参数
+#### `auto-webp`
+Options for `auto-webp` property
 ````js
 const imageOptions = {
   // other options
@@ -135,10 +135,10 @@ const imageOptions = {
 }
 ````
 
-#### 其他参数
+#### other
 TODO
 
-### 示例
+### Example
 ```js
 const imageUrlGeneratorDemo: ImageUrlGenerator
   = (url: string, options: ImageOptions = {}): string =>

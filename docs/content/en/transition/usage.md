@@ -1,13 +1,14 @@
 ---
-title: 使用
+title: Usage
 description: ''
 position: 7
 category: Webgl Transition
 ---
-## 基本使用
-- 将图片组件 `AsImage` 作为过渡组件 `AsTransition` 的 `images` 插槽子组件
-- 以图片 `index` 为参数，调用作用域变量 `toGroupWithIndex`，并将返回值绑定到 `AsImage` 的 `to-group` 属性，完成图片资源绑定。
+## Basic usage
+- Use `AsImage` as `AsTransition`'s `images` slot
+- Use image index as parameter to call scoped variable `toGroupWithIndex` which is a function, and then use the return value as  `AsImage`'s `to-group` property to bind image resource.
 
+Example
 ```html
 
 <template>
@@ -33,8 +34,8 @@ category: Webgl Transition
 
 ```
 
-## 使用内置图片过渡效果
-- 设置 `transition` 属性, [详见](/transition/build-in)
+## Use the built-in image transition
+- Setup `transition`, [More](/transition/build-in)
 
 ```html
 
@@ -65,10 +66,10 @@ category: Webgl Transition
 
 ```
 
-## 控制图片切换
-- 使用组件方法 `prev` `next` 进行图片切换
-- 使用组件方法 `setActiveIndex` 切换到指定图片
-- 监听 `change` 事件，获取 `当前图片索引` 和 `上一张图片索引`
+## Control image switching
+- Use component methods `prev` and `next` to switch image
+- Use component methods `setActiveIndex` to switch to the specified image
+- Listen `change` event, get `currentIndex` and `previousIndex`
 
 ```html
 // vue3 setup
@@ -94,51 +95,51 @@ const onChange = (activeIndex, oldIndex) => {
 
 
 
-## 属性说明
+## Attributes
 ### initial-index
-- **类型：** `number`
-- **默认：** `0`
+- **Type:** `number`
+- **Default:** `0`
 
-  初始图片索引
+  Initial Image Index
 
 ### speed
-- **类型：** `number`
-- **默认：** `50`
+- **Type:** `number`
+- **Default:** `50`
 
-  图片切换动画速度
+  Switching animation speed
 
 ### auto-play
-- **类型：** `boolean`
-- **默认：** `true`
+- **Type:** `boolean`
+- **Default:** `true`
 
-  自动切换图片
+  Automatic image switching
 
 ### interval
-- **类型：** `number`
-- **默认：** `3000`
+- **Type:** `number`
+- **Default:** `3000`
 
-  自动切换图片时，每次切换的图片间隔
+  Interval between auto switching
 
 ### transition
-- **类型：** `Transition`
-- **默认：** `{ name: 'default' }`
+- **Type:** `Transition`
+- **Default:** `{ name: 'default' }`
 
-  图片切换过渡效果
+  Image transition effect
 
-## 方法
+## Methods
 ### prev
-  上一张
+  The last slide
 ### next
-  下一张
+  Next slide
 ### setActiveIndex
-- **参数：**
-  - 需要切换的图片索引，从0开始
+- **Parameter:**
+  -  Image index to switch, starting at 0
 
-## 事件
+## Events
 ### change
-- **回调参数：**
-  - 目前激活的幻灯片的索引
-  - 原幻灯片的索引
+- **Callback Parameter:**
+  - Index of currently active slide
+  - Index to last slide
 
-## 示例
+## Example
 <code-sandbox :src="'https://codesandbox.io/embed/image-group-basic-nncsy7?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>

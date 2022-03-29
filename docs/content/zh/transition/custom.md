@@ -20,14 +20,14 @@ export interface Transition {
 ### 概念
 #### shader
 `fragment shader` 代码，完成过渡效果
-- 定义变量 常量或声明 `uniform` 变量
+- 定义变量， 常量或声明 `uniform` 变量
 - `vec4 transition(vec2 uv)` 定义过渡函数
-  - 参数 `uv` 图片每个点坐标
-- 内置 `getFromColor` 获取当前图 `uv` 坐标点像素值
-- 内置 `getToColor` 获取目标图 `uv` 坐标点像素值
+  - 参数 `uv`： 图片每个点坐标
+- 内置 `getFromColor` 函数： 获取当前图 `uv` 坐标点像素值
+- 内置 `getToColor` 函数：获取目标图 `uv` 坐标点像素值
 - 内置 `uniform` 变量
-  - `progress` 切换进度 0 - 1
-  - `next` 切换方向，下一张为 `true`，上一张为 `false`
+  - `progress`： 切换进度 （0 - 1）
+  - `next`： 切换方向，下一张为 `true`，上一张为 `false`
 
 #### uniforms
 - `shader` 中自定义的 `uniform` 变量
