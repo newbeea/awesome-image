@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     '@intlify/nuxt3',
   ],
   build: {
-    transpile: ['@awesome-image/image', '@icon-park/vue-next'],
+    transpile: ['@awesome-image/image', '@awesome-image/transition', '@awesome-image/filter-fake3d', '@awesome-image/filter-glitch', '@icon-park/vue-next'],
   },
   unocss: {
     uno: true,

@@ -1,9 +1,9 @@
 {
   "title": "Awesome Image",
-  "url": "vue-awesome-image.vercel.com",
+  "url": "awesome-image.vercel.com",
   "logo": {
     "light": "/logo.svg",
     "dark": "/logo.svg"
   },
-  "github": "newbeea/as-image"
+  "github": "newbeea/awesome-image"
 }
