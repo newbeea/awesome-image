@@ -1,10 +1,4 @@
----
-title: Introduction
-description: 'Awesomeimage is a universal image component that supports `lazy`/`progressive`/`responsive`/`automatic webp` which compatible with Vue2/Vue3/NUXT.It can also be paired with the official WebGL filter library or a custom WebGL filter component, or the WebGL transition component for a cooler photo display or button effect.'
-position: 1
-category: 'Awesome Image'
 
----
 <div style="text-align: center;">
 <img src="./docs/static/icon.png" style="width: 300px;"/>
 </div>
