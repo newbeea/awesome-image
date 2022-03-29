@@ -35,4 +35,6 @@ AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `�
 ### WebGL过渡
 <img src="/transition.gif" width="804" height="450" alt=""/>
 
+## Demo
+[Demo](https://awesome-image-demo.vercel.app)
 

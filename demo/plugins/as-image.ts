@@ -1,24 +1,12 @@
 
-import VueAsImage from 'as-image'
-import 'as-image/dist/style.css'
-import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
-// import 'highlight.js/styles/atom-one-dark.css'
-// import hljs from 'highlight.js';
+import { AsImage } from '@awesome-image/image'
+import { imageUrlGeneratorFP } from '@awesome-image/services'
 
 // @ts-expect-error #app resolved by Nuxt3
-import { defineNuxtPlugin, NuxtApp } from '#app'
+import type { NuxtApp } from '#app'
+import { defineNuxtPlugin } from '#app'
 export default defineNuxtPlugin((nuxt: NuxtApp) => {
-  nuxt.vueApp.use(VueAsImage, {
-    imageUrlGenerator: imageUrlGeneratorFP
+  nuxt.vueApp.use(AsImage, {
+    imageUrlGenerator: imageUrlGeneratorFP,
   })
-  // nuxt.vueApp.directive('highlight', {
-  //   mounted(el) {
-  //     let blocks = el.querySelectorAll('pre code')
-  //     for (let i = 0; i < blocks.length; i++) {
-  //       // blocks[i].innerHTML = blocks[i].innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-  //       hljs.highlightElement(blocks[i])
-  //     }
-  //   }
-  // })
-  
 })

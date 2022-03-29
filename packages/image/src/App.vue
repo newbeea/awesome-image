@@ -2,15 +2,15 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { defineComponent, ref } from 'vue-demi'
-import Fake3d from '@awesome-image/filter-fake3d'
-import Glitch from '@awesome-image/filter-glitch'
+// import Fake3d from '@awesome-image/filter-fake3d'
+// import Glitch from '@awesome-image/filter-glitch'
 
 import { AsImage } from './'
 export default defineComponent({
   name: 'App',
   components: {
     AsImage,
-    Glitch,
+    // Glitch,
   },
   data() {
     return {
@@ -44,13 +44,13 @@ export default defineComponent({
         <div class="placeholder" />
       </template>
 
-      <template
+      <!-- <template
         #webglfilter="{
           image
         }"
       >
         <Glitch :image="image" />
-      </template>
+      </template> -->
     </AsImage>
     <AsImage
       class="demoimage"

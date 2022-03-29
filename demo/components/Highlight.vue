@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import 'highlight.js/styles/atom-one-dark.css'
-import hljs from 'highlight.js';
+import hljs from 'highlight.js'
 defineProps({
-  code: String
+  code: String,
 })
 const pre = ref(null)
 onMounted(() => {
@@ -12,16 +12,16 @@ onMounted(() => {
 const expanded = ref(false)
 </script>
 <template>
-<div class="highlight">
-  <pre ref="pre" v-show="expanded" class="highlight-pre">
+  <div class="highlight">
+    <pre v-show="expanded" ref="pre" class="highlight-pre">
     <code>
       {{ code }}
     </code>
   </pre>
-  <div class="highlight-btn" @click="expanded = !expanded"> {{ expanded ? "Hide" : "Expand" }} </div>
-  
-</div>
-
+    <div class="highlight-btn" @click="expanded = !expanded">
+      {{ expanded ? "Hide" : "Expand" }}
+    </div>
+  </div>
 </template>
 <style scoped lang="scss">
 .highlight-pre {
@@ -30,7 +30,7 @@ const expanded = ref(false)
 .highlight-btn {
   text-align: center;
   padding: 10px;
-  background: #eee;
+  background: #ddd;
   cursor: pointer;
 }
 .dark {

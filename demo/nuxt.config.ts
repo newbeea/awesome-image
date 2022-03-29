@@ -1,13 +1,14 @@
 import path from 'path'
 import { defineNuxtConfig } from 'nuxt3'
-// import '@nuxt3/apollo-module'
-// import '@nuxt3/graphql-codegen-module'
-// import '@unocss/nuxt'
+
 import viteSvgIcons from 'vite-plugin-svg-icons'
 export default defineNuxtConfig({
   app: {
     // cdnURL: 'https://d17a2275ko4nj4.cloudfront.net', // upload .output/server/public to cdn when using serverless
   },
+  css: [
+    // '@awesome-image/image/dist/style.css',
+  ],
   buildModules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
@@ -15,7 +16,7 @@ export default defineNuxtConfig({
     '@intlify/nuxt3',
   ],
   build: {
-    transpile: ['as-image', 'as-image-group', '@icon-park/vue-next'],
+    transpile: ['@awesome-image/image', '@icon-park/vue-next'],
   },
   unocss: {
     uno: true,

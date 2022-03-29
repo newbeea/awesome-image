@@ -29,6 +29,9 @@ It can also be paired with the official WebGL filter library or a custom WebGL f
 - WebGL transition  ——  you can use the webgl image transition component `AsTransition` to switch image with awesome webgl effect. Support [GLTransitions](https://gl-transitions.com/) and custom WebGL image transitions [More](https://awesome-image.vercel.app/transition/introduction)
 - Custom image url generator  ——  @awesome-image/services has built-in image url generator rules such as fastly and upyun, you can customize other image url generator functions [More](https://awesome-image.vercel.app/url)
 
+## Demo
+[Demo](https://awesome-image-demo.vercel.app)
+
 ## Show Case
 ### Lazy / Responsive / Progressive / SSR
 <img src="./docs/static/show.gif" alt=""/>

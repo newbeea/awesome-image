@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.1",
+  "version": "0.0.8",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
@@ -29,6 +29,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@awesome-image/services": "workspace:^0.0.0",
     "@vue/composition-api": "^1.4.9",
     "vue-demi": "^0.12.1",
     "vue-template-compiler": "^2.6.14"

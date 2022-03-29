@@ -15,6 +15,7 @@ export function useLazy(imageRef: Ref<any>, offset: Ref<string>) {
           //   loaded.value = true
           //   imageDom.srcset = img.srcset
           // }
+          console.log('load', imageDom.dataset.srcset)
           imageDom.srcset = imageDom.dataset.srcset
           // image.value = img
           imageObserver.unobserve(imageDom)

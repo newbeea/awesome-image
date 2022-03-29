@@ -129,30 +129,23 @@ export default defineComponent({
     }
   },
   render() {
-    const genClass = (loaded: boolean, hasWebglFilter: boolean, name: string, loadedName: string) => {
-      let className = ''
-      if (loaded) {
-        className += ` ${style.imageLoaded}`
-        if (hasWebglFilter) {
-          className += ` ${style.hasWebglFilter}`
-        }
-      }
-      return className
-    }
     const renderImg = (type = 'image') => {
       const isImage = type === 'image'
       const hasWebglFilter = (isVue2 && this.$scopedSlots.webglfilter) || !!this.$slots.webglfilter
       let className = ''
       if (isImage) {
-        className = genClass(this.imageLoaded, hasWebglFilter, style.image, style.imageLoaded)
+        if (hasWebglFilter && this.imageLoaded)
+          className = `${style.image} ${style.hasWebglFilter} ${style.imageLoaded}`
+        else
+          className = style.image
       }
       else {
-        className = genClass(this.placeholderLoaded, hasWebglFilter, style.imagePlaceholder, style.placeholderLoaded)
+        className = style.imagePlaceholder
       }
 
       const attrs = {
         [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
-        onload: `this.classList.add("${isImage ? style.imageOriginLoaded : style.placeholderOriginLoaded}");`,
+        onload: `this.classList.add("${isImage ? style.imageLoaded : style.placeholderLoaded}");`,
 
       }
       if (hasWebglFilter)

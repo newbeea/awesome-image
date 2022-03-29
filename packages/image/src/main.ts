@@ -1,9 +1,9 @@
 import { createApp } from 'vue-demi'
-import { imageUrlGeneratorFP } from '@vue-awesome-image/services'
+import { imageUrlGeneratorFP } from '@awesome-image/services'
 import App from './App.vue'
-import VueAwesomeImage from '.'
+import { AsImage } from '.'
 const app = createApp(App)
-app.use(VueAwesomeImage, {
+app.use(AsImage, {
   imageUrlGenerator: imageUrlGeneratorFP,
 })
 app.mount('#app')

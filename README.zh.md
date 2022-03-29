@@ -28,6 +28,9 @@ AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `�
 - 轮播过渡  ——  可以使用轮播图片过渡组件AsTransition，支持[GLTransitions](https://gl-transitions.com/)过渡效果，支持自定义WebGL图片过渡效果 [More](https://awesome-image.vercel.app/transition/introduction)
 - 自定义图片处理  ——  @awesome-image/services内置fastly、upyun等图片处理规则，可自由定制其他图片url转换函数 [More](https://awesome-image.vercel.app/url)
 
+## Demo
+[Demo](https://awesome-image-demo.vercel.app)
+
 ## 效果
 ### 懒加载 / 渐进加载 / 响应加载 / SSR
 <img src="./docs/static/show.gif" width="804" height="450" alt=""/>
