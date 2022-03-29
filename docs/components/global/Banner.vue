@@ -1,5 +1,5 @@
 <template>
-  <div @click="change">
+  <div>
     <AsImage
       class="banner"
       :width="1332"
@@ -12,46 +12,12 @@
         <div class="placeholder"></div>
       </template>
       <template #webglfilter="{ image }">
-        <div>
-          <component :is="component" :image="image" :scale="20" depth="/banner-depth.png"></component>
-        </div>
+        <as-filter-glitch :image="image" :scale="20" depth="/banner-depth.png"></as-filter-glitch>
       </template>
     </AsImage>
   </div>
 </template>
-<script>
-export default {
-  components: {
-  },
-  data() {
-    return {
-      index: 0,
-      timer: null,
-      filters: [
-        'glitch',
-        'crt',
-        'ascii',
-      ],
-      component: 'as-filter-glitch',
-    }
-  },
-  mounted() {
-    // this.timer = setInterval(() => {
-    //   this.change()
-    // }, 2000)
-  },
-  unmounted() {
-    clearInterval(this.timer)
-  },
-  methods: {
-    change() {
-      this.index += 1
-      this.index %= this.filters.length
-      this.component = `as-filter-${this.filters[this.index]}`
-    },
-  },
-}
-</script>
+
 <style>
 .placeholder {
   width: 100%;

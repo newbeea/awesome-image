@@ -130,7 +130,7 @@ const onChange = (activeIndex, oldIndex) => {
   上一张
 ### next
   下一张
-### setActiveIndex
+### set-active-index
 - **参数：**
   - 需要切换的图片索引，从0开始
 

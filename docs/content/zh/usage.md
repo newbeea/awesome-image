@@ -58,7 +58,7 @@ category: Awesome Image
 ```
 
 ## 渐进加载
-渐进加载使用一张宽度为 `48px` 的缩率图（需提前生成或搭配图片服务动态生成）作为 `placeholder`, 并在加载 `placeholder` 和 原图时通过渐显动画平滑显示。支持在 `SSR` 模式下，客户端 `hydrating` 之前渐进加载图片。
+渐进加载使用一张宽度为 `48px` 的缩率图（需提前生成或搭配图片服务动态生成）作为 `placeholder`, 并在加载 `placeholder` 和 原图时通过渐显动画平滑显示。支持在 `SSR` 模式下，客户端 `注水` 之前渐进加载图片。
 - 需配置 `imageUrlGenerator` [详见](/url) 获取对应 `48px` 缩率图
 - 使用 `progressive` (默认`false`) 属性控制是否启用渐进加载
 - 设置 `duration` (默认`1`, 单位秒)属性控制渐显动画时长
@@ -141,7 +141,7 @@ category: Awesome Image
     class="demoimage"
     :width="1280"
     :height="640"
-    :auto="true"
+    :auto-webp="true"
     src="//cdn.com/image.jpg"
   >
     <template #loading>
@@ -189,13 +189,13 @@ category: Awesome Image
 
   是否懒加载
 
-### imageLazyOffset
+### image-lazy-offset
 - **类型：** `string`
 - **默认：** `'0px'`
 
   懒加载时，图片提前加载的距离
 
-### placeholderLazyOffset
+### placeholder-lazy-offset
 - **类型：** `string`
 - **默认：** `'0px'`
 
@@ -247,7 +247,7 @@ category: Awesome Image
 
   图片格式
 
-### imageUrlGenerator
+### image-url-generator
 - **类型：** `function`
 - **默认：** `(url) => url`
 
