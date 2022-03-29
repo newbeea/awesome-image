@@ -28,8 +28,11 @@ Glitch effect
 </template>
 ```
 
-## `@awesome-image/filter-3d`
+## `@awesome-image/filter-fake3d`
 Fake 3D，`shader` from [akella](https://github.com/akella/fake3d)
+
+<code-sandbox :src="'https://codesandbox.io/embed/image-filter-fake3d-0673d4?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
+
 ### Attribute
 
 #### depth
@@ -49,7 +52,6 @@ You can override the default mouse hover effect by manually controlling the mous
 
 Move the mouse over the image (needs to click on mobile) to see the effect
 
-<code-sandbox :src="'https://codesandbox.io/embed/image-filter-fake3d-0673d4?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 
 ## `@awesome-image/filter-crt`
@@ -59,6 +61,9 @@ Retro display effect, `shader` from [pixi](https://github.com/pixijs/filters)
 
 ## `@awesome-image/filter-ascii`
 ASCII character effect,`shader` from [pixi](https://github.com/pixijs/filters)
+
+<code-sandbox :src="'https://codesandbox.io/embed/image-filter-ascii-dpotsq?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
+
 ### Attribute
 #### pixel-size
 - **Type:** `number`
@@ -66,10 +71,12 @@ ASCII character effect,`shader` from [pixi](https://github.com/pixijs/filters)
 
   Character size
 
-<code-sandbox :src="'https://codesandbox.io/embed/image-filter-ascii-dpotsq?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 ## `@awesome-image/filter-hexagon`
 Hexagon mosaic effect, `shader` from [pixi](https://github.com/pixijs/filters)
+
+<code-sandbox :src="'https://codesandbox.io/embed/image-filter-hexagon-7jz4tt?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
+
 ### Attribute
 #### scale
 - **Type:** `number`
@@ -77,7 +84,6 @@ Hexagon mosaic effect, `shader` from [pixi](https://github.com/pixijs/filters)
 
   Hexagon size
 
-<code-sandbox :src="'https://codesandbox.io/embed/image-filter-hexagon-7jz4tt?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 ## `more`
 TODO

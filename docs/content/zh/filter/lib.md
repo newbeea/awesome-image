@@ -28,8 +28,11 @@ category: Webgl Filter
 </template>
 ```
 
-## `@awesome-image/filter-3d`
+## `@awesome-image/filter-fake3d`
 伪3D效果，`shader` 来自 [akella](https://github.com/akella/fake3d)
+
+<code-sandbox :src="'https://codesandbox.io/embed/image-filter-fake3d-0673d4?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
+
 ### 属性
 
 #### depth
@@ -49,7 +52,6 @@ category: Webgl Filter
 
   鼠标在图片上移动（移动端需点击）查看效果
 
-<code-sandbox :src="'https://codesandbox.io/embed/image-filter-fake3d-0673d4?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 
 ## `@awesome-image/filter-crt`
@@ -59,21 +61,25 @@ category: Webgl Filter
 
 ## `@awesome-image/filter-ascii`
 Ascii字符效果，`shader` 来自 [pixi](https://github.com/pixijs/filters)
+
+<code-sandbox :src="'https://codesandbox.io/embed/image-filter-ascii-dpotsq?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
+
 #### pixel-size
 - **类型：** `number`
 - **默认：** `8`
   字符大小
 
-<code-sandbox :src="'https://codesandbox.io/embed/image-filter-ascii-dpotsq?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 ## `@awesome-image/filter-hexagon`
   六边形马赛克效果，`shader` 来自 [pixi](https://github.com/pixijs/filters)
+
+<code-sandbox :src="'https://codesandbox.io/embed/image-filter-hexagon-7jz4tt?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
+
 #### scale
 - **类型：** `number`
 - **默认：** `15`
   六边形大小
 
-<code-sandbox :src="'https://codesandbox.io/embed/image-filter-hexagon-7jz4tt?fontsize=14&hidenavigation=1&theme=dark'"></code-sandbox>
 
 ## `more`
 TODO
