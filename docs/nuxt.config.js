@@ -20,7 +20,7 @@ export default theme({
       file: 'en-US.js',
       name: 'English',
     }],
-    defaultLocale: 'zh',
+    defaultLocale: 'en',
   },
   buildModules: [
     '@nuxtjs/composition-api/module',
