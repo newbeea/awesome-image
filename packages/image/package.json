@@ -29,7 +29,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@awesome-image/services": "workspace:^0.0.0",
+    "@awesome-image/services": "workspace:*",
     "@vue/composition-api": "^1.4.9",
     "vue-demi": "^0.12.1",
     "vue-template-compiler": "^2.6.14"

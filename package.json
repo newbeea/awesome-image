@@ -7,6 +7,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "pnpm run build:s && pnpm run build:t && pnpm run build:i",
+    "build:i": "pnpm -C ./packages/image build",
+    "build:t": "pnpm -C ./packages/transition build",
+    "build:s": "pnpm -C ./packages/services build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
