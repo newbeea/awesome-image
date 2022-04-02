@@ -36,9 +36,9 @@ It can also be paired with the official WebGL filter library or a custom WebGL f
 ### WebGL Transition
 <img src="./docs/static/transition.gif" alt=""/>
 
-## Develop
+## Development
 
-### Install
+### Installation
 ```
 pnpm i
 ```
