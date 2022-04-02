@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 examples/vue3/node_modules
+dist
 dist-ssr
 *.local
 
