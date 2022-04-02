@@ -36,4 +36,29 @@ It can also be paired with the official WebGL filter library or a custom WebGL f
 ### WebGL Transition
 <img src="./docs/static/transition.gif" alt=""/>
 
+## Develop
 
+### Install
+```
+pnpm i
+```
+
+### Build `workspace`
+```
+pnpm run build
+```
+
+### Develop `package`
+```
+// @awesome-image/image
+pnpm -C ./packages/image/ dev
+
+// @awesome-image/transition
+pnpm -C ./packages/transition/ dev
+
+// @awesome-image/services
+pnpm -C ./packages/services/ dev
+
+// @awesome-image/filter-glitch
+pnpm -C ./packages/filters/glitch/ dev
+```

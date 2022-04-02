@@ -35,4 +35,29 @@ AwesomeImage 是一个支持 `懒加载` / `渐进加载` / `响应加载` / `�
 ### WebGL过渡
 <img src="./docs/static/transition.gif" width="804" height="450" alt=""/>
 
+## 开发
 
+### 安装
+```
+pnpm i
+```
+
+### 构建 `workspace`
+```
+pnpm run build
+```
+
+### 开发子 `package`
+```
+// @awesome-image/image
+pnpm -C ./packages/image/ dev
+
+// @awesome-image/transition
+pnpm -C ./packages/transition/ dev
+
+// @awesome-image/services
+pnpm -C ./packages/services/ dev
+
+// @awesome-image/filter-glitch
+pnpm -C ./packages/filters/glitch/ dev
+```
