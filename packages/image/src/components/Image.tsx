@@ -16,7 +16,6 @@ import {
 import { useLazy } from '../composables/lazy'
 import { useResponsive } from '../composables/responsive'
 import type { ImageOptions, ImageUrlGenerator } from '../interface'
-import imageUrlGeneratorDefault from '../composables/default-image-provider'
 import style from './style.module.scss'
 export default defineComponent({
   name: 'AsImage',
@@ -36,7 +35,7 @@ export default defineComponent({
     progressive: { type: Boolean, default: false },
     breakpoints: { type: Array as PropType<Array<number>>, default: () => [640, 768, 1024, 1280, 1536] },
     sizes: { type: String, default: '100vw' },
-    imageUrlGenerator: { type: Function as any, default: imageUrlGeneratorDefault },
+    imageUrlGenerator: { type: Function as any, required: false },
     toGroup: { type: Function as any, required: false },
     duration: { type: Number, default: 1 },
     autoWebp: { type: Boolean, default: false },
@@ -60,8 +59,8 @@ export default defineComponent({
     const placeholderLoaded = ref(false)
     const image = ref<HTMLImageElement>()
     const imageLoaded = ref(false)
-
-    const generator = isVue2 ? root.$imageUrlGenerator : inject<ImageUrlGenerator>('imageUrlGenerator', imageUrlGenerator.value)
+    // props imageUrlGenerator > global imageUrlGenerator > default imageUrlGenerator
+    const generator = imageUrlGenerator.value || (isVue2 ? root.$imageUrlGenerator : inject<ImageUrlGenerator>('imageUrlGenerator'))
 
     // generate placeholder image's srcset
     const placeholderSrcSet = progressive.value
