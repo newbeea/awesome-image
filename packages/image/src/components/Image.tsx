@@ -74,7 +74,7 @@ export default defineComponent({
     // generate image's srcset
     const options: ImageOptions = {}
     if (quanlity.value)
-      options.quanlity = quanlity.value
+      options.quantity = quanlity.value
     if (format.value)
       options.format = format.value
 
