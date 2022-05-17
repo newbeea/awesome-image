@@ -1,6 +1,6 @@
 /* eslint-disable react/no-string-refs */
 /* eslint-disable react/no-unknown-property */
-import type { PropType } from 'vue-demi'
+import type { PropType, SetupContext } from 'vue-demi'
 import {
   Transition,
   computed,
@@ -42,7 +42,10 @@ export default defineComponent({
     autoWebp: { type: Boolean, default: false },
   },
   emits: ['image-loaded', 'placeholder-loaded', 'image-error', 'placeholder-error'],
-  setup(props, { emit, root }) {
+  setup(props, ctx) {
+    const { emit, root } = ctx as SetupContext & {
+      root: any
+    }
     const {
       src,
       responsive,
@@ -131,6 +134,7 @@ export default defineComponent({
   render() {
     const renderImg = (type = 'image') => {
       const isImage = type === 'image'
+      // es-lint-disable-next-line
       const hasWebglFilter = (isVue2 && this.$scopedSlots.webglfilter) || !!this.$slots.webglfilter
       let className = ''
       if (isImage) {
@@ -142,10 +146,11 @@ export default defineComponent({
       else {
         className = style.imagePlaceholder
       }
-
+      const imageLoaded = style.imageLoaded
+      const placeholderLoaded = style.placeholderLoaded
       const attrs = {
         [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
-        onload: `this.classList.add("${isImage ? style.imageLoaded : style.placeholderLoaded}");`,
+        onload: `this.classList.add("${isImage ? imageLoaded : placeholderLoaded}");`,
 
       }
       if (hasWebglFilter)
@@ -160,6 +165,7 @@ export default defineComponent({
         <img
           // {...this.$attrs}
           // crossorigin="anonymous"
+          importance={isImage ? 'auto' : 'high'}
           ref={isImage ? 'image' : 'placeholder'}
           class={className}
           style={{

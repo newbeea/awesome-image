@@ -6,8 +6,8 @@ const imageUrlGeneratorUpyun: ImageUrlGenerator = (url: string, options: ImageOp
     query.push(`fw/${options.width}`)
   if (options.blur)
     query.push(`gaussblur/${options.blur * 5}x${options.blur * 5}`)
-  if (options.quantity)
-    query.push(`quality/${options.quantity}`)
+  if (options.quanlity)
+    query.push(`quality/${options.quanlity}`)
   if (options.format)
     query.push(`format/${options.format}`)
 

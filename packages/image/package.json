@@ -29,13 +29,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@awesome-image/services": "workspace:*",
     "@vue/composition-api": "^1.4.9",
     "vue-demi": "^0.12.1",
     "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.16.1",
+    "@awesome-image/services": "workspace:*",
     "@types/node": "^17.0.21",
     "@vitejs/plugin-vue": "^2.2.0",
     "@vitejs/plugin-vue-jsx": "^1.3.8",

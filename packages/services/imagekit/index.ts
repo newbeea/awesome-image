@@ -6,8 +6,8 @@ const imageUrlGeneratorImagekit: ImageUrlGenerator = (url: string, options: Imag
     params.push(`w-${options.width}`)
   if (options.blur)
     params.push(`bl-${options.blur * 5}`)
-  if (options.quantity)
-    params.push(`q-${options.quantity}`)
+  if (options.quanlity)
+    params.push(`q-${options.quanlity}`)
   if (options.format)
     params.push(`f-${options.format}`)
 

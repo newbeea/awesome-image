@@ -6,8 +6,8 @@ const imageUrlGeneratorFP: ImageUrlGenerator = (url: string, options: ImageOptio
     query.push(`w=${options.width}`)
   if (options.blur)
     query.push(`b=${options.blur}`)
-  if (options.quantity)
-    query.push(`q=${options.quantity}`)
+  if (options.quanlity)
+    query.push(`q=${options.quanlity}`)
   if (options.format)
     query.push(`f=${options.format}`)
 

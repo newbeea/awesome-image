@@ -74,7 +74,7 @@ export interface ImageOptions {
   width?: number
   height?: number
   blur?: number
-  quantity?: number
+  quanlity?: number
   format?: string
 }
 export interface ImageUrlGenerator {

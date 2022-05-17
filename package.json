@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm run build:s && pnpm run build:t && pnpm run build:i",
+    "build": "pnpm run build:s && pnpm run build:i && pnpm run build:t",
     "build:i": "pnpm -C ./packages/image build",
     "build:t": "pnpm -C ./packages/transition build",
     "build:s": "pnpm -C ./packages/services build",
