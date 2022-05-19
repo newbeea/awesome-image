@@ -2,7 +2,7 @@
 import { isVue3 } from 'vue-demi'
 import type { App, Plugin } from 'vue-demi'
 
-import Image from './components/Image'
+import Image from './components/index'
 import type { ImageUrlGenerator } from './interface'
 
 export type SFCWithInstall<T> = T & Plugin

@@ -1,25 +1,21 @@
-/* eslint-disable react/no-string-refs */
 /* eslint-disable react/no-unknown-property */
 import type { PropType, SetupContext } from 'vue-demi'
 import {
   Transition,
   computed,
   defineComponent,
-  defineEmits,
   inject,
   isVue2,
-  onMounted,
   ref,
   toRefs,
 } from 'vue-demi'
-
 import { useLazy } from '../composables/lazy'
 import { useResponsive } from '../composables/responsive'
 import type { ImageOptions, ImageUrlGenerator } from '../interface'
 import imageUrlGeneratorDefault from '../composables/default-image-provider'
 import style from './style.module.scss'
 export default defineComponent({
-  name: 'AsImage',
+  name: 'ImageComponent',
   components: {
     Transition,
   },
@@ -64,6 +60,8 @@ export default defineComponent({
     const image = ref<HTMLImageElement>()
     const imageLoaded = ref(false)
 
+    const ssrImageLoaded = ref(false)
+    const ssrPlaceholderLoaded = ref(false)
     const generator = isVue2 ? root.$imageUrlGenerator : inject<ImageUrlGenerator>('imageUrlGenerator', imageUrlGenerator.value)
 
     // generate placeholder image's srcset
@@ -98,26 +96,16 @@ export default defineComponent({
         useLazy(placeholder, placeholderLazyOffset)
     }
 
-    const onImageLoaded = () => {
-      if (image.value?.complete && !imageLoaded.value) {
-        emit('image-loaded')
-        if (props.toGroup) props.toGroup(image.value)
-        imageLoaded.value = true
-      }
+    const onImageLoaded = (m = false) => {
+      emit('image-loaded')
+      if (props.toGroup) props.toGroup(image.value)
+      imageLoaded.value = true
     }
 
-    const onPlaceholderLoaded = () => {
-      if (placeholder.value?.complete && !placeholderLoaded.value) {
-        emit('placeholder-loaded')
-        placeholderLoaded.value = true
-      }
+    const onPlaceholderLoaded = (m = false) => {
+      emit('placeholder-loaded')
+      placeholderLoaded.value = true
     }
-
-    onMounted(() => {
-      // in case of image loaded before vue mounted
-      onPlaceholderLoaded()
-      onImageLoaded()
-    })
 
     return {
       placeholderSrcSet,
@@ -129,25 +117,44 @@ export default defineComponent({
       placeholder,
       onImageLoaded,
       onPlaceholderLoaded,
+      ssrImageLoaded,
+      ssrPlaceholderLoaded,
     }
   },
   render() {
     const renderImg = (type = 'image') => {
       const isImage = type === 'image'
-      // es-lint-disable-next-line
+      if (((isImage && !this.ssrImageLoaded) || (!isImage && !this.ssrPlaceholderLoaded))
+      && this.$parent?.$el
+      && !this.lazy) {
+        const imgElement = this.$parent?.$el.querySelector(
+          `[data-type=${type}]`,
+        )
+        if (imgElement?.complete) {
+          if (isImage) {
+            this.ssrImageLoaded = true
+          }
+          else {
+            this.ssrPlaceholderLoaded = true
+          }
+        }
+      }
+
       const hasWebglFilter = (isVue2 && this.$scopedSlots.webglfilter) || !!this.$slots.webglfilter
       let className = ''
       if (isImage) {
-        if (hasWebglFilter && this.imageLoaded)
-          className = `${style.image} ${style.hasWebglFilter} ${style.imageLoaded}`
+        if (hasWebglFilter)
+          className = `${style.image} ${style.hasWebglFilter}`
         else
           className = style.image
       }
       else {
         className = style.imagePlaceholder
       }
+      // can not use style.imageLoaded directly, it will be undefined in nuxt
       const imageLoaded = style.imageLoaded
       const placeholderLoaded = style.placeholderLoaded
+
       const attrs = {
         [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
         onload: `this.classList.add("${isImage ? imageLoaded : placeholderLoaded}");`,
@@ -163,13 +170,12 @@ export default defineComponent({
         : attrs
       return (
         <img
-          // {...this.$attrs}
-          // crossorigin="anonymous"
+          data-type={type}
           importance={isImage ? 'auto' : 'high'}
-          ref={isImage ? 'image' : 'placeholder'}
+          ref={type}
           class={className}
           style={{
-            opacity: 0,
+            opacity: ((isImage && this.ssrImageLoaded) || (!isImage && this.ssrPlaceholderLoaded)) ? 1 : 0,
             transitionDuration: `${this.duration}s`,
           }}
           width={this.width}
