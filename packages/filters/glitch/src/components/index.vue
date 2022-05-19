@@ -113,10 +113,5 @@ export default defineComponent({
 </script>
 
 <template>
-  <div ref="webglContainer" class="webgl-filter" />
+  <div ref="webglContainer" class="webgl-filter" style="position: relative;" />
 </template>
-<style lang="scss">
-.webgl-filter {
-  position: relative;
-}
-</style>

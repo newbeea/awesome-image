@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "",
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",
