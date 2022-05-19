@@ -9,7 +9,7 @@ import { AsImage } from './'
 export default defineComponent({
   name: 'App',
   components: {
-    AsImage,
+    // AsImage,
     // Glitch,
   },
   data() {
@@ -36,9 +36,7 @@ export default defineComponent({
       :width="1080"
       :height="722"
       :src="'//d3skwsdk169y0b.cloudfront.net/image/fake3d/ball.jpg'"
-      :lazy="true"
-      :progressive="true"
-      :responsive="true"
+      :lazy="false"
     >
       <template #loading>
         <div class="placeholder" />
@@ -57,9 +55,6 @@ export default defineComponent({
       :width="1080"
       :height="722"
       :src="'//d3skwsdk169y0b.cloudfront.net/image/product/1.jpg'"
-      :lazy="true"
-      :progressive="true"
-      :responsive="true"
     >
       <template #loading>
         <div class="placeholder" />

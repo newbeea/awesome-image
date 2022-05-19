@@ -9,3 +9,18 @@ export interface ImageOptions {
 export interface ImageUrlGenerator {
   (url: string, options: ImageOptions): string
 }
+
+export interface AsImageOptions {
+  quanlity?: number
+  format?: string
+  lazy?: boolean
+  placeholderLazyOffset?: string
+  imageLazyOffset?: string
+  responsive?: boolean
+  progressive?: boolean
+  breakpoints?: number[]
+  sizes?: string
+  imageUrlGenerator?: ImageUrlGenerator
+  duration?: number
+  autoWebp?: boolean
+}

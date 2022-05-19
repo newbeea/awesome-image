@@ -29,6 +29,23 @@ category: Awesome Image
 </code-group>
 
 ### 使用
+##### 默认配置
+```
+const defaultOptions: AsImageOptions = {
+  quanlity: 0,
+  format: '',
+  lazy: false,
+  placeholderLazyOffset: '0px',
+  imageLazyOffset: '0px',
+  responsive: false,
+  progressive: false,
+  breakpoints: [640, 768, 1024, 1280, 1536],
+  sizes: '100vw',
+  imageUrlGenerator: (src) => src,
+  duration: 1,
+  autoWebp: false,
+}
+```
 #### 全局使用
 <code-group>
   <code-block label="Vue2" active>
@@ -39,6 +56,8 @@ category: Awesome Image
   // import { imageUrlGeneratorFP } from '@awesome-image/services'
   // read more about http://imageUrlGenerator
   Vue.use(AsImage, {
+    responsive: true,
+    progressive: true,
     imageUrlGenerator: yourImageUrlGenerator 
   })
 
@@ -53,6 +72,8 @@ category: Awesome Image
   // import { imageUrlGeneratorFP } from '@awesome-image/services'
   // read more about http://imageUrlGenerator
   createApp().use(AsImage, {
+    responsive: true,
+    progressive: true,
     imageUrlGenerator: yourImageUrlGenerator 
   })
 
@@ -70,6 +91,8 @@ category: Awesome Image
   // import { imageUrlGeneratorFP } from '@awesome-image/services'
   // read more about http://imageUrlGenerator
   Vue.use(AsImage, {
+    responsive: true,
+    progressive: true,
     imageUrlGenerator: yourImageUrlGenerator 
   })
 
@@ -87,7 +110,6 @@ category: Awesome Image
   </code-block>
   
 </code-group>
-
 
 #### 局部使用
 ```html

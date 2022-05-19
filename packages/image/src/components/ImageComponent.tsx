@@ -11,9 +11,27 @@ import {
 } from 'vue-demi'
 import { useLazy } from '../composables/lazy'
 import { useResponsive } from '../composables/responsive'
-import type { ImageOptions, ImageUrlGenerator } from '../interface'
+import type { AsImageOptions, ImageOptions, ImageUrlGenerator } from '../interface'
 import imageUrlGeneratorDefault from '../composables/default-image-provider'
+
+import { useMergedOptions } from '../composables/merge-options'
 import style from './style.module.scss'
+
+export const defaultOptions: AsImageOptions = {
+  quanlity: 0,
+  format: '',
+  lazy: false,
+  placeholderLazyOffset: '0px',
+  imageLazyOffset: '0px',
+  responsive: false,
+  progressive: false,
+  breakpoints: [640, 768, 1024, 1280, 1536],
+  sizes: '100vw',
+  imageUrlGenerator: imageUrlGeneratorDefault,
+  duration: 1,
+  autoWebp: false,
+}
+
 export default defineComponent({
   name: 'ImageComponent',
   components: {
@@ -24,18 +42,18 @@ export default defineComponent({
     width: { type: Number },
     height: { type: Number },
     quanlity: { type: Number, required: false },
-    format: { type: String, default: '' },
+    format: { type: String, required: false },
     lazy: { type: Boolean, default: false },
-    placeholderLazyOffset: { type: String, default: '0px' },
-    imageLazyOffset: { type: String, default: '0px' },
-    responsive: { type: Boolean, default: false },
-    progressive: { type: Boolean, default: false },
-    breakpoints: { type: Array as PropType<Array<number>>, default: () => [640, 768, 1024, 1280, 1536] },
-    sizes: { type: String, default: '100vw' },
-    imageUrlGenerator: { type: Function as any, default: imageUrlGeneratorDefault },
+    placeholderLazyOffset: { type: String, required: false },
+    imageLazyOffset: { type: String, required: false },
+    responsive: { type: Boolean, required: false },
+    progressive: { type: Boolean, required: false },
+    breakpoints: { type: Array as PropType<Array<number>>, required: false },
+    sizes: { type: String, required: false },
+    imageUrlGenerator: { type: Function as any, required: false },
     toGroup: { type: Function as any, required: false },
-    duration: { type: Number, default: 1 },
-    autoWebp: { type: Boolean, default: false },
+    duration: { type: Number, required: false },
+    autoWebp: { type: Boolean, required: false },
   },
   emits: ['image-loaded', 'placeholder-loaded', 'image-error', 'placeholder-error'],
   setup(props, ctx) {
@@ -44,16 +62,22 @@ export default defineComponent({
     }
     const {
       src,
+    } = toRefs(props)
+
+    const globalOptions: AsImageOptions = isVue2 ? root.$asImageOptions : inject<AsImageOptions>('$asImageOptions')
+
+    const {
       responsive,
       progressive,
       lazy,
       placeholderLazyOffset,
       imageLazyOffset,
       breakpoints,
+      duration,
       imageUrlGenerator,
       quanlity,
       format,
-    } = toRefs(props)
+    } = useMergedOptions(toRefs(props), globalOptions)
 
     const placeholder = ref<HTMLImageElement>()
     const placeholderLoaded = ref(false)
@@ -62,11 +86,10 @@ export default defineComponent({
 
     const ssrImageLoaded = ref(false)
     const ssrPlaceholderLoaded = ref(false)
-    const generator = isVue2 ? root.$imageUrlGenerator : inject<ImageUrlGenerator>('imageUrlGenerator', imageUrlGenerator.value)
 
     // generate placeholder image's srcset
     const placeholderSrcSet = progressive.value
-      ? computed(() => generator(src.value, {
+      ? computed(() => imageUrlGenerator.value(src.value, {
         width: 48,
         blur: 2,
       }))
@@ -80,14 +103,14 @@ export default defineComponent({
       options.format = format.value
 
     const imageSrcSet = responsive.value
-      ? useResponsive(src, breakpoints, generator, options)
-      : computed(() => generator(src.value, options))
+      ? useResponsive(src, breakpoints, imageUrlGenerator, options)
+      : computed(() => imageUrlGenerator.value(src.value, options))
 
     // generate picture's srcset
     const pictureOption: ImageOptions = Object.assign({}, options, { format: 'webp' })
     const pictureSrcSet = responsive.value
-      ? useResponsive(src, breakpoints, generator, pictureOption)
-      : computed(() => generator(src.value, pictureOption))
+      ? useResponsive(src, breakpoints, imageUrlGenerator, pictureOption)
+      : computed(() => imageUrlGenerator.value(src.value, pictureOption))
 
     // load data-srcset when intersection observer emitted.
     if (lazy.value) {
@@ -119,6 +142,8 @@ export default defineComponent({
       onPlaceholderLoaded,
       ssrImageLoaded,
       ssrPlaceholderLoaded,
+      lazyRef: lazy,
+      durationRef: duration,
     }
   },
   render() {
@@ -126,7 +151,7 @@ export default defineComponent({
       const isImage = type === 'image'
       if (((isImage && !this.ssrImageLoaded) || (!isImage && !this.ssrPlaceholderLoaded))
       && this.$parent?.$el
-      && !this.lazy) {
+      && !this.lazyRef) {
         const imgElement = this.$parent?.$el.querySelector(
           `[data-type=${type}]`,
         )
@@ -156,7 +181,7 @@ export default defineComponent({
       const placeholderLoaded = style.placeholderLoaded
 
       const attrs = {
-        [this.lazy ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
+        [this.lazyRef ? 'data-srcset' : 'srcset']: isImage ? this.imageSrcSet : this.placeholderSrcSet,
         onload: `this.classList.add("${isImage ? imageLoaded : placeholderLoaded}");`,
 
       }
@@ -176,7 +201,7 @@ export default defineComponent({
           class={className}
           style={{
             opacity: ((isImage && this.ssrImageLoaded) || (!isImage && this.ssrPlaceholderLoaded)) ? 1 : 0,
-            transitionDuration: `${this.duration}s`,
+            transitionDuration: `${this.durationRef}s`,
           }}
           width={this.width}
           height={this.height}

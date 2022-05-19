@@ -3,20 +3,19 @@ import { isVue3 } from 'vue-demi'
 import type { App, Plugin } from 'vue-demi'
 
 import Image from './components/index'
-import type { ImageUrlGenerator } from './interface'
+import type { AsImageOptions } from './interface'
 
 export type SFCWithInstall<T> = T & Plugin
 
-Image.install = (app: any, options: {
-  imageUrlGenerator?: ImageUrlGenerator
-} = {}) => {
+Image.install = (app: any, options: AsImageOptions = {}) => {
   if (options.imageUrlGenerator) {
     if (isVue3) {
-      app.config.globalProperties.$asImageOptions = options
       app.provide('imageUrlGenerator', options.imageUrlGenerator)
+      app.provide('$asImageOptions', options)
     }
     else {
       app.prototype.$imageUrlGenerator = options.imageUrlGenerator
+      app.prototype.$asImageOptions = options
     }
   }
   app.component(Image.name, Image)

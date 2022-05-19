@@ -5,5 +5,6 @@ import { AsImage } from '.'
 const app = createApp(App)
 app.use(AsImage, {
   imageUrlGenerator: imageUrlGeneratorFP,
+  lazy: true,
 })
 app.mount('#app')
