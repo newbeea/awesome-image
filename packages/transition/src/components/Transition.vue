@@ -122,7 +122,6 @@ export default defineComponent({
     const webglContainer = ref<HTMLElement>()
 
     const mount = async(width: number, height: number) => {
-      console.log('mounted')
       if (!webglContainer.value) return
       const glWidget = new GLWidget({
         element: webglContainer.value,
@@ -161,7 +160,6 @@ export default defineComponent({
     // slide and animate
     let current = initialIndex.value
     const step = 2500 / props.speed
-    console.log(step)
     let progress = step
     let rAF: number
     const animate = () => {
